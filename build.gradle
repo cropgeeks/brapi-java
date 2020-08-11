@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'uk.ac.hutton.ics'
+version '1.0.0'
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven {
+        url 'https://repo.spring.io/plugins-release/'
+    }
+}
+
+dependencies {
+    implementation 'org.restlet.jee:org.restlet:2.4.0'
+    implementation 'org.restlet.jee:org.restlet.ext.servlet:2.4.0'
+    implementation 'org.restlet.jee:org.restlet.ext.fileupload:2.4.0'
+    implementation 'org.restlet.jee:org.restlet.ext.json:2.4.0'
+    implementation 'org.restlet.jee:org.restlet.ext.gson:2.3.6'
+    implementation 'org.json:json:20160212'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.7.1'
+
+    implementation 'javax.servlet:javax.servlet-api:3.0.1'
+}
