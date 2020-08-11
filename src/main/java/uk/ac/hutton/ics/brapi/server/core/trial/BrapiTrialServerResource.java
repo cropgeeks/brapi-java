@@ -1,9 +1,15 @@
 package uk.ac.hutton.ics.brapi.server.core.trial;
 
-import uk.ac.hutton.ics.brapi.resource.base.ArrayResult;
-import uk.ac.hutton.ics.brapi.resource.trial.Trial;
-import uk.ac.hutton.ics.brapi.server.IBaseServerResource;
+import org.restlet.resource.*;
 
-public interface BrapiTrialServerResource extends IBaseServerResource<ArrayResult<Trial>>
+import uk.ac.hutton.ics.brapi.resource.base.*;
+import uk.ac.hutton.ics.brapi.resource.trial.Trial;
+
+public interface BrapiTrialServerResource
 {
+	@Get
+	BaseResult<ArrayResult<Trial>> getTrials();
+
+	@Post
+	BaseResult<ArrayResult<Trial>> postTrials(Trial[] newTrials);
 }

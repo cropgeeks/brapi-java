@@ -1,13 +1,16 @@
 package uk.ac.hutton.ics.brapi.server.core.location;
 
-import org.restlet.resource.Put;
+import org.restlet.resource.*;
 
 import uk.ac.hutton.ics.brapi.resource.base.BaseResult;
 import uk.ac.hutton.ics.brapi.resource.location.Location;
 import uk.ac.hutton.ics.brapi.server.IBaseServerResource;
 
-public interface BrapiLocationIndividualServerResource extends IBaseServerResource<Location>
+public interface BrapiLocationIndividualServerResource
 {
+	@Get
+	BaseResult<Location> getLocationById();
+
 	@Put
-	BaseResult<Location> postJson(Location newLocation);
+	BaseResult<Location> putLocationById(Location newLocation);
 }

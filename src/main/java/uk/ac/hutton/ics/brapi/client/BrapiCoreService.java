@@ -73,7 +73,7 @@ public interface BrapiCoreService
 	Call<BaseResult<ArrayResult<Location>>> postLocations(@Body Location[] newLocations);
 
 	@GET("locations/{locationDbId}")
-	Call<BaseResult<Location>> getLocation(@Path("locationDbId") String locationDbId);
+	Call<BaseResult<Location>> getLocationById(@Path("locationDbId") String locationDbId);
 
 	@PUT("locations/{locationDbId}")
 	Call<BaseResult<Location>> putLocationById(@Path("locationDbId") String locationDbId, @Body Location location);
@@ -112,7 +112,7 @@ public interface BrapiCoreService
 	Call<BaseResult<Person>> getPersonById(@Path("personDbId") String personDbId);
 
 	@PUT("people/{personDbId}")
-	Call<BaseResult<Person>> putPersonById(@Path("personDbId") String personDbId, @Body Location location);
+	Call<BaseResult<Person>> putPersonById(@Path("personDbId") String personDbId, @Body Person person);
 
 	@POST("search/people")
 	Call<BaseResult<ArrayResult<Person>>> postPeopleSearch(

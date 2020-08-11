@@ -1,13 +1,19 @@
 package uk.ac.hutton.ics.brapi.server.core.study;
 
-import org.restlet.resource.Post;
+import org.restlet.resource.*;
 
+import uk.ac.hutton.ics.brapi.resource.SearchResult;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.study.*;
-import uk.ac.hutton.ics.brapi.server.IBaseServerResource;
 
-public interface BrapiSearchStudyServerResource extends IBaseServerResource<ArrayResult<Study>>
+public interface BrapiSearchStudyServerResource
 {
 	@Post
-	BaseResult<ArrayResult<Study>> postJson(StudySearch search);
+	BaseResult<ArrayResult<Study>> postStudySearch(StudySearch search);
+
+	@Post
+	BaseResult<SearchResult> postStudySearchAsync(StudySearch search);
+
+	@Get
+	BaseResult<ArrayResult<Study>> getStudySearchAsync();
 }

@@ -1,13 +1,16 @@
 package uk.ac.hutton.ics.brapi.server.core.study;
 
-import org.restlet.resource.Put;
+import org.restlet.resource.*;
 
 import uk.ac.hutton.ics.brapi.resource.base.BaseResult;
 import uk.ac.hutton.ics.brapi.resource.study.Study;
 import uk.ac.hutton.ics.brapi.server.IBaseServerResource;
 
-public interface BrapiStudyIndividualServerResource extends IBaseServerResource<Study>
+public interface BrapiStudyIndividualServerResource
 {
+	@Get
+	BaseResult<Study> getStudyById();
+
 	@Put
-	BaseResult<Study> putJson(Study newStudy);
+	BaseResult<Study> putStudyById(Study newStudy);
 }

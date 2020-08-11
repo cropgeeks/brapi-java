@@ -1,8 +1,11 @@
 package uk.ac.hutton.ics.brapi.server.core.study;
 
-import uk.ac.hutton.ics.brapi.resource.base.ArrayResult;
-import uk.ac.hutton.ics.brapi.server.IBaseServerResource;
+import org.restlet.resource.Get;
 
-public interface BrapiStudyTypesServerResource extends IBaseServerResource<ArrayResult<String>>
+import uk.ac.hutton.ics.brapi.resource.base.*;
+
+public interface BrapiStudyTypesServerResource
 {
+	@Get
+	BaseResult<ArrayResult<String>> getStudyTypes();
 }
