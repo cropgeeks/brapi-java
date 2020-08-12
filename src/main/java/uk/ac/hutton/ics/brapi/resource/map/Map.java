@@ -2,9 +2,10 @@ package uk.ac.hutton.ics.brapi.resource.map;
 
 import java.sql.Timestamp;
 
-public class Map
+import uk.ac.hutton.ics.brapi.resource.base.BrapiObject;
+
+public class Map extends BrapiObject
 {
-	private Map       additionalInfo = null;
 	private String    comments;
 	private String    commonCropName;
 	private String    documentationURL;
@@ -17,17 +18,6 @@ public class Map
 	private String    scientificName;
 	private String    type;
 	private String    unit;
-
-	public Map getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public Map setAdditionalInfo(Map additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
 
 	public String getComments()
 	{

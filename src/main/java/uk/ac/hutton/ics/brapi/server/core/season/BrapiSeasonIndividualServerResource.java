@@ -4,7 +4,6 @@ import org.restlet.resource.*;
 
 import uk.ac.hutton.ics.brapi.resource.base.BaseResult;
 import uk.ac.hutton.ics.brapi.resource.season.Season;
-import uk.ac.hutton.ics.brapi.server.IBaseServerResource;
 
 public interface BrapiSeasonIndividualServerResource
 {

@@ -4,9 +4,7 @@ import org.restlet.resource.*;
 
 import uk.ac.hutton.ics.brapi.resource.SearchResult;
 import uk.ac.hutton.ics.brapi.resource.base.*;
-import uk.ac.hutton.ics.brapi.resource.call.*;
 import uk.ac.hutton.ics.brapi.resource.variant.*;
-import uk.ac.hutton.ics.brapi.server.IBaseServerResource;
 
 public interface BrapiSearchVariantServerResource
 {

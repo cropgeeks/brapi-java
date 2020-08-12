@@ -1,33 +1,21 @@
 package uk.ac.hutton.ics.brapi.resource.people;
 
-import java.util.*;
+import java.util.List;
 
-import uk.ac.hutton.ics.brapi.resource.base.Reference;
+import uk.ac.hutton.ics.brapi.resource.base.*;
 
-public class Person
+public class Person extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private String              description;
-	private String              emailAddress;
-	private List<Reference>     externalReferences;
-	private String              firstName;
-	private String              lastName;
-	private String              mailingAddress;
-	private String              middleName;
-	private String              personDbId;
-	private String              phoneNumber;
-	private String              userID;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public Person setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private String          description;
+	private String          emailAddress;
+	private List<Reference> externalReferences;
+	private String          firstName;
+	private String          lastName;
+	private String          mailingAddress;
+	private String          middleName;
+	private String          personDbId;
+	private String          phoneNumber;
+	private String          userID;
 
 	public String getDescription()
 	{

@@ -1,36 +1,24 @@
 package uk.ac.hutton.ics.brapi.resource.list;
 
 import java.sql.Timestamp;
-import java.util.*;
+import java.util.List;
 
-import uk.ac.hutton.ics.brapi.resource.base.Reference;
+import uk.ac.hutton.ics.brapi.resource.base.*;
 
-public class Lists
+public class Lists extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private List<String>        data;
-	private Timestamp           dateCreated;
-	private Timestamp           dateModified;
-	private List<Reference>     externalReferences;
-	private String              listDbId;
-	private String              listDescription;
-	private String              listName;
-	private String              listOwnerName;
-	private String              listOwnerPersonDbId;
-	private Long                listSize;
-	private String              listSource;
-	private String              listType;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public Lists setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private List<String>    data;
+	private Timestamp       dateCreated;
+	private Timestamp       dateModified;
+	private List<Reference> externalReferences;
+	private String          listDbId;
+	private String          listDescription;
+	private String          listName;
+	private String          listOwnerName;
+	private String          listOwnerPersonDbId;
+	private Long            listSize;
+	private String          listSource;
+	private String          listType;
 
 	public java.util.List<String> getData()
 	{

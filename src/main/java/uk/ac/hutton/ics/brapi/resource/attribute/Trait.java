@@ -1,35 +1,23 @@
 package uk.ac.hutton.ics.brapi.resource.attribute;
 
-import java.util.*;
+import java.util.List;
 
-import uk.ac.hutton.ics.brapi.resource.base.Reference;
+import uk.ac.hutton.ics.brapi.resource.base.*;
 
-public class Trait
+public class Trait extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private List<String>        alternativeAbbreviations;
-	private String              attribute;
-	private String              entity;
-	private List<Reference>     externalReferences;
-	private String              mainAbbreviation;
-	private Ontology            ontologyReference;
-	private String              status;
-	private List<String>        synonyms;
-	private String              traitClass;
-	private String              traitDbId;
-	private String              traitDescription;
-	private String              traitName;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public Trait setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private List<String>      alternativeAbbreviations;
+	private String            attribute;
+	private String            entity;
+	private List<Reference>   externalReferences;
+	private String            mainAbbreviation;
+	private OntologyReference ontologyReference;
+	private String            status;
+	private List<String>      synonyms;
+	private String            traitClass;
+	private String            traitDbId;
+	private String            traitDescription;
+	private String            traitName;
 
 	public List<String> getAlternativeAbbreviations()
 	{
@@ -86,12 +74,12 @@ public class Trait
 		return this;
 	}
 
-	public Ontology getOntologyReference()
+	public OntologyReference getOntologyReference()
 	{
 		return ontologyReference;
 	}
 
-	public Trait setOntologyReference(Ontology ontologyReference)
+	public Trait setOntologyReference(OntologyReference ontologyReference)
 	{
 		this.ontologyReference = ontologyReference;
 		return this;

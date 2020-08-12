@@ -2,32 +2,21 @@ package uk.ac.hutton.ics.brapi.resource.call;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.*;
+import java.util.List;
 
+import uk.ac.hutton.ics.brapi.resource.base.BrapiObject;
 import uk.ac.hutton.ics.brapi.resource.variant.Genotype;
 
-public class Call
+public class Call extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private String              callSetDbId;
-	private String              callSetName;
-	private Genotype            genotype;
+	private String       callSetDbId;
+	private String       callSetName;
+	private Genotype     genotype;
 	@SerializedName("genotype_likelihood")
-	private List<Double>        genotypeLikelihood;
-	private String              phaseSet;
-	private String              variantDbId;
-	private String              variantName;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public Call setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private List<Double> genotypeLikelihood;
+	private String       phaseSet;
+	private String       variantDbId;
+	private String       variantName;
 
 	public String getCallSetDbId()
 	{

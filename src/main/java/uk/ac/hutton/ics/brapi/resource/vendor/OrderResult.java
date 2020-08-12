@@ -1,27 +1,17 @@
 package uk.ac.hutton.ics.brapi.resource.vendor;
 
 import java.net.URI;
-import java.util.*;
+import java.util.List;
 
-public class OrderResult
+import uk.ac.hutton.ics.brapi.resource.base.BrapiObject;
+
+public class OrderResult extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private List<String>        clientSampleIds;
-	private String              fileName;
-	private String              fileType;
-	private URI                 fileURL;
-	private String              md5sum;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public OrderResult setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private List<String> clientSampleIds;
+	private String       fileName;
+	private String       fileType;
+	private URI          fileURL;
+	private String       md5sum;
 
 	public List<String> getClientSampleIds()
 	{

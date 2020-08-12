@@ -3,40 +3,30 @@ package uk.ac.hutton.ics.brapi.resource.variant;
 import com.google.gson.annotations.SerializedName;
 
 import java.sql.Timestamp;
-import java.util.*;
+import java.util.List;
 
-public class Variant
+import uk.ac.hutton.ics.brapi.resource.base.BrapiObject;
+
+public class Variant extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
 	@SerializedName("alternate_bases")
-	private List<String>        alternativeBases;
-	private List<Integer>       ciend;
-	private List<Integer>       cipos;
-	private Timestamp           created;
-	private Long                end;
-	private Boolean             filtersApplied;
-	private List<String>        filtersFailed;
-	private Boolean             filtersPassed;
-	private String              referenceBases;
-	private String              referenceName;
-	private Long                start;
-	private Integer             svlen;
-	private Timestamp           updated;
-	private String              variantDbId;
-	private List<String>        variantNames;
-	private List<String>        variantSetDbId;
-	private String              variantType;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public Variant setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private List<String>  alternativeBases;
+	private List<Integer> ciend;
+	private List<Integer> cipos;
+	private Timestamp     created;
+	private Long          end;
+	private Boolean       filtersApplied;
+	private List<String>  filtersFailed;
+	private Boolean       filtersPassed;
+	private String        referenceBases;
+	private String        referenceName;
+	private Long          start;
+	private Integer       svlen;
+	private Timestamp     updated;
+	private String        variantDbId;
+	private List<String>  variantNames;
+	private List<String>  variantSetDbId;
+	private String        variantType;
 
 	public List<String> getAlternativeBases()
 	{

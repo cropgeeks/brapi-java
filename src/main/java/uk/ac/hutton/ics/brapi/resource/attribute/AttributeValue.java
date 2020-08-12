@@ -1,32 +1,20 @@
 package uk.ac.hutton.ics.brapi.resource.attribute;
 
 import java.sql.Timestamp;
-import java.util.*;
+import java.util.List;
 
-import uk.ac.hutton.ics.brapi.resource.base.Reference;
+import uk.ac.hutton.ics.brapi.resource.base.*;
 
-public class AttributeValue
+public class AttributeValue extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private String              attributeDbId;
-	private String              attributeName;
-	private String              attributeValueDbId;
-	private Timestamp           determinedDate;
-	private List<Reference>     externalReferences;
-	private String              germplasmDbId;
-	private String              germplasmName;
-	private String              value;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public AttributeValue setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private String          attributeDbId;
+	private String          attributeName;
+	private String          attributeValueDbId;
+	private Timestamp       determinedDate;
+	private List<Reference> externalReferences;
+	private String          germplasmDbId;
+	private String          germplasmName;
+	private String          value;
 
 	public String getAttributeDbId()
 	{

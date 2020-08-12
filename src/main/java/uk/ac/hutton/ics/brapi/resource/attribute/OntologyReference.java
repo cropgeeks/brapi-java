@@ -2,7 +2,7 @@ package uk.ac.hutton.ics.brapi.resource.attribute;
 
 import java.util.List;
 
-public class Ontology
+public class OntologyReference
 {
 	private List<Link> documentationLinks;
 	private String     ontologyDbId;
@@ -14,7 +14,7 @@ public class Ontology
 		return documentationLinks;
 	}
 
-	public Ontology setDocumentationLinks(List<Link> documentationLinks)
+	public OntologyReference setDocumentationLinks(List<Link> documentationLinks)
 	{
 		this.documentationLinks = documentationLinks;
 		return this;
@@ -25,7 +25,7 @@ public class Ontology
 		return ontologyDbId;
 	}
 
-	public Ontology setOntologyDbId(String ontologyDbId)
+	public OntologyReference setOntologyDbId(String ontologyDbId)
 	{
 		this.ontologyDbId = ontologyDbId;
 		return this;
@@ -36,7 +36,7 @@ public class Ontology
 		return ontologyName;
 	}
 
-	public Ontology setOntologyName(String ontologyName)
+	public OntologyReference setOntologyName(String ontologyName)
 	{
 		this.ontologyName = ontologyName;
 		return this;
@@ -47,7 +47,7 @@ public class Ontology
 		return version;
 	}
 
-	public Ontology setVersion(String version)
+	public OntologyReference setVersion(String version)
 	{
 		this.version = version;
 		return this;

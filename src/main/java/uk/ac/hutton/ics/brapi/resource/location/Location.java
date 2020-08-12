@@ -1,30 +1,29 @@
 package uk.ac.hutton.ics.brapi.resource.location;
 
-import java.util.*;
+import java.util.List;
 
-import uk.ac.hutton.ics.brapi.resource.base.Reference;
+import uk.ac.hutton.ics.brapi.resource.base.*;
 
-public class Location
+public class Location extends BrapiObject
 {
-	private String              abbreviation;
-	private Map<String, String> additionalInfo = null;
-	private String              coordinateDescription;
-	private String              coordinateUncertainty;
-	private CoordinatesPoint    coordinatesPoint;
-	private String              countryCode;
-	private String              countryName;
-	private String              documentationURL;
-	private String              environmentType;
-	private String              exposure;
-	private List<Reference>     externalReferences;
-	private String              instituteAddress;
-	private String              instituteName;
-	private String              locationDbId;
-	private String              locationName;
-	private String              locationType;
-	private String              siteStatus;
-	private String              slope;
-	private String              topography;
+	private String           abbreviation;
+	private String           coordinateDescription;
+	private String           coordinateUncertainty;
+	private CoordinatesPoint coordinatesPoint;
+	private String           countryCode;
+	private String           countryName;
+	private String           documentationURL;
+	private String           environmentType;
+	private String           exposure;
+	private List<Reference>  externalReferences;
+	private String           instituteAddress;
+	private String           instituteName;
+	private String           locationDbId;
+	private String           locationName;
+	private String           locationType;
+	private String           siteStatus;
+	private String           slope;
+	private String           topography;
 
 	public String getAbbreviation()
 	{
@@ -34,17 +33,6 @@ public class Location
 	public Location setAbbreviation(String abbreviation)
 	{
 		this.abbreviation = abbreviation;
-		return this;
-	}
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public Location setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
 		return this;
 	}
 

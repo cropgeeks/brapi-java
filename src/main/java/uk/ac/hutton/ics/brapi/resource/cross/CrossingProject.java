@@ -1,30 +1,18 @@
 package uk.ac.hutton.ics.brapi.resource.cross;
 
-import java.util.*;
+import java.util.List;
 
-import uk.ac.hutton.ics.brapi.resource.base.Reference;
+import uk.ac.hutton.ics.brapi.resource.base.*;
 
-public class CrossingProject
+public class CrossingProject extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private String              commonCropName;
-	private String              crossingProjectDbId;
-	private String              crossingProjectDescription;
-	private String              crossingProjectName;
-	private List<Reference>     externalReferences;
-	private String              programDbId;
-	private String              programName;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public CrossingProject setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private String          commonCropName;
+	private String          crossingProjectDbId;
+	private String          crossingProjectDescription;
+	private String          crossingProjectName;
+	private List<Reference> externalReferences;
+	private String          programDbId;
+	private String          programName;
 
 	public String getCommonCropName()
 	{

@@ -2,23 +2,23 @@ package uk.ac.hutton.ics.brapi.resource.vendor;
 
 import java.util.List;
 
-import uk.ac.hutton.ics.brapi.resource.attribute.Ontology;
+import uk.ac.hutton.ics.brapi.resource.attribute.OntologyReference;
 
 public class Sample
 {
-	private String         clientSampleBarCode;
-	private String         clientSampleId;
-	private Integer        column;
-	private String         comments;
-	private Amount         concentration;
-	private String         organismName;
-	private String         row;
-	private String         speciesName;
-	private List<Ontology> taxonomyOntologyReference;
-	private String         tissueType;
-	private List<Ontology> tissueTypeOntologyReference;
-	private Amount         volume;
-	private String         well;
+	private String                  clientSampleBarCode;
+	private String                  clientSampleId;
+	private Integer                 column;
+	private String                  comments;
+	private Amount                  concentration;
+	private String                  organismName;
+	private String                  row;
+	private String                  speciesName;
+	private List<OntologyReference> taxonomyOntologyReference;
+	private String                  tissueType;
+	private List<OntologyReference> tissueTypeOntologyReference;
+	private Amount                  volume;
+	private String                  well;
 
 	public String getClientSampleBarCode()
 	{
@@ -108,12 +108,12 @@ public class Sample
 		return this;
 	}
 
-	public List<Ontology> getTaxonomyOntologyReference()
+	public List<OntologyReference> getTaxonomyOntologyReference()
 	{
 		return taxonomyOntologyReference;
 	}
 
-	public Sample setTaxonomyOntologyReference(List<Ontology> taxonomyOntologyReference)
+	public Sample setTaxonomyOntologyReference(List<OntologyReference> taxonomyOntologyReference)
 	{
 		this.taxonomyOntologyReference = taxonomyOntologyReference;
 		return this;
@@ -130,12 +130,12 @@ public class Sample
 		return this;
 	}
 
-	public List<Ontology> getTissueTypeOntologyReference()
+	public List<OntologyReference> getTissueTypeOntologyReference()
 	{
 		return tissueTypeOntologyReference;
 	}
 
-	public Sample setTissueTypeOntologyReference(List<Ontology> tissueTypeOntologyReference)
+	public Sample setTissueTypeOntologyReference(List<OntologyReference> tissueTypeOntologyReference)
 	{
 		this.tissueTypeOntologyReference = tissueTypeOntologyReference;
 		return this;

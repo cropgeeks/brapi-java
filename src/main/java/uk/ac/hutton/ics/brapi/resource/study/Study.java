@@ -2,15 +2,15 @@ package uk.ac.hutton.ics.brapi.resource.study;
 
 import java.net.URI;
 import java.sql.Timestamp;
-import java.util.*;
+import java.util.List;
 
 import uk.ac.hutton.ics.brapi.resource.*;
-import uk.ac.hutton.ics.brapi.resource.base.Reference;
+import uk.ac.hutton.ics.brapi.resource.base.*;
+import uk.ac.hutton.ics.brapi.resource.observation.ObservationLevel;
 
-public class Study
+public class Study extends BrapiObject
 {
-	private boolean                      active = false;
-	private Map<String, String>          additionalInfo;
+	private Boolean                      active;
 	private String                       commonCropName;
 	private List<Contact>                contacts;
 	private String                       culturalPractices;
@@ -38,25 +38,14 @@ public class Study
 	private String                       trialDbId;
 	private String                       trialName;
 
-	public boolean isActive()
+	public Boolean isActive()
 	{
 		return active;
 	}
 
-	public Study setActive(boolean active)
+	public Study setActive(Boolean active)
 	{
 		this.active = active;
-		return this;
-	}
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public Study setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
 		return this;
 	}
 

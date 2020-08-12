@@ -1,32 +1,20 @@
 package uk.ac.hutton.ics.brapi.resource.seedlot;
 
 import java.sql.Timestamp;
-import java.util.*;
+import java.util.List;
 
-import uk.ac.hutton.ics.brapi.resource.base.Reference;
+import uk.ac.hutton.ics.brapi.resource.base.*;
 
-public class SeedLotTransaction
+public class SeedLotTransaction extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private Integer             amount;
-	private List<Reference>     externalReferences;
-	private String              fromSeedLotDbId;
-	private String              toSeedLotDbId;
-	private String              transactionDbId;
-	private String              transactionDescription;
-	private Timestamp           transactionTimestamp;
-	private String              units;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public SeedLotTransaction setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private Integer         amount;
+	private List<Reference> externalReferences;
+	private String          fromSeedLotDbId;
+	private String          toSeedLotDbId;
+	private String          transactionDbId;
+	private String          transactionDescription;
+	private Timestamp       transactionTimestamp;
+	private String          units;
 
 	public Integer getAmount()
 	{

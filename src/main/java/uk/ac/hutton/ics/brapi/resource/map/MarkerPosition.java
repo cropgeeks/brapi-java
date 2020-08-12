@@ -1,27 +1,15 @@
 package uk.ac.hutton.ics.brapi.resource.map;
 
-import java.util.Map;
+import uk.ac.hutton.ics.brapi.resource.base.BrapiObject;
 
-public class MarkerPosition
+public class MarkerPosition extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private String              linkageGroupName;
-	private String              mapDbId;
-	private String              mapName;
-	private Long                position;
-	private String              variantDbId;
-	private String              variantName;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public MarkerPosition setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private String linkageGroupName;
+	private String mapDbId;
+	private String mapName;
+	private Long   position;
+	private String variantDbId;
+	private String variantName;
 
 	public String getLinkageGroupName()
 	{

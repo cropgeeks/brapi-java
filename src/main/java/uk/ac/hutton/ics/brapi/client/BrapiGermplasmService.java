@@ -1,5 +1,7 @@
 package uk.ac.hutton.ics.brapi.client;
 
+import java.util.*;
+
 import retrofit2.Call;
 import retrofit2.http.*;
 import uk.ac.hutton.ics.brapi.resource.SearchResult;
@@ -23,11 +25,11 @@ public interface BrapiGermplasmService
 	);
 
 	@POST("crosses")
-	Call<BaseResult<ArrayResult<Cross>>> postCrosses(@Body Cross[] newCrosses);
+	Call<BaseResult<ArrayResult<Cross>>> postCrosses(@Body List<Cross> newCrosses);
 
 	// TODO: Check
-//	@PUT("crosses")
-//	Call<BaseResult<Cross>> putCross();
+	@PUT("crosses")
+	Call<BaseResult<Cross>> putCross(@Body Map<String, Cross> crosses);
 
 	@GET("crossingprojects")
 	Call<BaseResult<ArrayResult<CrossingProject>>> getCrossingProjects(
@@ -39,7 +41,7 @@ public interface BrapiGermplasmService
 	);
 
 	@POST("crossingprojects")
-	Call<BaseResult<ArrayResult<CrossingProject>>> postCrossingProjects(@Body CrossingProject[] newCrossingProjects);
+	Call<BaseResult<ArrayResult<CrossingProject>>> postCrossingProjects(@Body List<CrossingProject> newCrossingProjects);
 
 	@GET("crossingprojects/{crossingProjectDbId}")
 	Call<BaseResult<CrossingProject>> getCrossingProjectById(@Path("crossingProjectDbId") String crossingProjectDbId);
@@ -77,7 +79,7 @@ public interface BrapiGermplasmService
 	);
 
 	@POST("germplasm")
-	Call<BaseResult<ArrayResult<Germplasm>>> postGermplasm(@Body Germplasm[] newGermplasm);
+	Call<BaseResult<ArrayResult<Germplasm>>> postGermplasm(@Body List<Germplasm> newGermplasm);
 
 	@GET("germplasm/{germplasmDbId}")
 	Call<BaseResult<Germplasm>> getGermplasmById(@Path("germplasmDbId") String germplasmDbId);
@@ -128,7 +130,7 @@ public interface BrapiGermplasmService
 	);
 
 	@POST("attributevalues")
-	Call<BaseResult<ArrayResult<AttributeValue>>> postAttributeValues(@Body AttributeValue[] newAttributeValues);
+	Call<BaseResult<ArrayResult<AttributeValue>>> postAttributeValues(@Body List<AttributeValue> newAttributeValues);
 
 	@GET("attributevalues/{attributeValueDbId}")
 	Call<BaseResult<AttributeValue>> getAttributeValueById(@Path("attributeValueDbId") String attributeValueDbId);
@@ -166,7 +168,7 @@ public interface BrapiGermplasmService
 	);
 
 	@POST("attributes")
-	Call<BaseResult<ArrayResult<Attribute>>> postAttributes(@Body Attribute[] newAttributes);
+	Call<BaseResult<ArrayResult<Attribute>>> postAttributes(@Body List<Attribute> newAttributes);
 
 	@GET("attributes/categories")
 	Call<BaseResult<ArrayResult<Category>>> getAttributeCategories(
@@ -208,11 +210,11 @@ public interface BrapiGermplasmService
 	);
 
 	@POST("plannedcrosses")
-	Call<BaseResult<ArrayResult<PlannedCross>>> postPlannedCrosses(@Body PlannedCross[] plannedCrosses);
+	Call<BaseResult<ArrayResult<PlannedCross>>> postPlannedCrosses(@Body List<PlannedCross> plannedCrosses);
 
 	// TODO: Check
-//	@PUT("plannedcrosses")
-//	Call<BaseResult<PlannedCross>> putPlannedCross();
+	@PUT("plannedcrosses")
+	Call<BaseResult<PlannedCross>> putPlannedCross(@Body Map<String, PlannedCross> plannedCrosses);
 
 	@GET("seedlots")
 	Call<BaseResult<ArrayResult<SeedLot>>> getSeedLots(
@@ -225,7 +227,7 @@ public interface BrapiGermplasmService
 	);
 
 	@POST("seedlots")
-	Call<BaseResult<ArrayResult<SeedLot>>> postSeedLots(@Body SeedLot[] newSeedLots);
+	Call<BaseResult<ArrayResult<SeedLot>>> postSeedLots(@Body List<SeedLot> newSeedLots);
 
 	@GET("seedlots/transactions")
 	Call<BaseResult<ArrayResult<SeedLotTransaction>>> getSeedLotTransaction(
@@ -239,7 +241,7 @@ public interface BrapiGermplasmService
 	);
 
 	@POST("seedlots/transactions")
-	Call<BaseResult<ArrayResult<SeedLotTransaction>>> postSeedLotTransactions(@Body SeedLotTransaction[] newSeedLotTransactions);
+	Call<BaseResult<ArrayResult<SeedLotTransaction>>> postSeedLotTransactions(@Body List<SeedLotTransaction> newSeedLotTransactions);
 
 	@GET("seedlots/{seedLotDbId}")
 	Call<BaseResult<SeedLot>> getSeedLotById(@Path("seedLotDbId") String seedLotDbId);

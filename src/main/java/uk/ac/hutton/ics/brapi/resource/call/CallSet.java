@@ -1,29 +1,19 @@
 package uk.ac.hutton.ics.brapi.resource.call;
 
 import java.sql.Timestamp;
-import java.util.*;
+import java.util.List;
 
-public class CallSet
+import uk.ac.hutton.ics.brapi.resource.base.BrapiObject;
+
+public class CallSet extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private String              callSetDbId;
-	private String              callSetName;
-	private Timestamp           created;
-	private String              sampleDbId;
-	private String              studyDbId;
-	private Timestamp           updated;
-	private List<String>        variantSetDbIds;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public CallSet setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private String       callSetDbId;
+	private String       callSetName;
+	private Timestamp    created;
+	private String       sampleDbId;
+	private String       studyDbId;
+	private Timestamp    updated;
+	private List<String> variantSetDbIds;
 
 	public String getCallSetDbId()
 	{

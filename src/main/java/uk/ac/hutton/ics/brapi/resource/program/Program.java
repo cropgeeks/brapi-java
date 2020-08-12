@@ -1,21 +1,20 @@
 package uk.ac.hutton.ics.brapi.resource.program;
 
-import java.util.*;
+import java.util.List;
 
-import uk.ac.hutton.ics.brapi.resource.base.Reference;
+import uk.ac.hutton.ics.brapi.resource.base.*;
 
-public class Program
+public class Program extends BrapiObject
 {
-	private String              abbreviation;
-	private Map<String, String> additionalInfo;
-	private String              commonCropName;
-	private String              documentationURL;
-	private List<Reference>     externalReferences;
-	private String              leadPersonDbId;
-	private String              leadPersonName;
-	private String              objective;
-	private String              programDbId;
-	private String              programName;
+	private String          abbreviation;
+	private String          commonCropName;
+	private String          documentationURL;
+	private List<Reference> externalReferences;
+	private String          leadPersonDbId;
+	private String          leadPersonName;
+	private String          objective;
+	private String          programDbId;
+	private String          programName;
 
 	public String getAbbreviation()
 	{
@@ -25,17 +24,6 @@ public class Program
 	public Program setAbbreviation(String abbreviation)
 	{
 		this.abbreviation = abbreviation;
-		return this;
-	}
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public Program setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
 		return this;
 	}
 

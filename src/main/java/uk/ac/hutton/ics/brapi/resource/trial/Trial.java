@@ -1,29 +1,28 @@
 package uk.ac.hutton.ics.brapi.resource.trial;
 
 import java.net.URI;
-import java.util.*;
+import java.util.List;
 
 import uk.ac.hutton.ics.brapi.resource.Contact;
-import uk.ac.hutton.ics.brapi.resource.base.Reference;
+import uk.ac.hutton.ics.brapi.resource.base.*;
 
-public class Trial
+public class Trial extends BrapiObject
 {
-	private Boolean             active;
-	private Map<String, String> additionalInfo;
-	private String              commonCropName;
-	private List<Contact>       contacts;
-	private List<Authorship>    datasetAuthorships;
-	private URI                 documentationURL;
-	private String              endDate;
-	private List<Reference>     externalReferences;
-	private String              programDbId;
-	private String              programName;
-	private List<Publication>   publications;
-	private String              startDate;
-	private String              trialDbId;
-	private String              trialDescription;
-	private String              trialName;
-	private String              trialPUI;
+	private Boolean           active;
+	private String            commonCropName;
+	private List<Contact>     contacts;
+	private List<Authorship>  datasetAuthorships;
+	private URI               documentationURL;
+	private String            endDate;
+	private List<Reference>   externalReferences;
+	private String            programDbId;
+	private String            programName;
+	private List<Publication> publications;
+	private String            startDate;
+	private String            trialDbId;
+	private String            trialDescription;
+	private String            trialName;
+	private String            trialPUI;
 
 	public Boolean getActive()
 	{
@@ -33,17 +32,6 @@ public class Trial
 	public Trial setActive(Boolean active)
 	{
 		this.active = active;
-		return this;
-	}
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public Trial setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
 		return this;
 	}
 

@@ -1,31 +1,21 @@
 package uk.ac.hutton.ics.brapi.resource.reference;
 
 import java.net.URI;
-import java.util.*;
+import java.util.List;
 
-public class ReferenceSet
+import uk.ac.hutton.ics.brapi.resource.base.BrapiObject;
+
+public class ReferenceSet extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private String              assemblyPUI;
-	private String              description;
-	private Boolean             isDerived;
-	private String              md5checksum;
-	private String              referenceSetDbId;
-	private String              referenceSetName;
-	private List<String>        sourceAccessions;
-	private URI                 sourceURI;
-	private Species             species;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public ReferenceSet setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private String       assemblyPUI;
+	private String       description;
+	private Boolean      isDerived;
+	private String       md5checksum;
+	private String       referenceSetDbId;
+	private String       referenceSetName;
+	private List<String> sourceAccessions;
+	private URI          sourceURI;
+	private Species      species;
 
 	public String getAssemblyPUI()
 	{

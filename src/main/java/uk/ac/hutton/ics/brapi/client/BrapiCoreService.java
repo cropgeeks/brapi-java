@@ -1,5 +1,7 @@
 package uk.ac.hutton.ics.brapi.client;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.*;
 import uk.ac.hutton.ics.brapi.resource.*;
@@ -30,7 +32,7 @@ public interface BrapiCoreService
 	);
 
 	@POST("lists")
-	Call<BaseResult<ArrayResult<Lists>>> postLists(@Body Lists[] newLists);
+	Call<BaseResult<ArrayResult<Lists>>> postLists(@Body List<Lists> newLists);
 
 	@GET("lists/{listDbId}")
 	Call<BaseResult<ArrayResult<Lists>>> getListsById(
@@ -43,7 +45,7 @@ public interface BrapiCoreService
 	Call<BaseResult<Lists>> putListById(@Body Lists updatedLists);
 
 	@POST("lists/{listDbId}/items")
-	Call<BaseResult<Lists>> postListItems(@Path("listDbId") String listDbId, @Body String[] ids);
+	Call<BaseResult<Lists>> postListItems(@Path("listDbId") String listDbId, @Body List<String> ids);
 
 	@POST("search/lists")
 	Call<BaseResult<ArrayResult<Lists>>> postListSearch(
@@ -70,7 +72,7 @@ public interface BrapiCoreService
 	);
 
 	@POST("locations")
-	Call<BaseResult<ArrayResult<Location>>> postLocations(@Body Location[] newLocations);
+	Call<BaseResult<ArrayResult<Location>>> postLocations(@Body List<Location> newLocations);
 
 	@GET("locations/{locationDbId}")
 	Call<BaseResult<Location>> getLocationById(@Path("locationDbId") String locationDbId);
@@ -106,7 +108,7 @@ public interface BrapiCoreService
 	);
 
 	@POST("people")
-	Call<BaseResult<ArrayResult<Person>>> postPeople(@Body Person[] newPeople);
+	Call<BaseResult<ArrayResult<Person>>> postPeople(@Body List<Person> newPeople);
 
 	@GET("people/{personDbId}")
 	Call<BaseResult<Person>> getPersonById(@Path("personDbId") String personDbId);
@@ -144,7 +146,7 @@ public interface BrapiCoreService
 	);
 
 	@POST("programs")
-	Call<BaseResult<ArrayResult<Program>>> postPrograms(@Body Program[] newPrograms);
+	Call<BaseResult<ArrayResult<Program>>> postPrograms(@Body List<Program> newPrograms);
 
 	@GET("programs/{programDbId}")
 	Call<BaseResult<Program>> getProgramById(@Path("programDbId") String programDbId);
@@ -179,7 +181,7 @@ public interface BrapiCoreService
 	);
 
 	@POST("seasons")
-	Call<BaseResult<ArrayResult<Season>>> postSeasons(@Body Season[] newSeasons);
+	Call<BaseResult<ArrayResult<Season>>> postSeasons(@Body List<Season> newSeasons);
 
 	@GET("seasons/{seasonDbId}")
 	Call<BaseResult<Season>> getSeasonById(@Path("seasonDbId") String seasonDbId);
@@ -235,7 +237,7 @@ public interface BrapiCoreService
 	);
 
 	@POST("studies")
-	Call<BaseResult<ArrayResult<Study>>> postStudies(@Body Study[] newStudies);
+	Call<BaseResult<ArrayResult<Study>>> postStudies(@Body List<Study> newStudies);
 
 	@GET("studies/{studyDbId}")
 	Call<BaseResult<Study>> getStudyById(@Path("studyDbId") String studyDbId);
@@ -288,7 +290,7 @@ public interface BrapiCoreService
 	);
 
 	@POST("trials")
-	Call<BaseResult<ArrayResult<Trial>>> postTrials(@Body Trial[] newTrials);
+	Call<BaseResult<ArrayResult<Trial>>> postTrials(@Body List<Trial> newTrials);
 
 	@GET("trials/{trialDbId}")
 	Call<BaseResult<Trial>> getTrialById(@Path("trialDbId") String trialDbId);

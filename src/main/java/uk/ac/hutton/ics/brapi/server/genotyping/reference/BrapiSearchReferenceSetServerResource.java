@@ -4,7 +4,6 @@ import org.restlet.resource.*;
 
 import uk.ac.hutton.ics.brapi.resource.SearchResult;
 import uk.ac.hutton.ics.brapi.resource.base.*;
-import uk.ac.hutton.ics.brapi.resource.map.*;
 import uk.ac.hutton.ics.brapi.resource.reference.*;
 
 public interface BrapiSearchReferenceSetServerResource

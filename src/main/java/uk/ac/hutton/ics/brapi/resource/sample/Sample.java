@@ -1,45 +1,33 @@
 package uk.ac.hutton.ics.brapi.resource.sample;
 
 import java.sql.Timestamp;
-import java.util.*;
+import java.util.List;
 
-import uk.ac.hutton.ics.brapi.resource.base.Reference;
+import uk.ac.hutton.ics.brapi.resource.base.*;
 
-public class Sample
+public class Sample extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private Integer             column;
-	private List<Reference>     externalReferences;
-	private String              germplasmDbId;
-	private String              observationUnitDbId;
-	private String              plateDbId;
-	private String              plateName;
-	private String              programDbId;
-	private String              row;
-	private String              sampleBarcode;
-	private String              sampleDbId;
-	private String              sampleDescription;
-	private String              sampleGroupDbId;
-	private String              sampleName;
-	private String              samplePUI;
-	private Timestamp           sampleTimestamp;
-	private String              sampleType;
-	private String              studyDbId;
-	private String              takenBy;
-	private String              tissueType;
-	private String              trialDbId;
-	private String              well;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public Sample setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private Integer         column;
+	private List<Reference> externalReferences;
+	private String          germplasmDbId;
+	private String          observationUnitDbId;
+	private String          plateDbId;
+	private String          plateName;
+	private String          programDbId;
+	private String          row;
+	private String          sampleBarcode;
+	private String          sampleDbId;
+	private String          sampleDescription;
+	private String          sampleGroupDbId;
+	private String          sampleName;
+	private String          samplePUI;
+	private Timestamp       sampleTimestamp;
+	private String          sampleType;
+	private String          studyDbId;
+	private String          takenBy;
+	private String          tissueType;
+	private String          trialDbId;
+	private String          well;
 
 	public Integer getColumn()
 	{

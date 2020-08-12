@@ -1,32 +1,22 @@
 package uk.ac.hutton.ics.brapi.resource.reference;
 
 import java.net.URI;
-import java.util.*;
+import java.util.List;
 
-public class Reference
+import uk.ac.hutton.ics.brapi.resource.base.BrapiObject;
+
+public class Reference extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private Boolean             isDerived;
-	private Integer             length;
-	private String              md5checksum;
-	private String              referenceDbId;
-	private String              referenceName;
-	private String              referenceSetDbId;
-	private List<String>        sourceAccessions;
-	private Float               sourceDivergence;
-	private URI                 sourceURI;
-	private Species             species;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public Reference setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private Boolean      isDerived;
+	private Integer      length;
+	private String       md5checksum;
+	private String       referenceDbId;
+	private String       referenceName;
+	private String       referenceSetDbId;
+	private List<String> sourceAccessions;
+	private Float        sourceDivergence;
+	private URI          sourceURI;
+	private Species      species;
 
 	public Boolean getDerived()
 	{

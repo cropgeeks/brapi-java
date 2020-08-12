@@ -2,44 +2,32 @@ package uk.ac.hutton.ics.brapi.resource.attribute;
 
 import java.net.URI;
 import java.sql.Timestamp;
-import java.util.*;
+import java.util.List;
 
-import uk.ac.hutton.ics.brapi.resource.base.Reference;
+import uk.ac.hutton.ics.brapi.resource.base.*;
 
-public class Attribute
+public class Attribute extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private String              attributeCategory;
-	private String              attributeDbId;
-	private String              attributeDescription;
-	private String              attributeName;
-	private String              commonCropName;
-	private String              contextOfUse;
-	private String              defaultValue;
-	private URI                 documentationURL;
-	private List<Reference>     externalReferences;
-	private String              growthStage;
-	private String              institution;
-	private String              language;
-	private Method              method;
-	private Ontology            ontologyReference;
-	private Scale               scale;
-	private String              scientist;
-	private String              status;
-	private Timestamp           submissionTimestamp;
-	private List<String>        synonyms;
-	private Trait               trait;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public Attribute setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private String            attributeCategory;
+	private String            attributeDbId;
+	private String            attributeDescription;
+	private String            attributeName;
+	private String            commonCropName;
+	private String            contextOfUse;
+	private String            defaultValue;
+	private URI               documentationURL;
+	private List<Reference>   externalReferences;
+	private String            growthStage;
+	private String            institution;
+	private String            language;
+	private Method            method;
+	private OntologyReference ontologyReference;
+	private Scale             scale;
+	private String            scientist;
+	private String            status;
+	private Timestamp         submissionTimestamp;
+	private List<String>      synonyms;
+	private Trait             trait;
 
 	public String getAttributeCategory()
 	{
@@ -184,12 +172,12 @@ public class Attribute
 		return this;
 	}
 
-	public Ontology getOntologyReference()
+	public OntologyReference getOntologyReference()
 	{
 		return ontologyReference;
 	}
 
-	public Attribute setOntologyReference(Ontology ontologyReference)
+	public Attribute setOntologyReference(OntologyReference ontologyReference)
 	{
 		this.ontologyReference = ontologyReference;
 		return this;

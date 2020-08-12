@@ -1,30 +1,18 @@
 package uk.ac.hutton.ics.brapi.resource.attribute;
 
-import java.util.*;
+import java.util.List;
 
-import uk.ac.hutton.ics.brapi.resource.base.Reference;
+import uk.ac.hutton.ics.brapi.resource.base.*;
 
-public class Scale
+public class Scale extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private String              dataType;
-	private Integer             decimalPlaces;
-	private List<Reference>     externalReferences;
-	private Ontology            ontologyReference;
-	private String              scaleDbId;
-	private String              scaleName;
-	private ValidValues         validValues;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public Scale setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private String            dataType;
+	private Integer           decimalPlaces;
+	private List<Reference>   externalReferences;
+	private OntologyReference ontologyReference;
+	private String            scaleDbId;
+	private String            scaleName;
+	private ValidValues       validValues;
 
 	public String getDataType()
 	{
@@ -59,12 +47,12 @@ public class Scale
 		return this;
 	}
 
-	public Ontology getOntologyReference()
+	public OntologyReference getOntologyReference()
 	{
 		return ontologyReference;
 	}
 
-	public Scale setOntologyReference(Ontology ontologyReference)
+	public Scale setOntologyReference(OntologyReference ontologyReference)
 	{
 		this.ontologyReference = ontologyReference;
 		return this;

@@ -1,23 +1,13 @@
 package uk.ac.hutton.ics.brapi.resource.vendor;
 
-import java.util.*;
+import java.util.List;
 
-public class VendorSpec
+import uk.ac.hutton.ics.brapi.resource.base.BrapiObject;
+
+public class VendorSpec extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private List<Service>       services;
-	private VendorContact       vendorContact;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public VendorSpec setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private List<Service> services;
+	private VendorContact vendorContact;
 
 	public List<Service> getServices()
 	{

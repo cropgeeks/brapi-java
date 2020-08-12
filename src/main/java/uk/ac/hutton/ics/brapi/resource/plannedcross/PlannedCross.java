@@ -1,32 +1,20 @@
 package uk.ac.hutton.ics.brapi.resource.plannedcross;
 
-import java.util.*;
+import java.util.List;
 
-import uk.ac.hutton.ics.brapi.resource.base.Reference;
+import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.cross.Parent;
 
-public class PlannedCross
+public class PlannedCross extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private String              crossType;
-	private String              crossingProjectDbId;
-	private String              crossingProjectName;
-	private List<Reference>     externalReferences;
-	private Parent              parent1;
-	private Parent              parent2;
-	private String              plannedCrossDbId;
-	private String              plannedCrossName;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public PlannedCross setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private String          crossType;
+	private String          crossingProjectDbId;
+	private String          crossingProjectName;
+	private List<Reference> externalReferences;
+	private Parent          parent1;
+	private Parent          parent2;
+	private String          plannedCrossDbId;
+	private String          plannedCrossName;
 
 	public String getCrossType()
 	{

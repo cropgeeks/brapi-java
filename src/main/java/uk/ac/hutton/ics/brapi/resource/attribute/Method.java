@@ -1,31 +1,19 @@
 package uk.ac.hutton.ics.brapi.resource.attribute;
 
-import java.util.*;
+import java.util.List;
 
-import uk.ac.hutton.ics.brapi.resource.base.Reference;
+import uk.ac.hutton.ics.brapi.resource.base.*;
 
-public class Method
+public class Method extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private String              bibliographicalReference;
-	private String              description;
-	private List<Reference>     externalReferences;
-	private String              formula;
-	private String              methodClass;
-	private String              methodDbId;
-	private String              methodName;
-	private Ontology            ontologyReference;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public Method setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private String            bibliographicalReference;
+	private String            description;
+	private List<Reference>   externalReferences;
+	private String            formula;
+	private String            methodClass;
+	private String            methodDbId;
+	private String            methodName;
+	private OntologyReference ontologyReference;
 
 	public String getBibliographicalReference()
 	{
@@ -104,12 +92,12 @@ public class Method
 		return this;
 	}
 
-	public Ontology getOntologyReference()
+	public OntologyReference getOntologyReference()
 	{
 		return ontologyReference;
 	}
 
-	public Method setOntologyReference(Ontology ontologyReference)
+	public Method setOntologyReference(OntologyReference ontologyReference)
 	{
 		this.ontologyReference = ontologyReference;
 		return this;

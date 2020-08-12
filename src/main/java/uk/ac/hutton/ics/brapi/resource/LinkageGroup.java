@@ -1,24 +1,12 @@
 package uk.ac.hutton.ics.brapi.resource;
 
-import java.util.Map;
+import uk.ac.hutton.ics.brapi.resource.base.BrapiObject;
 
-public class LinkageGroup
+public class LinkageGroup extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private String              linkageGroupName;
-	private Integer             markerCount;
-	private Long                maxPosition;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public LinkageGroup setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private String  linkageGroupName;
+	private Integer markerCount;
+	private Long    maxPosition;
 
 	public String getLinkageGroupName()
 	{

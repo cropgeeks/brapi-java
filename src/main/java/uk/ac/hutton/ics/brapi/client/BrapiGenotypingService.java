@@ -227,7 +227,7 @@ public interface BrapiGenotypingService
 	);
 
 	@POST("samples")
-	Call<BaseResult<ArrayResult<Sample>>> postSamples(@Body Sample[] newSamples);
+	Call<BaseResult<ArrayResult<Sample>>> postSamples(@Body List<Sample> newSamples);
 
 	@GET("samples/{sampleDbId}")
 	Call<BaseResult<Sample>> getSampleById(@Path("sampleDbId") String sampleDbId);
@@ -362,7 +362,7 @@ public interface BrapiGenotypingService
 	);
 
 	@POST("vendor/orders")
-	Call<BaseResult<ArrayResult<VendorOrder>>> postVerndorOrders(@Body VendorOrder[] newVendorOrders);
+	Call<BaseResult<ArrayResult<VendorOrder>>> postVerndorOrders(@Body List<VendorOrder> newVendorOrders);
 
 	@GET("vendor/orders/{orderId}/plates")
 	Call<BaseResult<ArrayResult<Plate>>> getVendorOrderByIdPlates(

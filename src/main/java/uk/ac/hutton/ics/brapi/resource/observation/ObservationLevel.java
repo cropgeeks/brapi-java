@@ -1,9 +1,21 @@
-package uk.ac.hutton.ics.brapi.resource;
+package uk.ac.hutton.ics.brapi.resource.observation;
 
 public class ObservationLevel
 {
+	private String  levelCode;
 	private String  levelName;
 	private Integer levelOrder;
+
+	public String getLevelCode()
+	{
+		return levelCode;
+	}
+
+	public ObservationLevel setLevelCode(String levelCode)
+	{
+		this.levelCode = levelCode;
+		return this;
+	}
 
 	public String getLevelName()
 	{

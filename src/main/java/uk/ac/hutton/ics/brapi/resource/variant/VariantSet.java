@@ -1,29 +1,19 @@
 package uk.ac.hutton.ics.brapi.resource.variant;
 
-import java.util.*;
+import java.util.List;
 
-public class VariantSet
+import uk.ac.hutton.ics.brapi.resource.base.BrapiObject;
+
+public class VariantSet extends BrapiObject
 {
-	private Map<String, String> additionalInfo;
-	private Analysis            analysis;
-	private List<Format>        availableFormats;
-	private Long                callSetCount;
-	private String              referenceSetDbId;
-	private String              studyDbId;
-	private Long                variantCount;
-	private String              variantSetDbId;
-	private String              variantSetName;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public VariantSet setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
+	private Analysis     analysis;
+	private List<Format> availableFormats;
+	private Long         callSetCount;
+	private String       referenceSetDbId;
+	private String       studyDbId;
+	private Long         variantCount;
+	private String       variantSetDbId;
+	private String       variantSetName;
 
 	public Analysis getAnalysis()
 	{
