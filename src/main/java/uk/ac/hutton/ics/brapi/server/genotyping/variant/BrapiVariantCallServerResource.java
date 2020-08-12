@@ -1,8 +1,12 @@
 package uk.ac.hutton.ics.brapi.server.genotyping.variant;
 
-import uk.ac.hutton.ics.brapi.resource.call.*;
-import uk.ac.hutton.ics.brapi.server.IBaseServerResource;
+import org.restlet.resource.Get;
 
-public interface BrapiVariantCallServerResource extends IBaseServerResource<CallResult<Call>>
+import uk.ac.hutton.ics.brapi.resource.base.TokenBaseResult;
+import uk.ac.hutton.ics.brapi.resource.call.*;
+
+public interface BrapiVariantCallServerResource
 {
+	@Get
+	TokenBaseResult<CallResult<Call>> getVariantByIdCalls();
 }

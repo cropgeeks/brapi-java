@@ -5,8 +5,8 @@ import org.restlet.resource.Get;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.variant.Variant;
 
-public interface BrapiVariantServerResource
+public interface BrapiVariantSetVariantServerResource
 {
 	@Get
-	TokenBaseResult<ArrayResult<Variant>> getVariants();
+	TokenBaseResult<BaseResult<Variant>> getVariantSetByIdVariants();
 }

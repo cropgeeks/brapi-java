@@ -1,13 +1,19 @@
 package uk.ac.hutton.ics.brapi.server.genotyping.marker;
 
-import org.restlet.resource.Post;
+import org.restlet.resource.*;
 
+import uk.ac.hutton.ics.brapi.resource.SearchResult;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.map.*;
-import uk.ac.hutton.ics.brapi.server.IBaseServerResource;
 
-public interface BrapiSearchMarkerPositionServerResource extends IBaseServerResource<ArrayResult<MarkerPosition>>
+public interface BrapiSearchMarkerPositionServerResource
 {
 	@Post
-	BaseResult<ArrayResult<MarkerPosition>> postJson(MarkerPositionSearch search);
+	BaseResult<ArrayResult<MarkerPosition>> postMarkerPositionSearch(MarkerPositionSearch search);
+
+	@Post
+	BaseResult<SearchResult> postMarkerPositionSearchAsync(MarkerPositionSearch search);
+
+	@Get
+	BaseResult<ArrayResult<MarkerPosition>> getMarkerPositionSearchAsync();
 }

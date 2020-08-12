@@ -1,9 +1,12 @@
 package uk.ac.hutton.ics.brapi.server.genotyping.variant;
 
-import uk.ac.hutton.ics.brapi.resource.base.ArrayResult;
-import uk.ac.hutton.ics.brapi.resource.variant.VariantSet;
-import uk.ac.hutton.ics.brapi.server.IBaseServerResource;
+import org.restlet.resource.Get;
 
-public interface BrapiVariantSetServerResource extends IBaseServerResource<ArrayResult<VariantSet>>
+import uk.ac.hutton.ics.brapi.resource.base.*;
+import uk.ac.hutton.ics.brapi.resource.variant.VariantSet;
+
+public interface BrapiVariantSetServerResource
 {
+	@Get
+	BaseResult<ArrayResult<VariantSet>> getVariantSets();
 }

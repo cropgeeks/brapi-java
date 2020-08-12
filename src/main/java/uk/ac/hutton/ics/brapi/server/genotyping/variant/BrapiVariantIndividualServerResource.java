@@ -1,8 +1,12 @@
 package uk.ac.hutton.ics.brapi.server.genotyping.variant;
 
-import uk.ac.hutton.ics.brapi.resource.variant.Variant;
-import uk.ac.hutton.ics.brapi.server.IBaseServerResource;
+import org.restlet.resource.Get;
 
-public interface BrapiVariantIndividualServerResource extends IBaseServerResource<Variant>
+import uk.ac.hutton.ics.brapi.resource.base.BaseResult;
+import uk.ac.hutton.ics.brapi.resource.variant.Variant;
+
+public interface BrapiVariantIndividualServerResource
 {
+	@Get
+	BaseResult<Variant> getVariantById();
 }

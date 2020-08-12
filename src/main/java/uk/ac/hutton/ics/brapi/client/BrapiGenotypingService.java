@@ -32,7 +32,7 @@ public interface BrapiGenotypingService
 	Call<BaseResult<CallSet>> getCallSetById(@Path("callSetDbId") String callSetDbId);
 
 	@GET("callsets/{callSetDbId}/calls")
-	Call<TokenBaseResult<CallResult<Call>>> getCallSetCalls(
+	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.call.Call>>> getCallSetCalls(
 		@Path("callSetDbId") String callSetDbId,
 		@Query("expandHomozygotes") String expandHomozygotes,
 		@Query("unknownString") String unknownString,
@@ -387,7 +387,6 @@ public interface BrapiGenotypingService
 	@GET("vendor/plates/{submissionId}")
 	Call<BaseResult<PlateSubmission>> getVendorPlateSubmissionById(@Path("submissionId") String submissionId);
 
-	// TODO: Check correctness
 	@GET("vendor/specifications")
 	Call<BaseResult<VendorSpec>> getVendorSpec();
 }

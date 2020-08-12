@@ -1,13 +1,19 @@
 package uk.ac.hutton.ics.brapi.server.genotyping.call;
 
-import org.restlet.resource.Post;
+import org.restlet.resource.*;
 
+import uk.ac.hutton.ics.brapi.resource.SearchResult;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.call.*;
-import uk.ac.hutton.ics.brapi.server.IBaseServerResource;
 
-public interface BrapiSearchCallServerResource extends IBaseServerResource<ArrayResult<Call>>
+public interface BrapiSearchCallServerResource
 {
 	@Post
-	TokenBaseResult<ArrayResult<Call>> postJson(CallSearch search);
+	TokenBaseResult<CallResult<Call>> postCallSearch(CallSearch search);
+
+	@Post
+	BaseResult<SearchResult> postCallSearchAsync(CallSearch search);
+
+	@Get
+	TokenBaseResult<CallResult<Call>> getCallSearchAsync();
 }

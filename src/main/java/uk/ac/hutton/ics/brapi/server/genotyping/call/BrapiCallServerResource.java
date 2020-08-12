@@ -1,9 +1,12 @@
 package uk.ac.hutton.ics.brapi.server.genotyping.call;
 
-import uk.ac.hutton.ics.brapi.resource.base.ArrayResult;
-import uk.ac.hutton.ics.brapi.resource.call.Call;
-import uk.ac.hutton.ics.brapi.server.IBaseServerResource;
+import org.restlet.resource.Get;
 
-public interface BrapiCallServerResource extends IBaseServerResource<ArrayResult<Call>>
+import uk.ac.hutton.ics.brapi.resource.base.TokenBaseResult;
+import uk.ac.hutton.ics.brapi.resource.call.*;
+
+public interface BrapiCallServerResource
 {
+	@Get
+	TokenBaseResult<CallResult<Call>> getCalls();
 }
