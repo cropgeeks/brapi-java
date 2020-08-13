@@ -3,7 +3,7 @@ package uk.ac.hutton.ics.brapi.server.germplasm.cross;
 import org.restlet.resource.*;
 
 import uk.ac.hutton.ics.brapi.resource.base.*;
-import uk.ac.hutton.ics.brapi.resource.cross.CrossingProject;
+import uk.ac.hutton.ics.brapi.resource.germplasm.cross.CrossingProject;
 
 public interface BrapiCrossingProjectServerResource
 {

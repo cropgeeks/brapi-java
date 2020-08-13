@@ -4,13 +4,12 @@ import java.util.*;
 
 import retrofit2.Call;
 import retrofit2.http.*;
-import uk.ac.hutton.ics.brapi.resource.SearchResult;
-import uk.ac.hutton.ics.brapi.resource.attribute.*;
 import uk.ac.hutton.ics.brapi.resource.base.*;
-import uk.ac.hutton.ics.brapi.resource.cross.*;
-import uk.ac.hutton.ics.brapi.resource.germplasm.*;
-import uk.ac.hutton.ics.brapi.resource.plannedcross.PlannedCross;
-import uk.ac.hutton.ics.brapi.resource.seedlot.*;
+import uk.ac.hutton.ics.brapi.resource.germplasm.attribute.*;
+import uk.ac.hutton.ics.brapi.resource.germplasm.cross.*;
+import uk.ac.hutton.ics.brapi.resource.germplasm.germplasm.*;
+import uk.ac.hutton.ics.brapi.resource.germplasm.plannedcross.PlannedCross;
+import uk.ac.hutton.ics.brapi.resource.germplasm.seedlot.*;
 
 public interface BrapiGermplasmService
 {
@@ -20,14 +19,13 @@ public interface BrapiGermplasmService
 		@Query("crossDbId") String crossDbId,
 		@Query("externalReferenceID") String externalReferenceID,
 		@Query("externalReferenceSource") String externalReferenceSource,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("crosses")
 	Call<BaseResult<ArrayResult<Cross>>> postCrosses(@Body List<Cross> newCrosses);
 
-	// TODO: Check
 	@PUT("crosses")
 	Call<BaseResult<Cross>> putCross(@Body Map<String, Cross> crosses);
 
@@ -36,8 +34,8 @@ public interface BrapiGermplasmService
 		@Query("crossingProjectDbId") String crossingProjectDbId,
 		@Query("externalReferenceID") String externalReferenceID,
 		@Query("externalReferenceSource") String externalReferenceSource,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("crossingprojects")
@@ -51,8 +49,8 @@ public interface BrapiGermplasmService
 
 	@GET("breedingmethods")
 	Call<BaseResult<ArrayResult<BreedingMethod>>> getBreedingMethods(
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("breedingmethods/{breedingMethodDbId}")
@@ -74,8 +72,8 @@ public interface BrapiGermplasmService
 		@Query("progenyDbId") String progenyDbId,
 		@Query("externalReferenceID") String externalReferenceID,
 		@Query("externalReferenceSource") String externalReferenceSource,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("germplasm")
@@ -103,8 +101,8 @@ public interface BrapiGermplasmService
 	@POST("search/germplasm")
 	Call<BaseResult<ArrayResult<Germplasm>>> postGermplasmSearch(
 		@Body GermplasmSearch search,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/germplasm")
@@ -113,8 +111,8 @@ public interface BrapiGermplasmService
 	@GET("search/germplasm/{searchResultsDbId}")
 	Call<BaseResult<ArrayResult<Germplasm>>> getGermplasmSearchAsync(
 		@Path("searchResultsDbId") String searchResultsDbId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("attributevalues")
@@ -125,8 +123,8 @@ public interface BrapiGermplasmService
 		@Query("germplasmDbId") String germplasmDbId,
 		@Query("externalReferenceID") String externalReferenceID,
 		@Query("externalReferenceSource") String externalReferenceSource,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("attributevalues")
@@ -141,8 +139,8 @@ public interface BrapiGermplasmService
 	@POST("search/attributevalues")
 	Call<BaseResult<ArrayResult<AttributeValue>>> postAttributeValueSearch(
 		@Body AttributeValueSearch search,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/attributevalues")
@@ -151,8 +149,8 @@ public interface BrapiGermplasmService
 	@GET("search/attributevalues/{searchResultsDbId}")
 	Call<BaseResult<ArrayResult<AttributeValue>>> getAttributeValueSearchAsync(
 		@Path("searchResultsDbId") String searchResultsDbId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("attributes")
@@ -163,8 +161,8 @@ public interface BrapiGermplasmService
 		@Query("germplasmDbId") String germplasmDbId,
 		@Query("externalReferenceID") String externalReferenceID,
 		@Query("externalReferenceSource") String externalReferenceSource,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("attributes")
@@ -172,8 +170,8 @@ public interface BrapiGermplasmService
 
 	@GET("attributes/categories")
 	Call<BaseResult<ArrayResult<Category>>> getAttributeCategories(
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("attributes/{attributeDbId}")
@@ -185,8 +183,8 @@ public interface BrapiGermplasmService
 	@POST("search/attributes")
 	Call<BaseResult<ArrayResult<Attribute>>> postAttributeSearch(
 		@Body AttributeSearch search,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/attributes")
@@ -195,8 +193,8 @@ public interface BrapiGermplasmService
 	@GET("search/attributes/{searchResultsDbId}")
 	Call<BaseResult<ArrayResult<Attribute>>> getAttributeSearchAsync(
 		@Path("searchResultsDbId") String searchResultsDbId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("plannedcrosses")
@@ -205,14 +203,13 @@ public interface BrapiGermplasmService
 		@Query("plannedCrossDbId") String plannedCrossDbId,
 		@Query("externalReferenceID") String externalReferenceID,
 		@Query("externalReferenceSource") String externalReferenceSource,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("plannedcrosses")
 	Call<BaseResult<ArrayResult<PlannedCross>>> postPlannedCrosses(@Body List<PlannedCross> plannedCrosses);
 
-	// TODO: Check
 	@PUT("plannedcrosses")
 	Call<BaseResult<PlannedCross>> putPlannedCross(@Body Map<String, PlannedCross> plannedCrosses);
 
@@ -222,8 +219,8 @@ public interface BrapiGermplasmService
 		@Query("germplasmDbId") String germplasmDbId,
 		@Query("externalReferenceID") String externalReferenceID,
 		@Query("externalReferenceSource") String externalReferenceSource,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("seedlots")
@@ -236,8 +233,8 @@ public interface BrapiGermplasmService
 		@Query("germplasmDbId") String germplasmDbId,
 		@Query("externalReferenceID") String externalReferenceID,
 		@Query("externalReferenceSource") String externalReferenceSource,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("seedlots/transactions")
@@ -254,7 +251,7 @@ public interface BrapiGermplasmService
 		@Path("seedLotDbId") String seedLotDbId,
 		@Query("transactionDbId") String transactionDbId,
 		@Query("transactionDirection") String transactionDirection,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 }

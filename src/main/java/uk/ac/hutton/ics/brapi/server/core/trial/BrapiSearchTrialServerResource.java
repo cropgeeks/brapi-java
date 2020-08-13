@@ -2,9 +2,8 @@ package uk.ac.hutton.ics.brapi.server.core.trial;
 
 import org.restlet.resource.*;
 
-import uk.ac.hutton.ics.brapi.resource.SearchResult;
 import uk.ac.hutton.ics.brapi.resource.base.*;
-import uk.ac.hutton.ics.brapi.resource.trial.*;
+import uk.ac.hutton.ics.brapi.resource.core.trial.*;
 
 public interface BrapiSearchTrialServerResource
 {

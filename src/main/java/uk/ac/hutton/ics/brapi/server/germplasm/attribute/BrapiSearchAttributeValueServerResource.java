@@ -2,9 +2,8 @@ package uk.ac.hutton.ics.brapi.server.germplasm.attribute;
 
 import org.restlet.resource.*;
 
-import uk.ac.hutton.ics.brapi.resource.SearchResult;
-import uk.ac.hutton.ics.brapi.resource.attribute.*;
 import uk.ac.hutton.ics.brapi.resource.base.*;
+import uk.ac.hutton.ics.brapi.resource.germplasm.attribute.*;
 
 public interface BrapiSearchAttributeValueServerResource
 {

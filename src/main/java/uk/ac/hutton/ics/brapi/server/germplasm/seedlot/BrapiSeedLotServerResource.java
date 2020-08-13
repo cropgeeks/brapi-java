@@ -3,7 +3,7 @@ package uk.ac.hutton.ics.brapi.server.germplasm.seedlot;
 import org.restlet.resource.*;
 
 import uk.ac.hutton.ics.brapi.resource.base.*;
-import uk.ac.hutton.ics.brapi.resource.seedlot.SeedLot;
+import uk.ac.hutton.ics.brapi.resource.germplasm.seedlot.SeedLot;
 
 public interface BrapiSeedLotServerResource
 {

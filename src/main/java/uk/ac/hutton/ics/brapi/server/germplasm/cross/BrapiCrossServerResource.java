@@ -5,7 +5,7 @@ import org.restlet.resource.*;
 import java.util.Map;
 
 import uk.ac.hutton.ics.brapi.resource.base.*;
-import uk.ac.hutton.ics.brapi.resource.cross.Cross;
+import uk.ac.hutton.ics.brapi.resource.germplasm.cross.Cross;
 
 public interface BrapiCrossServerResource
 {

@@ -2,9 +2,8 @@ package uk.ac.hutton.ics.brapi.server.genotyping.sample;
 
 import org.restlet.resource.*;
 
-import uk.ac.hutton.ics.brapi.resource.SearchResult;
 import uk.ac.hutton.ics.brapi.resource.base.*;
-import uk.ac.hutton.ics.brapi.resource.sample.*;
+import uk.ac.hutton.ics.brapi.resource.genotyping.sample.*;
 
 public interface BrapiSearchSampleServerResource
 {

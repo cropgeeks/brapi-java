@@ -4,22 +4,22 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.*;
-import uk.ac.hutton.ics.brapi.resource.*;
 import uk.ac.hutton.ics.brapi.resource.base.*;
-import uk.ac.hutton.ics.brapi.resource.list.*;
-import uk.ac.hutton.ics.brapi.resource.location.*;
-import uk.ac.hutton.ics.brapi.resource.people.*;
-import uk.ac.hutton.ics.brapi.resource.program.*;
-import uk.ac.hutton.ics.brapi.resource.season.Season;
-import uk.ac.hutton.ics.brapi.resource.study.*;
-import uk.ac.hutton.ics.brapi.resource.trial.*;
+import uk.ac.hutton.ics.brapi.resource.core.list.*;
+import uk.ac.hutton.ics.brapi.resource.core.location.*;
+import uk.ac.hutton.ics.brapi.resource.core.people.*;
+import uk.ac.hutton.ics.brapi.resource.core.program.*;
+import uk.ac.hutton.ics.brapi.resource.core.season.Season;
+import uk.ac.hutton.ics.brapi.resource.core.serverinfo.ServerInfo;
+import uk.ac.hutton.ics.brapi.resource.core.study.*;
+import uk.ac.hutton.ics.brapi.resource.core.trial.*;
 
 public interface BrapiCoreService
 {
 	@GET("commoncropnames")
 	Call<BaseResult<ArrayResult<String>>> getCommonCropNames(
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("lists")
@@ -27,8 +27,8 @@ public interface BrapiCoreService
 		@Query("listType") String listType,
 		@Query("listName") String listName,
 		@Query("listSource") String listSource,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("lists")
@@ -37,8 +37,8 @@ public interface BrapiCoreService
 	@GET("lists/{listDbId}")
 	Call<BaseResult<ArrayResult<Lists>>> getListsById(
 		@Path("listDbId") String listDbId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@PUT("lists/{listDbId}")
@@ -50,8 +50,8 @@ public interface BrapiCoreService
 	@POST("search/lists")
 	Call<BaseResult<ArrayResult<Lists>>> postListSearch(
 		@Body ListSearch search,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/lists")
@@ -60,15 +60,15 @@ public interface BrapiCoreService
 	@GET("search/lists/{searchResultsDbId}")
 	Call<BaseResult<ArrayResult<Lists>>> getListSearchAsync(
 		@Path("searchResultsDbId") String searchResultsDbId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("locations")
 	Call<BaseResult<ArrayResult<Location>>> getLocations(
 		@Query("locationType") String locationType,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("locations")
@@ -83,8 +83,8 @@ public interface BrapiCoreService
 	@POST("search/locations")
 	Call<BaseResult<ArrayResult<Location>>> postLocationSearch(
 		@Body LocationSearch search,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/locations")
@@ -93,8 +93,8 @@ public interface BrapiCoreService
 	@GET("search/locations/{searchResultsDbId}")
 	Call<BaseResult<ArrayResult<Location>>> getLocationSearchAsync(
 		@Path("searchResultsDbId") String searchResultsDbId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("people")
@@ -103,8 +103,8 @@ public interface BrapiCoreService
 		@Query("lastName") String lastName,
 		@Query("personDbId") String personDbId,
 		@Query("userID") String userID,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("people")
@@ -119,8 +119,8 @@ public interface BrapiCoreService
 	@POST("search/people")
 	Call<BaseResult<ArrayResult<Person>>> postPeopleSearch(
 		@Body PeopleSearch search,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/people")
@@ -129,8 +129,8 @@ public interface BrapiCoreService
 	@GET("search/people/{searchResultsDbId}")
 	Call<BaseResult<ArrayResult<Person>>> getPeopleSearchAsync(
 		@Path("searchResultsDbId") String searchResultsDbId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("programs")
@@ -141,8 +141,8 @@ public interface BrapiCoreService
 		@Query("abbreviation") String abbreviation,
 		@Query("externalReferenceID") String externalReferenceID,
 		@Query("externalReferenceSource") String externalReferenceSource,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("programs")
@@ -157,8 +157,8 @@ public interface BrapiCoreService
 	@POST("search/programs")
 	Call<BaseResult<ArrayResult<Program>>> postProgramSearch(
 		@Body ProgramSearch search,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/programs")
@@ -167,8 +167,8 @@ public interface BrapiCoreService
 	@GET("search/programs/{searchResultsDbId}")
 	Call<BaseResult<ArrayResult<Program>>> getProgramSearchAsync(
 		@Path("searchResultsDbId") String searchResultsDbId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("seasons")
@@ -176,8 +176,8 @@ public interface BrapiCoreService
 		@Query("seasonDbId") String seasonDbId,
 		@Query("season") String season,
 		@Query("year") String year,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("seasons")
@@ -192,15 +192,15 @@ public interface BrapiCoreService
 	@GET("serverinfo")
 	Call<BaseResult<ServerInfo>> getServerInfo(
 		@Query("dataType") String dataType,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/studies")
 	Call<BaseResult<ArrayResult<Study>>> postStudySearch(
 		@Body StudySearch search,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/studies")
@@ -209,8 +209,8 @@ public interface BrapiCoreService
 	@GET("search/studies/{searchResultsDbId}")
 	Call<BaseResult<ArrayResult<Study>>> getStudySearchAsync(
 		@Path("searchResultsDbId") String searchResultsDbId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("studies")
@@ -232,8 +232,8 @@ public interface BrapiCoreService
 		@Query("sortOrder") String sortOrder,
 		@Query("externalReferenceID") String externalReferenceID,
 		@Query("externalReferenceSource") String externalReferenceSource,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("studies")
@@ -247,15 +247,15 @@ public interface BrapiCoreService
 
 	@GET("studytypes")
 	Call<BaseResult<ArrayResult<String>>> getStudyTypes(
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/trials")
 	Call<BaseResult<ArrayResult<Trial>>> postTrialSearch(
 		@Body TrialSearch search,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/trials")
@@ -264,8 +264,8 @@ public interface BrapiCoreService
 	@GET("search/trials/{searchResultsDbId}")
 	Call<BaseResult<ArrayResult<Trial>>> getTrialSearchAsync(
 		@Path("searchResultsDbId") String searchResultsDbId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("trials")
@@ -285,8 +285,8 @@ public interface BrapiCoreService
 		@Query("sortOrder") String sortOrder,
 		@Query("externalReferenceID") String externalReferenceID,
 		@Query("externalReferenceSource") String externalReferenceSource,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("trials")

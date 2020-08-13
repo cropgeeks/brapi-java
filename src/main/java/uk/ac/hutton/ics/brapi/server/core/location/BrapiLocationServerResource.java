@@ -3,7 +3,7 @@ package uk.ac.hutton.ics.brapi.server.core.location;
 import org.restlet.resource.*;
 
 import uk.ac.hutton.ics.brapi.resource.base.*;
-import uk.ac.hutton.ics.brapi.resource.location.Location;
+import uk.ac.hutton.ics.brapi.resource.core.location.Location;
 
 public interface BrapiLocationServerResource
 {

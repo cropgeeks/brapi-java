@@ -4,16 +4,15 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.*;
-import uk.ac.hutton.ics.brapi.resource.*;
 import uk.ac.hutton.ics.brapi.resource.base.*;
-import uk.ac.hutton.ics.brapi.resource.call.*;
-import uk.ac.hutton.ics.brapi.resource.map.*;
-import uk.ac.hutton.ics.brapi.resource.reference.Reference;
-import uk.ac.hutton.ics.brapi.resource.reference.*;
-import uk.ac.hutton.ics.brapi.resource.sample.Sample;
-import uk.ac.hutton.ics.brapi.resource.sample.*;
-import uk.ac.hutton.ics.brapi.resource.variant.*;
-import uk.ac.hutton.ics.brapi.resource.vendor.*;
+import uk.ac.hutton.ics.brapi.resource.genotyping.call.*;
+import uk.ac.hutton.ics.brapi.resource.genotyping.map.*;
+import uk.ac.hutton.ics.brapi.resource.genotyping.reference.Reference;
+import uk.ac.hutton.ics.brapi.resource.genotyping.reference.*;
+import uk.ac.hutton.ics.brapi.resource.genotyping.sample.Sample;
+import uk.ac.hutton.ics.brapi.resource.genotyping.sample.*;
+import uk.ac.hutton.ics.brapi.resource.genotyping.variant.*;
+import uk.ac.hutton.ics.brapi.resource.genotyping.vendor.*;
 
 public interface BrapiGenotypingService
 {
@@ -24,15 +23,15 @@ public interface BrapiGenotypingService
 		@Query("variantSetDbId") String variantSetDbId,
 		@Query("sampleDbId") String sampleDbId,
 		@Query("germplasmDbId") String germplasmDbId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("callsets/{callSetDbId}")
 	Call<BaseResult<CallSet>> getCallSetById(@Path("callSetDbId") String callSetDbId);
 
 	@GET("callsets/{callSetDbId}/calls")
-	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.call.Call>>> getCallSetCalls(
+	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> getCallSetCalls(
 		@Path("callSetDbId") String callSetDbId,
 		@Query("expandHomozygotes") String expandHomozygotes,
 		@Query("unknownString") String unknownString,
@@ -45,8 +44,8 @@ public interface BrapiGenotypingService
 	@POST("search/callsets")
 	Call<BaseResult<ArrayResult<CallSet>>> postCallSetSearch(
 		@Body CallSetSearch search,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/callsets")
@@ -55,12 +54,12 @@ public interface BrapiGenotypingService
 	@GET("search/callsets/{searchResultsDbId}")
 	Call<BaseResult<ArrayResult<CallSet>>> getCallSetSearchAsync(
 		@Path("searchResultsDbId") String searchResultsDbId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("calls")
-	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.call.Call>>> getCalls(
+	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> getCalls(
 		@Query("callSetDbId") String callSetDbId,
 		@Query("variantDbId") String variantDbId,
 		@Query("variantSetDbId") String variantSetDbId,
@@ -73,7 +72,7 @@ public interface BrapiGenotypingService
 	);
 
 	@POST("search/calls")
-	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.call.Call>>> postCallSearch(
+	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> postCallSearch(
 		@Body CallSearch search,
 		@Query("pageToken") String pageToken,
 		@Query("pageSize") int pageSize
@@ -83,7 +82,7 @@ public interface BrapiGenotypingService
 	Call<BaseResult<SearchResult>> postCallSearchAsync(@Body CallSearch search);
 
 	@GET("search/calls/{searchResultsDbId}")
-	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.call.Call>>> getCallSearchAsync(
+	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> getCallSearchAsync(
 		@Path("searchResultsDbId") String searchResultsDbId,
 		@Query("pageToken") String pageToken,
 		@Query("pageSize") int pageSize
@@ -99,8 +98,8 @@ public interface BrapiGenotypingService
 		@Query("programDbId") String programDbId,
 		@Query("trialDbId") String trialDbId,
 		@Query("studyDbId") String studyDbId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("maps/{mapDbId}")
@@ -109,8 +108,8 @@ public interface BrapiGenotypingService
 	@GET("maps/{mapDbId}/linkagegroups")
 	Call<BaseResult<ArrayResult<LinkageGroup>>> getMapLinkageGroups(
 		@Path("mapDbId") String mapDbId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("markerpositions")
@@ -120,15 +119,15 @@ public interface BrapiGenotypingService
 		@Query("variantDbId") String variantDbId,
 		@Query("minPosition") String minPosition,
 		@Query("maxPosition") String maxPosition,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/markerpositions")
 	Call<BaseResult<ArrayResult<MarkerPosition>>> postMarkerPositionsSearch(
 		@Body MarkerPositionSearch search,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/markerpositions")
@@ -137,8 +136,8 @@ public interface BrapiGenotypingService
 	@GET("search/markerpositions/{searchResultsDbId}")
 	Call<BaseResult<ArrayResult<MarkerPosition>>> getMarkerPositionSearchAsync(
 		@Path("searchResultsDbId") String searchResultsDbId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("referencesets")
@@ -147,8 +146,8 @@ public interface BrapiGenotypingService
 		@Query("accession") String accession,
 		@Query("assemblyPUI") String assemblyPUI,
 		@Query("md5checksum") String md5checksum,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("referencesets/{referenceSetDbId}")
@@ -157,8 +156,8 @@ public interface BrapiGenotypingService
 	@POST("search/referencesets")
 	Call<BaseResult<ArrayResult<ReferenceSet>>> postReferenceSetsSearch(
 		@Body ReferenceSetSearch search,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/referencesets")
@@ -167,8 +166,8 @@ public interface BrapiGenotypingService
 	@GET("search/referencesets/{searchResultsDbId}")
 	Call<BaseResult<ArrayResult<MarkerPosition>>> getReferenceSetsSearchAsync(
 		@Path("searchResultsDbId") String searchResultsDbId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("reference")
@@ -180,8 +179,8 @@ public interface BrapiGenotypingService
 		@Query("isDerived") String isDerived,
 		@Query("minLength") String minLength,
 		@Query("maxLength") String maxLength,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("references/{referenceDbId}")
@@ -199,8 +198,8 @@ public interface BrapiGenotypingService
 	@POST("search/references")
 	Call<BaseResult<ArrayResult<Reference>>> postReferenceSearch(
 		@Body ReferenceSearch search,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/references")
@@ -209,8 +208,8 @@ public interface BrapiGenotypingService
 	@GET("search/references/{searchResultsDbId}")
 	Call<BaseResult<ArrayResult<Reference>>> getReferenceSearchAsync(
 		@Path("searchResultsDbId") String searchResultsDbId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("samples")
@@ -222,8 +221,8 @@ public interface BrapiGenotypingService
 		@Query("studyDbId") String studyDbId,
 		@Query("externalReferenceID") String externalReferenceID,
 		@Query("externalReferenceSource") String externalReferenceSource,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("samples")
@@ -238,8 +237,8 @@ public interface BrapiGenotypingService
 	@POST("search/samples")
 	Call<BaseResult<ArrayResult<Sample>>> postSampleSearch(
 		@Body SampleSearch search,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/samples")
@@ -248,15 +247,15 @@ public interface BrapiGenotypingService
 	@GET("search/samples/{searchResultsDbId}")
 	Call<BaseResult<ArrayResult<Sample>>> getSampleSearchAsync(
 		@Path("searchResultsDbId") String searchResultsDbId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/variantsets")
 	Call<BaseResult<ArrayResult<VariantSet>>> postVariantSetSearch(
 		@Body VariantSetSearch search,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/variantsets")
@@ -265,8 +264,8 @@ public interface BrapiGenotypingService
 	@GET("search/variantsets/{searchResultsDbId}")
 	Call<BaseResult<ArrayResult<VariantSet>>> getVariantSetSearchAsync(
 		@Path("searchResultsDbId") String searchResultsDbId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("variantsets")
@@ -276,8 +275,8 @@ public interface BrapiGenotypingService
 		@Query("callSetDbId") String callSetDbId,
 		@Query("studyDbId") String studyDbId,
 		@Query("studyName") String studyName,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("variantsets/extract")
@@ -287,7 +286,7 @@ public interface BrapiGenotypingService
 	Call<BaseResult<VariantSet>> getVariantSetById(@Path("variantSetDbId") String variantSetDbId);
 
 	@GET("variantsets/{variantSetDbId}/calls")
-	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.call.Call>>> getVariantSetByIdCalls(
+	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> getVariantSetByIdCalls(
 		@Path("variantSetDbId") String variantSetDbId,
 		@Query("expandHomozygotes") String expandHomozygotes,
 		@Query("unknownString") String unknownString,
@@ -302,8 +301,8 @@ public interface BrapiGenotypingService
 		@Path("variantSetDbId") String variantSetDbId,
 		@Query("callSetDbId") String callSetDbId,
 		@Query("callSetName") String callSetName,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("variantsets/{variantSetDbId}/variants")
@@ -343,7 +342,7 @@ public interface BrapiGenotypingService
 	Call<BaseResult<Variant>> getVariantById(@Path("variantDbId") String variantDbId);
 
 	@GET("variants/{variantDbId}/calls")
-	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.call.Call>>> getVariantByIdCalls(
+	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> getVariantByIdCalls(
 		@Path("variantDbId") String variantDbId,
 		@Query("expandHomozygotes") String expandHomozygotes,
 		@Query("unknownString") String unknownString,
@@ -357,8 +356,8 @@ public interface BrapiGenotypingService
 	Call<BaseResult<ArrayResult<VendorOrder>>> getVendorOrder(
 		@Query("orderId") String orderId,
 		@Query("submissionId") String submissionId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@POST("vendor/orders")
@@ -367,15 +366,15 @@ public interface BrapiGenotypingService
 	@GET("vendor/orders/{orderId}/plates")
 	Call<BaseResult<ArrayResult<Plate>>> getVendorOrderByIdPlates(
 		@Path("orderId") String orderId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("vendor/orders/{orderId}/results")
 	Call<BaseResult<ArrayResult<OrderResult>>> getVendorOrderByIdResults(
 		@Path("orderId") String orderId,
-		@Query("pageSize") int pageSize,
-		@Query("page") int page
+		@Query("page") int page,
+		@Query("pageSize") int pageSize
 	);
 
 	@GET("vendor/orders/{orderId}/status")

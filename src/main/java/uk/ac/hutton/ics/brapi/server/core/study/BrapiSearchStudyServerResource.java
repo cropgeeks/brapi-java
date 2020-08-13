@@ -2,9 +2,8 @@ package uk.ac.hutton.ics.brapi.server.core.study;
 
 import org.restlet.resource.*;
 
-import uk.ac.hutton.ics.brapi.resource.SearchResult;
 import uk.ac.hutton.ics.brapi.resource.base.*;
-import uk.ac.hutton.ics.brapi.resource.study.*;
+import uk.ac.hutton.ics.brapi.resource.core.study.*;
 
 public interface BrapiSearchStudyServerResource
 {

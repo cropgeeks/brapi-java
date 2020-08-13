@@ -2,7 +2,7 @@ package uk.ac.hutton.ics.brapi.resource.base;
 
 import java.util.List;
 
-import uk.ac.hutton.ics.brapi.resource.observation.ObservationVariable;
+import uk.ac.hutton.ics.brapi.resource.phenotyping.observation.ObservationVariable;
 
 public class TableResult<T>
 {
