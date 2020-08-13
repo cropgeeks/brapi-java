@@ -8,7 +8,7 @@ import uk.ac.hutton.ics.brapi.resource.core.list.Lists;
 public interface BrapiListIndividualServerResource
 {
 	@Get
-	BaseResult<ArrayResult<Lists>> getListsById();
+	BaseResult<Lists> getListsById();
 
 	@Put
 	BaseResult<Lists> putListById(Lists updatedLists);

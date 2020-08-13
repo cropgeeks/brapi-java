@@ -35,7 +35,7 @@ public interface BrapiCoreService
 	Call<BaseResult<ArrayResult<Lists>>> postLists(@Body List<Lists> newLists);
 
 	@GET("lists/{listDbId}")
-	Call<BaseResult<ArrayResult<Lists>>> getListsById(
+	Call<BaseResult<Lists>> getListById(
 		@Path("listDbId") String listDbId,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize

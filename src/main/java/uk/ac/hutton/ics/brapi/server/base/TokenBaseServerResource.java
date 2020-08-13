@@ -7,7 +7,7 @@ import java.util.Objects;
 
 import uk.ac.hutton.ics.brapi.resource.base.TokenBaseResult;
 
-public abstract class TokenBaseServerResource<T> extends ServerResource
+public abstract class TokenBaseServerResource extends ServerResource
 {
 	protected static final String PARAM_PAGE_SIZE    = "pageSize";
 	protected static final String PARAM_CURRENT_PAGE = "pageToken";
@@ -15,11 +15,6 @@ public abstract class TokenBaseServerResource<T> extends ServerResource
 	// TODO: do we want to configure this value in the environment somehow (e.g. properties file etc...)
 	protected int pageSize    = Integer.MAX_VALUE;
 	protected int currentPage = 0;
-
-	protected static String toString(Object value)
-	{
-		return value == null ? null : Objects.toString(value);
-	}
 
 	@Override
 	public void doInit()
@@ -51,16 +46,5 @@ public abstract class TokenBaseServerResource<T> extends ServerResource
 				e.printStackTrace();
 			}
 		}
-	}
-
-	@Get("json")
-	public abstract TokenBaseResult<T> getJson();
-
-	protected Timestamp getTimestamp(Date date)
-	{
-		if (date != null)
-			return new Timestamp(date.getTime());
-		else
-			return null;
 	}
 }

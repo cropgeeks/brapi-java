@@ -8,5 +8,5 @@ import uk.ac.hutton.ics.brapi.resource.genotyping.variant.Variant;
 public interface BrapiVariantServerResource
 {
 	@Get
-	TokenBaseResult<ArrayResult<Variant>> getVariants();
+	TokenBaseResult<ArrayResult<Variant>> getAllVariants();
 }

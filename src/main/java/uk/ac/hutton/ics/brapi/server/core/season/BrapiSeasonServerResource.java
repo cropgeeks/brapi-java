@@ -11,5 +11,5 @@ public interface BrapiSeasonServerResource
 	BaseResult<ArrayResult<Season>> getSeasons();
 
 	@Post
-	BaseResult<ArrayResult<Season>> postSeason(Season[] newSeasons);
+	BaseResult<ArrayResult<Season>> postSeasons(Season[] newSeasons);
 }

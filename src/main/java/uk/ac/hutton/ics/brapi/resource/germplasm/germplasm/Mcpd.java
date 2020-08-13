@@ -1,6 +1,5 @@
 package uk.ac.hutton.ics.brapi.resource.germplasm.germplasm;
 
-import java.util.Collection;
 import java.util.*;
 
 public class Mcpd

@@ -8,5 +8,5 @@ import uk.ac.hutton.ics.brapi.resource.core.serverinfo.ServerInfo;
 public interface BrapiServerInfoResource
 {
 	@Get
-	BaseResult<ServerInfo> getServerInfo();
+	BaseResult<ServerInfo> getServerinfo();
 }
