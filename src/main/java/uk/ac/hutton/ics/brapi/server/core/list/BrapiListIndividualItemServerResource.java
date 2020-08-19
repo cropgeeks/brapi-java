@@ -8,5 +8,5 @@ import uk.ac.hutton.ics.brapi.resource.core.list.Lists;
 public interface BrapiListIndividualItemServerResource
 {
 	@Post
-	BaseResult<Lists> postListItems(String[] ids);
+	BaseResult<Lists> postListByIdItems(String[] ids);
 }

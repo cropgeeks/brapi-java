@@ -45,7 +45,7 @@ public interface BrapiCoreService
 	Call<BaseResult<Lists>> putListById(@Body Lists updatedLists);
 
 	@POST("lists/{listDbId}/items")
-	Call<BaseResult<Lists>> postListItems(@Path("listDbId") String listDbId, @Body List<String> ids);
+	Call<BaseResult<Lists>> postListByIdItems(@Path("listDbId") String listDbId, @Body List<String> ids);
 
 	@POST("search/lists")
 	Call<BaseResult<ArrayResult<Lists>>> postListSearch(

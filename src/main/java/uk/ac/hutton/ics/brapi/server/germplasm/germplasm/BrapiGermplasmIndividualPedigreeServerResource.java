@@ -8,5 +8,5 @@ import uk.ac.hutton.ics.brapi.resource.germplasm.germplasm.Pedigree;
 public interface BrapiGermplasmIndividualPedigreeServerResource
 {
 	@Get
-	BaseResult<Pedigree> getGermplasmPedigree();
+	BaseResult<Pedigree> getGermplasmByIdPedigree();
 }

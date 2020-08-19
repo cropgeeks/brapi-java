@@ -89,14 +89,14 @@ public interface BrapiGermplasmService
 	Call<BaseResult<Mcpd>> getGermplasmMcpd(@Path("germplasmDbId") String germplasmDbId);
 
 	@GET("germplasm/{germplasmDbId}/pedigree")
-	Call<BaseResult<Pedigree>> getGermplasmPedigree(
+	Call<BaseResult<Pedigree>> getGermplasmByIdPedigree(
 		@Path("germplasmDbId") String germplasmDbId,
 		@Query("notation") String notation,
 		@Query("includeSiblings") String includeSiblings
 	);
 
 	@GET("germplasm/{germplasmDbId}/progeny")
-	Call<BaseResult<Progeny>> getGermplasmProgeny(@Path("germplasmDbId") String germplasmDbId);
+	Call<BaseResult<Progeny>> getGermplasmByIdProgeny(@Path("germplasmDbId") String germplasmDbId);
 
 	@POST("search/germplasm")
 	Call<BaseResult<ArrayResult<Germplasm>>> postGermplasmSearch(

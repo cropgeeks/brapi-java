@@ -31,7 +31,7 @@ public interface BrapiGenotypingService
 	Call<BaseResult<CallSet>> getCallSetById(@Path("callSetDbId") String callSetDbId);
 
 	@GET("callsets/{callSetDbId}/calls")
-	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> getCallSetCalls(
+	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> getCallSetByIdCalls(
 		@Path("callSetDbId") String callSetDbId,
 		@Query("expandHomozygotes") String expandHomozygotes,
 		@Query("unknownString") String unknownString,
@@ -106,7 +106,7 @@ public interface BrapiGenotypingService
 	Call<BaseResult<Map>> getMapById(@Path("mapDbId") String mapDbId);
 
 	@GET("maps/{mapDbId}/linkagegroups")
-	Call<BaseResult<ArrayResult<LinkageGroup>>> getMapLinkageGroups(
+	Call<BaseResult<ArrayResult<LinkageGroup>>> getMapByIdLinkageGroups(
 		@Path("mapDbId") String mapDbId,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
@@ -187,7 +187,7 @@ public interface BrapiGenotypingService
 	Call<BaseResult<Reference>> getReferenceById(@Path("referenceDbId") String referenceDbId);
 
 	@GET("references/{referenceDbId}/bases")
-	Call<TokenBaseResult<ArrayResult<Base>>> getReferenceBases(
+	Call<TokenBaseResult<ArrayResult<Base>>> getReferenceByIdBases(
 		@Path("referenceDbId") String referenceDbId,
 		@Query("start") String start,
 		@Query("end") String end,

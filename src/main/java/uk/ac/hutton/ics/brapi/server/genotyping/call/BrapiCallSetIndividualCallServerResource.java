@@ -8,5 +8,5 @@ import uk.ac.hutton.ics.brapi.resource.genotyping.call.*;
 public interface BrapiCallSetIndividualCallServerResource
 {
 	@Get
-	TokenBaseResult<CallResult<Call>> getCallSetCalls();
+	TokenBaseResult<CallResult<Call>> getCallSetByIdCalls();
 }

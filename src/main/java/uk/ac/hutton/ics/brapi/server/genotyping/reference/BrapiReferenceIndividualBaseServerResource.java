@@ -8,5 +8,5 @@ import uk.ac.hutton.ics.brapi.resource.genotyping.reference.Base;
 public interface BrapiReferenceIndividualBaseServerResource
 {
 	@Get
-	TokenBaseResult<ArrayResult<Base>> getReferenceBases();
+	TokenBaseResult<ArrayResult<Base>> getReferenceByIdBases();
 }

@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'uk.ac.hutton.ics'
-version '1.0.0'
+version '1.0.1'
 
 repositories {
     jcenter()
@@ -23,3 +23,25 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.14.4'
     implementation 'com.squareup.retrofit2:retrofit:2.7.1'
 }
+
+// Generate a .jar file that client applications can use to communicate with the API
+task jarClient (type: Jar, dependsOn: classes) {
+    from sourceSets.main.output
+    archiveFileName = "brapi-client-${project.version}.jar"
+    includeEmptyDirs = false
+    include '**/brapi/resource/**'
+    include '**/client/**'
+}
+
+// Generate a .jar file that server applications can use to implement the API
+task jarServer (type: Jar, dependsOn: classes) {
+    from sourceSets.main.output
+    archiveFileName = "brapi-server-${project.version}.jar"
+    includeEmptyDirs = false
+    include '**/brapi/resource/**'
+    include '**/server/**'
+}
+
+// Automatically build both jars on every build
+rootProject.tasks.getByName('build').dependsOn jarServer
+rootProject.tasks.getByName('build').dependsOn jarClient

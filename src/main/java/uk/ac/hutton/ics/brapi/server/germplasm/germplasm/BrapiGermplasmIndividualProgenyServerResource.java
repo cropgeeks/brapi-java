@@ -8,5 +8,5 @@ import uk.ac.hutton.ics.brapi.resource.germplasm.germplasm.Progeny;
 public interface BrapiGermplasmIndividualProgenyServerResource
 {
 	@Get
-	BaseResult<Progeny> getGermplasmProgeny();
+	BaseResult<Progeny> getGermplasmByIdProgeny();
 }

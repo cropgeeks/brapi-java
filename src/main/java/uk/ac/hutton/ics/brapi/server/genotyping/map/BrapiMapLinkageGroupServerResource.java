@@ -4,5 +4,5 @@ import uk.ac.hutton.ics.brapi.resource.base.*;
 
 public interface BrapiMapLinkageGroupServerResource
 {
-	BaseResult<ArrayResult<LinkageGroup>> getMapLinkageGroups();
+	BaseResult<ArrayResult<LinkageGroup>> getMapByIdLinkageGroups();
 }
