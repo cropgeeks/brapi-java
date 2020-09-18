@@ -2,11 +2,6 @@ package uk.ac.hutton.ics.brapi.server.base;
 
 import org.restlet.resource.*;
 
-import java.sql.*;
-import java.util.Objects;
-
-import uk.ac.hutton.ics.brapi.resource.base.TokenBaseResult;
-
 public abstract class TokenBaseServerResource extends ServerResource
 {
 	protected static final String PARAM_PAGE_SIZE    = "pageSize";

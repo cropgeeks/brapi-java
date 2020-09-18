@@ -39,17 +39,17 @@ public class BrapiCall
 
 	public boolean hasDataType(DataType datatype)
 	{
-		return dataTypes.contains(datatype);
+		return dataTypes.contains(datatype.name());
 	}
 
 	public boolean hasMethod(Method method)
 	{
-		return methods.contains(method);
+		return methods.contains(method.name());
 	}
 
 	public boolean hasVersion(Version version)
 	{
-		return versions.contains(version);
+		return versions.contains(version.name());
 	}
 
 	public String getService()
