@@ -39,7 +39,7 @@ public class BrapiCall
 
 	public boolean hasDataType(DataType datatype)
 	{
-		return dataTypes.contains(datatype.name());
+		return dataTypes.contains(datatype.getType());
 	}
 
 	public boolean hasMethod(Method method)
@@ -49,7 +49,7 @@ public class BrapiCall
 
 	public boolean hasVersion(Version version)
 	{
-		return versions.contains(version.name());
+		return versions.contains(version.getNumber());
 	}
 
 	public String getService()
@@ -65,7 +65,7 @@ public class BrapiCall
 
 	public List<DataType> getDataTypes()
 	{
-		return dataTypes.stream().map(DataType::valueOf).collect(Collectors.toList());
+		return dataTypes.stream().map(DataType::getFromString).collect(Collectors.toList());
 	}
 
 	public List<Method> getMethods()
@@ -75,7 +75,7 @@ public class BrapiCall
 
 	public List<Version> getVersions()
 	{
-		return versions.stream().map(Version::valueOf).collect(Collectors.toList());
+		return versions.stream().map(Version::getFromString).collect(Collectors.toList());
 	}
 
 	public enum DataType
@@ -89,6 +89,21 @@ public class BrapiCall
 		DataType(String type)
 		{
 			this.type = type;
+		}
+
+		public String getType() {
+			return type;
+		}
+
+		public static DataType getFromString(String type)
+		{
+			for (DataType dt : DataType.values())
+			{
+				if (Objects.equals(dt.type, type))
+					return dt;
+			}
+
+			return null;
 		}
 	}
 
@@ -113,6 +128,21 @@ public class BrapiCall
 		Version(String number)
 		{
 			this.number = number;
+		}
+
+		public String getNumber() {
+			return number;
+		}
+
+		public static Version getFromString(String version)
+		{
+			for (Version v : Version.values())
+			{
+				if (Objects.equals(v.number, version))
+					return v;
+			}
+
+			return null;
 		}
 	}
 }

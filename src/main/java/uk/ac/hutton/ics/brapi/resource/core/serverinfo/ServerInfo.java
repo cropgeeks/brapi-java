@@ -15,6 +15,10 @@ public class ServerInfo
 	private String          serverDescription;
 	private String          serverName;
 
+	public ServerInfo()
+	{
+	}
+
 	public List<BrapiCall> getCalls()
 	{
 		return calls;

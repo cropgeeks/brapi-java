@@ -21,7 +21,7 @@ public class TokenPagination
 		this.totalCount = totalCount;
 		this.totalPages = (int) Math.ceil(totalCount / (float) desiredPageSize);
 
-		// If we can, generate valeus for prevPageToken and nextPageToken
+		// If we can, generate values for prevPageToken and nextPageToken
 		int currentPage = Integer.parseInt(currentPageToken);
 		if (currentPage >= 1)
 			prevPageToken = String.valueOf(currentPage - 1);

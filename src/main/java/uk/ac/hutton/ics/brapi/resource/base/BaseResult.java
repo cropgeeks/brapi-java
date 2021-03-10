@@ -9,6 +9,10 @@ public class BaseResult<T>
 	private Metadata metadata = new Metadata();
 	private T        result;
 
+	public BaseResult()
+	{
+	}
+
 	public BaseResult(T result, int currentPage, int pageSize, long totalCount)
 	{
 		this.result = result;
