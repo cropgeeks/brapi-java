@@ -1,29 +1,14 @@
 package uk.ac.hutton.ics.brapi.resource.germplasm.attribute;
 
+import lombok.*;
+import lombok.experimental.Accessors;
+
+@NoArgsConstructor
+@Getter
+@Setter
+@Accessors(chain = true)
 public class Link
 {
 	private String URL;
 	private String type;
-
-	public String getURL()
-	{
-		return URL;
-	}
-
-	public Link setURL(String URL)
-	{
-		this.URL = URL;
-		return this;
-	}
-
-	public String getType()
-	{
-		return type;
-	}
-
-	public Link setType(String type)
-	{
-		this.type = type;
-		return this;
-	}
 }

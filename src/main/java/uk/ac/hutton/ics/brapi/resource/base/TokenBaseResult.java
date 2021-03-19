@@ -1,7 +1,13 @@
 package uk.ac.hutton.ics.brapi.resource.base;
 
 import com.google.gson.annotations.SerializedName;
+import lombok.*;
+import lombok.experimental.Accessors;
 
+@NoArgsConstructor
+@Getter
+@Setter
+@Accessors(chain = true)
 public class TokenBaseResult<T>
 {
 	@SerializedName("@context")
@@ -13,27 +19,5 @@ public class TokenBaseResult<T>
 	{
 		this.result = result;
 		metadata.setPagination(new TokenPagination(pageSize, Integer.toString(currentPage), totalCount, pageSize));
-	}
-
-	public TokenMetadata getMetadata()
-	{
-		return metadata;
-	}
-
-	public TokenBaseResult<T> setMetadata(TokenMetadata metadata)
-	{
-		this.metadata = metadata;
-		return this;
-	}
-
-	public T getResult()
-	{
-		return result;
-	}
-
-	public TokenBaseResult<T> setResult(T result)
-	{
-		this.result = result;
-		return this;
 	}
 }

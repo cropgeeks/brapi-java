@@ -1,29 +1,14 @@
 package uk.ac.hutton.ics.brapi.resource.core.location;
 
+import lombok.*;
+import lombok.experimental.Accessors;
+
+@NoArgsConstructor
+@Getter
+@Setter
+@Accessors(chain = true)
 public class GeometryPolygon
 {
 	private String       type;
 	private Double[][][] coordinates;
-
-	public String getType()
-	{
-		return type;
-	}
-
-	public GeometryPolygon setType(String type)
-	{
-		this.type = type;
-		return this;
-	}
-
-	public Double[][][] getCoordinates()
-	{
-		return coordinates;
-	}
-
-	public GeometryPolygon setCoordinates(Double[][][] coordinates)
-	{
-		this.coordinates = coordinates;
-		return this;
-	}
 }

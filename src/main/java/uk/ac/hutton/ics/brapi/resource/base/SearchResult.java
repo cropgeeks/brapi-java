@@ -1,17 +1,13 @@
 package uk.ac.hutton.ics.brapi.resource.base;
 
+import lombok.*;
+import lombok.experimental.Accessors;
+
+@NoArgsConstructor
+@Getter
+@Setter
+@Accessors(chain = true)
 public class SearchResult
 {
 	private String searchResultsDbId;
-
-	public String getSearchResultsDbId()
-	{
-		return searchResultsDbId;
-	}
-
-	public SearchResult setSearchResultsDbId(String searchResultsDbId)
-	{
-		this.searchResultsDbId = searchResultsDbId;
-		return this;
-	}
 }

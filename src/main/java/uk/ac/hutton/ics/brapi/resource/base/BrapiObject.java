@@ -1,19 +1,15 @@
 package uk.ac.hutton.ics.brapi.resource.base;
 
+import lombok.*;
+import lombok.experimental.Accessors;
+
 import java.util.Map;
 
+@NoArgsConstructor
+@Getter
+@Setter
+@Accessors(chain = true)
 public class BrapiObject
 {
 	protected Map<String, String> additionalInfo;
-
-	public Map<String, String> getAdditionalInfo()
-	{
-		return additionalInfo;
-	}
-
-	public BrapiObject setAdditionalInfo(Map<String, String> additionalInfo)
-	{
-		this.additionalInfo = additionalInfo;
-		return this;
-	}
 }
