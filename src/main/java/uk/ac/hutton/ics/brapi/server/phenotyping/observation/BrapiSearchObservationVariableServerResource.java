@@ -1,18 +1,18 @@
 package uk.ac.hutton.ics.brapi.server.phenotyping.observation;
 
-import org.restlet.resource.*;
-
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.phenotyping.observation.*;
 
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
+import java.io.IOException;
+import java.sql.SQLException;
+
 public interface BrapiSearchObservationVariableServerResource
 {
-	@Post
-	BaseResult<ArrayResult<ObservationVariable>> postObservationVariableSearch(ObservationVariableSearch search);
+	Response postObservationVariableSearch(ObservationVariableSearch search)
+		throws SQLException, IOException;
 
-	@Post
-	BaseResult<SearchResult> postObservationVariableSearchAsync(ObservationVariableSearch search);
-
-	@Get
-	BaseResult<ArrayResult<ObservationVariable>> getObservationVariableSearchAsync();
+	BaseResult<ArrayResult<ObservationVariable>> getObservationVariableSearchAsync(@PathParam("searchResultsDbId") String searchResultsDbId)
+		throws SQLException, IOException;
 }

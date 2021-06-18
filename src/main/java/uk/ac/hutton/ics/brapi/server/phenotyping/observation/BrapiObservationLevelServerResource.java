@@ -1,14 +1,16 @@
 package uk.ac.hutton.ics.brapi.server.phenotyping.observation;
 
-import org.restlet.resource.Get;
-
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.phenotyping.observation.ObservationLevel;
 
+import javax.ws.rs.QueryParam;
+import java.io.IOException;
+import java.sql.SQLException;
+
 public interface BrapiObservationLevelServerResource
 {
-	@Get
-	BaseResult<ArrayResult<ObservationLevel>> getObservationLevels();
-
-
+	BaseResult<ArrayResult<ObservationLevel>> getObservationLevels(@QueryParam("studyDbId") String studyDbId,
+																   @QueryParam("trialDbId") String trialDbId,
+																   @QueryParam("programDbId") String programDbId)
+		throws IOException, SQLException;
 }
