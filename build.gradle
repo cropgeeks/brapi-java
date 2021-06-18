@@ -19,11 +19,15 @@ repositories {
 gradleLint.rules += 'unused-dependency'
 
 dependencies {
-    implementation 'org.restlet.jee:org.restlet:2.4.0'
-
     implementation 'com.google.code.gson:gson:2.3.1'
     implementation 'com.squareup.okhttp3:okhttp:3.14.4'
     implementation 'com.squareup.retrofit2:retrofit:2.7.1'
+
+    implementation 'jakarta.ws.rs:jakarta.ws.rs-api:2.1.6'
+    implementation 'javax.servlet:javax.servlet-api:3.0.1'
+
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.12.3'
+
 
     compileOnly 'org.projectlombok:lombok:1.18.16'
     annotationProcessor 'org.projectlombok:lombok:1.18.16'

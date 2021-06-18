@@ -1,18 +1,18 @@
 package uk.ac.hutton.ics.brapi.server.core.list;
 
-import org.restlet.resource.*;
-
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.core.list.*;
 
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
+import java.io.IOException;
+import java.sql.SQLException;
+
 public interface BrapiSearchListServerResource
 {
-	@Post
-	BaseResult<ArrayResult<Lists>> postListSearch(ListSearch search);
+	Response postListSearch(ListSearch search)
+		throws SQLException, IOException;
 
-	@Post
-	BaseResult<SearchResult> postListSearchAsync(ListSearch search);
-
-	@Get
-	BaseResult<ArrayResult<Lists>> getListSearchAsync();
+	BaseResult<ArrayResult<Lists>> getListSearchAsync(@PathParam("searchResultsDbId") String searchResultsDbId)
+		throws SQLException, IOException;
 }

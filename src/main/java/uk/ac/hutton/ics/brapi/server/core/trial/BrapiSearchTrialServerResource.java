@@ -1,18 +1,18 @@
 package uk.ac.hutton.ics.brapi.server.core.trial;
 
-import org.restlet.resource.*;
-
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.core.trial.*;
 
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
+import java.io.IOException;
+import java.sql.SQLException;
+
 public interface BrapiSearchTrialServerResource
 {
-	@Post
-	BaseResult<ArrayResult<Trial>> postTrialSearch(TrialSearch search);
+	Response postTrialSearch(TrialSearch search)
+		throws SQLException, IOException;
 
-	@Post
-	BaseResult<SearchResult> postTrialSearchAsync(TrialSearch search);
-
-	@Get
-	BaseResult<ArrayResult<Trial>> getTrialSearchAsync();
+	BaseResult<ArrayResult<Trial>> getTrialSearchAsync(@PathParam("searchResultsDbId") String searchResultsDbId)
+		throws SQLException, IOException;
 }

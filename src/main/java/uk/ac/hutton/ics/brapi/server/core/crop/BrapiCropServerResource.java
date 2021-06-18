@@ -1,11 +1,12 @@
 package uk.ac.hutton.ics.brapi.server.core.crop;
 
-import org.restlet.resource.Get;
-
 import uk.ac.hutton.ics.brapi.resource.base.*;
+
+import java.io.IOException;
+import java.sql.SQLException;
 
 public interface BrapiCropServerResource
 {
-	@Get
-	BaseResult<ArrayResult<String>> getCommonCropNames();
+	BaseResult<ArrayResult<String>> getCommonCropNames()
+		throws SQLException, IOException;
 }

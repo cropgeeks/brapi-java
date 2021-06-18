@@ -1,18 +1,18 @@
 package uk.ac.hutton.ics.brapi.server.genotyping.marker;
 
-import org.restlet.resource.*;
-
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.genotyping.map.*;
 
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
+import java.io.IOException;
+import java.sql.SQLException;
+
 public interface BrapiSearchMarkerPositionServerResource
 {
-	@Post
-	BaseResult<ArrayResult<MarkerPosition>> postMarkerPositionSearch(MarkerPositionSearch search);
+	Response postMarkerPositionSearch(MarkerPositionSearch search)
+		throws SQLException, IOException;
 
-	@Post
-	BaseResult<SearchResult> postMarkerPositionSearchAsync(MarkerPositionSearch search);
-
-	@Get
-	BaseResult<ArrayResult<MarkerPosition>> getMarkerPositionSearchAsync();
+	BaseResult<ArrayResult<MarkerPosition>> getMarkerPositionSearchAsync(@PathParam("searchResultsDbId") String searchResultsDbId)
+		throws SQLException, IOException;
 }

@@ -1,12 +1,21 @@
 package uk.ac.hutton.ics.brapi.server.genotyping.call;
 
-import org.restlet.resource.Get;
-
 import uk.ac.hutton.ics.brapi.resource.base.*;
-import uk.ac.hutton.ics.brapi.resource.genotyping.call.CallSet;
+import uk.ac.hutton.ics.brapi.resource.genotyping.call.*;
+
+import javax.ws.rs.*;
+import java.io.IOException;
+import java.sql.SQLException;
 
 public interface BrapiCallSetServerResource
 {
-	@Get
-	BaseResult<ArrayResult<CallSet>> getCallsets();
+	BaseResult<ArrayResult<CallSet>> getCallsets(@QueryParam("callSetDbId") String callSetDbId,
+												 @QueryParam("callSetName") String callSetName,
+												 @QueryParam("variantSetDbId") String variantSetDbId,
+												 @QueryParam("sampleDbId") String sampleDbId,
+												 @QueryParam("germplasmDbId") String germplasmDbId)
+		throws IOException, SQLException;
+
+	BaseResult<CallSet> getCallSetById(@PathParam("callSetDbId") String callSetDbId)
+		throws IOException, SQLException;
 }

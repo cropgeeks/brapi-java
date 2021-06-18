@@ -1,18 +1,18 @@
 package uk.ac.hutton.ics.brapi.server.germplasm.attribute;
 
-import org.restlet.resource.*;
-
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.germplasm.attribute.*;
 
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
+import java.io.IOException;
+import java.sql.SQLException;
+
 public interface BrapiSearchAttributeServerResource
 {
-	@Post
-	BaseResult<ArrayResult<Attribute>> postAttributeSearch(AttributeSearch search);
+	Response postAttributeSearch(AttributeSearch search)
+		throws SQLException, IOException;
 
-	@Post
-	BaseResult<SearchResult> postAttributeSearchAsync(AttributeSearch search);
-
-	@Get
-	BaseResult<ArrayResult<Attribute>> getAttributeSearchAsync();
+	BaseResult<ArrayResult<Attribute>> getAttributeSearchAsync(@PathParam("searchResultsDbId") String searchResultsDbId)
+		throws SQLException, IOException;
 }

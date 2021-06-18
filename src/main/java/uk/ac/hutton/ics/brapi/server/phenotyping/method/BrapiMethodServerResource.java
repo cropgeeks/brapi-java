@@ -1,17 +1,27 @@
 package uk.ac.hutton.ics.brapi.server.phenotyping.method;
 
-import org.restlet.resource.*;
-
-import java.util.List;
-
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.germplasm.attribute.Method;
 
+import javax.ws.rs.*;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
 public interface BrapiMethodServerResource
 {
-	@Get
-	BaseResult<ArrayResult<Method>> getMethods();
+	BaseResult<ArrayResult<Method>> getMethods(@QueryParam("methodDbId") String methodDbId,
+											   @QueryParam("observationVariableDbId") String observationVariableDbId,
+											   @QueryParam("externalReferenceID") String externalReferenceID,
+											   @QueryParam("externalReferenceSource") String externalReferenceSource)
+		throws IOException, SQLException;
 
-	@Post
-	BaseResult<ArrayResult<Method>> postMethods(List<Method> newMethods);
+	BaseResult<ArrayResult<Method>> postMethods(List<Method> newMethods)
+		throws IOException, SQLException;
+
+	BaseResult<Method> getMethodById(@PathParam("methodDbId") String methodDbId)
+		throws IOException, SQLException;
+
+	BaseResult<Method> putMethodById(@PathParam("methodDbId") String methodDbId, Method method)
+		throws IOException, SQLException;
 }

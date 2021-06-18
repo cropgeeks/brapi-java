@@ -1,12 +1,14 @@
 package uk.ac.hutton.ics.brapi.server.core.serverinfo;
 
-import org.restlet.resource.Get;
-
 import uk.ac.hutton.ics.brapi.resource.base.BaseResult;
 import uk.ac.hutton.ics.brapi.resource.core.serverinfo.ServerInfo;
 
+import javax.ws.rs.QueryParam;
+import java.io.IOException;
+import java.sql.SQLException;
+
 public interface BrapiServerInfoResource
 {
-	@Get
-	BaseResult<ServerInfo> getServerinfo();
+	BaseResult<ServerInfo> getServerinfo(@QueryParam("dataType") String dataType)
+		throws SQLException, IOException;
 }

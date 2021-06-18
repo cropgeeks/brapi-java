@@ -1,18 +1,18 @@
 package uk.ac.hutton.ics.brapi.server.genotyping.sample;
 
-import org.restlet.resource.*;
-
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.genotyping.sample.*;
 
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
+import java.io.IOException;
+import java.sql.SQLException;
+
 public interface BrapiSearchSampleServerResource
 {
-	@Post
-	BaseResult<ArrayResult<Sample>> postSampleSearch(SampleSearch search);
+	Response postSampleSearch(SampleSearch search)
+		throws SQLException, IOException;
 
-	@Post
-	BaseResult<SearchResult> postSampleSearchAsync(SampleSearch search);
-
-	@Get
-	BaseResult<ArrayResult<Sample>> getSampleSearchAsync();
+	BaseResult<ArrayResult<Sample>> getSampleSearchAsync(@PathParam("searchResultsDbId") String searchResultsDbId)
+		throws SQLException, IOException;
 }

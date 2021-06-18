@@ -1,11 +1,12 @@
 package uk.ac.hutton.ics.brapi.server.core.study;
 
-import org.restlet.resource.Get;
-
 import uk.ac.hutton.ics.brapi.resource.base.*;
+
+import java.io.IOException;
+import java.sql.SQLException;
 
 public interface BrapiStudyTypesServerResource
 {
-	@Get
-	BaseResult<ArrayResult<String>> getStudyTypes();
+	BaseResult<ArrayResult<String>> getStudyTypes()
+		throws SQLException, IOException;
 }

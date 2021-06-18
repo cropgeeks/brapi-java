@@ -1,18 +1,18 @@
 package uk.ac.hutton.ics.brapi.server.core.people;
 
-import org.restlet.resource.*;
-
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.core.people.*;
 
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
+import java.io.IOException;
+import java.sql.SQLException;
+
 public interface BrapiSearchPeopleServerResource
 {
-	@Post
-	BaseResult<ArrayResult<Person>> postPeopleSearch(PeopleSearch search);
+	Response postPeopleSearch(PeopleSearch search)
+		throws SQLException, IOException;
 
-	@Post
-	BaseResult<SearchResult> postPeopleSearchAsync(PeopleSearch search);
-
-	@Get
-	BaseResult<ArrayResult<Person>> getPeopleSearchAsync();
+	BaseResult<ArrayResult<Person>> getPeopleSearchAsync(@PathParam("searchResultsDbId") String searchResultsDbId)
+		throws SQLException, IOException;
 }

@@ -1,18 +1,18 @@
 package uk.ac.hutton.ics.brapi.server.phenotyping.image;
 
-import org.restlet.resource.*;
-
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.phenotyping.image.*;
 
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
+import java.io.IOException;
+import java.sql.SQLException;
+
 public interface BrapiSearchImageServerResource
 {
-	@Post
-	BaseResult<ArrayResult<Image>> postImageSearch(ImageSearch search);
+	Response postImageSearch(ImageSearch search)
+		throws SQLException, IOException;
 
-	@Post
-	BaseResult<SearchResult> postImageSearchAsync(ImageSearch search);
-
-	@Get
-	BaseResult<ArrayResult<Image>> getImageSearchAsync();
+	BaseResult<ArrayResult<Image>> getImageSearchAsync(@PathParam("searchResultsDbId") String searchResultsDbId)
+		throws SQLException, IOException;
 }

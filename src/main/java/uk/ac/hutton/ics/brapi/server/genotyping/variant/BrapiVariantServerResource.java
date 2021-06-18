@@ -1,12 +1,14 @@
 package uk.ac.hutton.ics.brapi.server.genotyping.variant;
 
-import org.restlet.resource.Get;
-
-import uk.ac.hutton.ics.brapi.resource.base.*;
+import uk.ac.hutton.ics.brapi.resource.base.BaseResult;
 import uk.ac.hutton.ics.brapi.resource.genotyping.variant.Variant;
+
+import javax.ws.rs.PathParam;
+import java.io.IOException;
+import java.sql.SQLException;
 
 public interface BrapiVariantServerResource
 {
-	@Get
-	TokenBaseResult<ArrayResult<Variant>> getAllVariants();
+	BaseResult<Variant> getVariantById(@PathParam("variantDbId") String variantDbId)
+		throws IOException, SQLException;
 }

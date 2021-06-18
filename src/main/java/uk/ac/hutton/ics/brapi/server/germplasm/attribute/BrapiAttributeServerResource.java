@@ -1,15 +1,31 @@
 package uk.ac.hutton.ics.brapi.server.germplasm.attribute;
 
-import org.restlet.resource.*;
-
 import uk.ac.hutton.ics.brapi.resource.base.*;
-import uk.ac.hutton.ics.brapi.resource.germplasm.attribute.Attribute;
+import uk.ac.hutton.ics.brapi.resource.germplasm.attribute.*;
+
+import javax.ws.rs.QueryParam;
+import java.io.IOException;
+import java.sql.SQLException;
 
 public interface BrapiAttributeServerResource
 {
-	@Get
-	BaseResult<ArrayResult<Attribute>> getAttributes();
+	BaseResult<ArrayResult<Attribute>> getAttributes(@QueryParam("attributeCategory") String attributeCategory,
+													 @QueryParam("attributeDbId") String attributeDbId,
+													 @QueryParam("attributeName") String attributeName,
+													 @QueryParam("germplasmDbId") String germplasmDbId,
+													 @QueryParam("externalReferenceID") String externalReferenceID,
+													 @QueryParam("externalReferenceSource") String externalReferenceSource)
+		throws IOException, SQLException;
 
-	@Post
-	BaseResult<ArrayResult<Attribute>> postAttributes(Attribute[] newAttributes);
+	BaseResult<ArrayResult<Attribute>> postAttributes(Attribute[] newAttributes)
+		throws IOException, SQLException;
+
+	BaseResult<Attribute> getAttributeById(@QueryParam("attributeDbId") String attributeDbId)
+		throws IOException, SQLException;
+
+	BaseResult<Attribute> putAttributeById(@QueryParam("attributeDbId") String attributeDbId, Attribute attribute)
+		throws IOException, SQLException;
+
+	BaseResult<ArrayResult<Category>> getAttributeCategories()
+		throws IOException, SQLException;
 }

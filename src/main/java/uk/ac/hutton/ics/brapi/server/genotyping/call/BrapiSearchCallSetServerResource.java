@@ -1,18 +1,18 @@
 package uk.ac.hutton.ics.brapi.server.genotyping.call;
 
-import org.restlet.resource.*;
-
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.genotyping.call.*;
 
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
+import java.io.IOException;
+import java.sql.SQLException;
+
 public interface BrapiSearchCallSetServerResource
 {
-	@Post
-	BaseResult<ArrayResult<CallSet>> postCallSetSearch(CallSetSearch search);
+	Response postCallSetSearch(CallSetSearch search)
+		throws SQLException, IOException;
 
-	@Post
-	BaseResult<SearchResult> postCallSetSearchAsync(CallSetSearch search);
-
-	@Get
-	BaseResult<ArrayResult<CallSet>> getCallSetSearchAsync();
+	BaseResult<ArrayResult<CallSet>> getCallSetSearchAsync(@PathParam("searchResultsDbId") String searchResultsDbId)
+		throws SQLException, IOException;
 }

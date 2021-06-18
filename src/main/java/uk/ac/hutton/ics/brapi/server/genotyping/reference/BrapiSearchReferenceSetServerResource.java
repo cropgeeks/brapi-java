@@ -1,18 +1,18 @@
 package uk.ac.hutton.ics.brapi.server.genotyping.reference;
 
-import org.restlet.resource.*;
-
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.genotyping.reference.*;
 
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
+import java.io.IOException;
+import java.sql.SQLException;
+
 public interface BrapiSearchReferenceSetServerResource
 {
-	@Post
-	BaseResult<ArrayResult<ReferenceSet>> postReferenceSetSearch(ReferenceSetSearch search);
+	Response postReferenceSetSearch(ReferenceSetSearch search)
+		throws SQLException, IOException;
 
-	@Post
-	BaseResult<SearchResult> postReferenceSetSearchAsync(ReferenceSetSearch search);
-
-	@Get
-	BaseResult<ArrayResult<ReferenceSet>> getReferenceSetSearchAsync();
+	BaseResult<ArrayResult<ReferenceSet>> getReferenceSetSearchAsync(@PathParam("searchResultsDbId") String searchResultsDbId)
+		throws SQLException, IOException;
 }

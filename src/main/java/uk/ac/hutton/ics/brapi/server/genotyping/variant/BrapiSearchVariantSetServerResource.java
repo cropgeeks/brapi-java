@@ -1,18 +1,18 @@
 package uk.ac.hutton.ics.brapi.server.genotyping.variant;
 
-import org.restlet.resource.*;
-
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.genotyping.variant.*;
 
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
+import java.io.IOException;
+import java.sql.SQLException;
+
 public interface BrapiSearchVariantSetServerResource
 {
-	@Post
-	BaseResult<ArrayResult<VariantSet>> postVariantSetSearch(VariantSetSearch search);
+	Response postVariantSetSearch(VariantSetSearch search)
+		throws SQLException, IOException;
 
-	@Post
-	BaseResult<SearchResult> postVariantSetSearchAsync(VariantSetSearch search);
-
-	@Get
-	BaseResult<ArrayResult<VariantSet>> getVariantSetSearchAsync();
+	BaseResult<ArrayResult<VariantSet>> getVariantSetSearchAsync(@PathParam("searchResultsDbId") String searchResultsDbId)
+		throws SQLException, IOException;
 }

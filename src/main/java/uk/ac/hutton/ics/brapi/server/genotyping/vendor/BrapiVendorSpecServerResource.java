@@ -1,12 +1,13 @@
 package uk.ac.hutton.ics.brapi.server.genotyping.vendor;
 
-import org.restlet.resource.Get;
-
 import uk.ac.hutton.ics.brapi.resource.base.BaseResult;
 import uk.ac.hutton.ics.brapi.resource.genotyping.vendor.VendorSpec;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 public interface BrapiVendorSpecServerResource
 {
-	@Get
-	BaseResult<VendorSpec> getVendorSpec();
+	BaseResult<VendorSpec> getVendorSpec()
+		throws IOException, SQLException;
 }

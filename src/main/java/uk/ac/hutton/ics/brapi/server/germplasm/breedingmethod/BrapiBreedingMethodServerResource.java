@@ -1,12 +1,17 @@
 package uk.ac.hutton.ics.brapi.server.germplasm.breedingmethod;
 
-import org.restlet.resource.Get;
-
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.germplasm.germplasm.BreedingMethod;
 
+import javax.ws.rs.PathParam;
+import java.io.IOException;
+import java.sql.SQLException;
+
 public interface BrapiBreedingMethodServerResource
 {
-	@Get
-	BaseResult<ArrayResult<BreedingMethod>> getBreedingMethods();
+	BaseResult<ArrayResult<BreedingMethod>> getBreedingMethods()
+		throws IOException, SQLException;
+
+	BaseResult<BreedingMethod> getBreedingMethodById(@PathParam("breedingMethodDbId") String breedingMethodDbId)
+		throws IOException, SQLException;
 }
