@@ -1,7 +1,7 @@
 package uk.ac.hutton.ics.brapi.server.base;
 
-import javax.servlet.http.*;
-import javax.ws.rs.core.*;
+import jakarta.servlet.http.*;
+import jakarta.ws.rs.core.*;
 
 public abstract class ContextResource
 {

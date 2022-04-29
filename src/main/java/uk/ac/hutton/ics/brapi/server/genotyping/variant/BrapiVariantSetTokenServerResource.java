@@ -4,7 +4,7 @@ import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.genotyping.call.*;
 import uk.ac.hutton.ics.brapi.resource.genotyping.variant.Variant;
 
-import javax.ws.rs.*;
+import jakarta.ws.rs.*;
 import java.io.IOException;
 import java.sql.SQLException;
 

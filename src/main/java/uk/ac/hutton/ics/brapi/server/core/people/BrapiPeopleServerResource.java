@@ -3,7 +3,7 @@ package uk.ac.hutton.ics.brapi.server.core.people;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.core.people.Person;
 
-import javax.ws.rs.*;
+import jakarta.ws.rs.*;
 import java.io.IOException;
 import java.sql.SQLException;
 

@@ -3,7 +3,7 @@ package uk.ac.hutton.ics.brapi.server.germplasm.breedingmethod;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.germplasm.germplasm.BreedingMethod;
 
-import javax.ws.rs.PathParam;
+import jakarta.ws.rs.PathParam;
 import java.io.IOException;
 import java.sql.SQLException;
 

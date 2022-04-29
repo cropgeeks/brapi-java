@@ -3,7 +3,7 @@ package uk.ac.hutton.ics.brapi.server.phenotyping.observation;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.phenotyping.observation.ObservationVariable;
 
-import javax.ws.rs.*;
+import jakarta.ws.rs.*;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;

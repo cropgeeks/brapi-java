@@ -3,7 +3,7 @@ package uk.ac.hutton.ics.brapi.server.germplasm.cross;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.germplasm.cross.Cross;
 
-import javax.ws.rs.QueryParam;
+import jakarta.ws.rs.QueryParam;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Map;

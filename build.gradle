@@ -1,10 +1,11 @@
 plugins {
     id 'java'
+    id 'war'
     id 'nebula.lint' version '16.9.1'
 }
 
 group 'uk.ac.hutton.ics'
-version '1.0.2'
+version '1.1.0'
 
 sourceCompatibility = 11
 
@@ -19,17 +20,17 @@ repositories {
 gradleLint.rules += 'unused-dependency'
 
 dependencies {
-    implementation 'com.google.code.gson:gson:2.3.1'
-    implementation 'com.squareup.okhttp3:okhttp:3.14.4'
-    implementation 'com.squareup.retrofit2:retrofit:2.7.1'
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
 
-    implementation 'jakarta.ws.rs:jakarta.ws.rs-api:2.1.6'
-    implementation 'javax.servlet:javax.servlet-api:3.0.1'
+    implementation 'jakarta.ws.rs:jakarta.ws.rs-api:3.0.0'
+    providedCompile 'jakarta.servlet:jakarta.servlet-api:5.0.0'
 
-    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.12.3'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.13.2'
 
 
-    compileOnly 'org.projectlombok:lombok:1.18.16'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.16'
 }
 

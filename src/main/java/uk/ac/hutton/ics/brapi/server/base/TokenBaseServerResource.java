@@ -1,6 +1,6 @@
 package uk.ac.hutton.ics.brapi.server.base;
 
-import javax.ws.rs.*;
+import jakarta.ws.rs.*;
 
 public abstract class TokenBaseServerResource extends ContextResource
 {

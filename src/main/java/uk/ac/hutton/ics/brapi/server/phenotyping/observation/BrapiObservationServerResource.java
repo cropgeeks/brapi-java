@@ -3,8 +3,8 @@ package uk.ac.hutton.ics.brapi.server.phenotyping.observation;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.phenotyping.observation.Observation;
 
-import javax.ws.rs.*;
-import javax.ws.rs.core.Response;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.Response;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.*;

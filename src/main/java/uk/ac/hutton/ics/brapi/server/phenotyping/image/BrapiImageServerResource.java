@@ -3,7 +3,7 @@ package uk.ac.hutton.ics.brapi.server.phenotyping.image;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.phenotyping.image.Image;
 
-import javax.ws.rs.*;
+import jakarta.ws.rs.*;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
