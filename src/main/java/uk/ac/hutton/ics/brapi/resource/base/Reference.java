@@ -9,6 +9,6 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class Reference
 {
-	private String referenceID;
+	private String referenceId;
 	private String referenceSource;
 }

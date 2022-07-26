@@ -121,7 +121,8 @@ public class BrapiCall
 		ONE_ONE("1.1"),
 		ONE_TWO("1.2"),
 		ONE_ZTHREE("1.3"),
-		TWO_ZERO("2.0");
+		TWO_ZERO("2.0"),
+		TWO_ONE("2.1");
 
 		String number;
 
