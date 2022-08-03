@@ -1,7 +1,5 @@
 package uk.ac.hutton.ics.brapi.client;
 
-import java.util.*;
-
 import okhttp3.*;
 import retrofit2.Call;
 import retrofit2.http.Headers;
@@ -12,6 +10,8 @@ import uk.ac.hutton.ics.brapi.resource.phenotyping.event.Event;
 import uk.ac.hutton.ics.brapi.resource.phenotyping.image.*;
 import uk.ac.hutton.ics.brapi.resource.phenotyping.observation.*;
 import uk.ac.hutton.ics.brapi.resource.phenotyping.ontology.Ontology;
+
+import java.util.*;
 
 public interface BrapiPhenotypingService
 {
@@ -34,7 +34,7 @@ public interface BrapiPhenotypingService
 		@Query("observationUnitDbId") String observationUnitDbId,
 		@Query("observationDbId") String observationDbId,
 		@Query("descriptiveOntologyTerm") String descriptiveOntologyTerm,
-		@Query("externalReferenceID") String externalReferenceID,
+		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
@@ -74,7 +74,7 @@ public interface BrapiPhenotypingService
 	Call<BaseResult<ArrayResult<Method>>> getMethods(
 		@Query("methodDbId") String methodDbId,
 		@Query("observationVariableDbId") String observationVariableDbId,
-		@Query("externalReferenceID") String externalReferenceID,
+		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
@@ -111,7 +111,7 @@ public interface BrapiPhenotypingService
 		@Query("observationUnitLevelOrder") String observationUnitLevelOrder,
 		@Query("observationUnitLevelCode") String observationUnitLevelCode,
 		@Query("includeObservations") String includeObservations,
-		@Query("externalReferenceID") String externalReferenceID,
+		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
@@ -197,7 +197,7 @@ public interface BrapiPhenotypingService
 		@Query("observationVariableDbId") String observationVariableDbId,
 		@Query("traitClass") String traitClass,
 		@Query("studyDbId") String studyDbId,
-		@Query("externalReferenceID") String externalReferenceID,
+		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
@@ -228,7 +228,7 @@ public interface BrapiPhenotypingService
 		@Query("observationUnitLevelCode") String observationUnitLevelCode,
 		@Query("observationTimeStampRangeStart") String observationTimeStampRangeStart,
 		@Query("observationTimeStampRangeEnd") String observationTimeStampRangeEnd,
-		@Query("externalReferenceID") String externalReferenceID,
+		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
@@ -309,7 +309,7 @@ public interface BrapiPhenotypingService
 	Call<BaseResult<ArrayResult<Scale>>> getScales(
 		@Query("scaleDbId") String scaleDbId,
 		@Query("observationVariableDbId") String observationVariableDbId,
-		@Query("externalReferenceID") String externalReferenceID,
+		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
@@ -328,7 +328,7 @@ public interface BrapiPhenotypingService
 	Call<BaseResult<ArrayResult<Trait>>> getTraits(
 		@Query("traitDbId") String traitDbId,
 		@Query("observationVariableDbId") String observationVariableDbId,
-		@Query("externalReferenceID") String externalReferenceID,
+		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize

@@ -1,9 +1,9 @@
 package uk.ac.hutton.ics.brapi.server.core.season;
 
+import jakarta.ws.rs.*;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.core.season.Season;
 
-import jakarta.ws.rs.*;
 import java.io.IOException;
 import java.sql.SQLException;
 

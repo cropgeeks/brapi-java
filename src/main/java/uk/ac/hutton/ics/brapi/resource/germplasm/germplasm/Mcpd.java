@@ -3,7 +3,7 @@ package uk.ac.hutton.ics.brapi.resource.germplasm.germplasm;
 import lombok.*;
 import lombok.experimental.Accessors;
 
-import java.util.*;
+import java.util.List;
 
 @NoArgsConstructor
 @Getter

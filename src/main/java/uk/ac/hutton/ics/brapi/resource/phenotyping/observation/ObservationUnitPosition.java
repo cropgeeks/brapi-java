@@ -1,10 +1,10 @@
 package uk.ac.hutton.ics.brapi.resource.phenotyping.observation;
 
-import java.util.List;
-
 import lombok.*;
 import lombok.experimental.Accessors;
 import uk.ac.hutton.ics.brapi.resource.core.location.CoordinatesPoint;
+
+import java.util.List;
 
 @NoArgsConstructor
 @Getter

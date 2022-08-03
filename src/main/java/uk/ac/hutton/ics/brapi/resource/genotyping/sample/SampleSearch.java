@@ -11,13 +11,21 @@ import java.util.List;
 @Accessors(chain = true)
 public class SampleSearch
 {
-	private List<String> externalReferenceIDs;
+	private List<String> commonCropNames;
+	private List<String> externalReferenceIds;
 	private List<String> externalReferenceSources;
 	private List<String> germplasmDbIds;
 	private List<String> germplasmNames;
 	private List<String> observationUnitDbIds;
 	private List<String> plateDbIds;
+	private List<String> plateNames;
+	private List<String> programDbIds;
+	private List<String> programNames;
 	private List<String> sampleDbIds;
+	private List<String> sampleGroupDbIds;
+	private List<String> sampleNames;
 	private List<String> studyDbIds;
 	private List<String> studyNames;
+	private List<String> trialDbIds;
+	private List<String> trialNames;
 }

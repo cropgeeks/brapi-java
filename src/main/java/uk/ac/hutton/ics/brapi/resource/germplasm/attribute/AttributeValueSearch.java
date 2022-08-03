@@ -14,13 +14,16 @@ public class AttributeValueSearch
 	private List<String> attributeDbIds;
 	private List<String> attributeNames;
 	private List<String> attributeValueDbIds;
+	private List<String> commonCropNames;
 	private List<String> dataTypes;
-	private List<String> externalReferenceIDs;
+	private List<String> externalReferenceIds;
 	private List<String> externalReferenceSources;
 	private List<String> germplasmDbIds;
 	private List<String> germplasmNames;
 	private List<String> methodDbIds;
 	private List<String> ontologyDbIds;
+	private List<String> programDbIds;
+	private List<String> programNames;
 	private List<String> scaleDbIds;
 	private List<String> traitClasses;
 	private List<String> traitDbIds;

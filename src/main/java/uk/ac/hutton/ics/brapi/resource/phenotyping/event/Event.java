@@ -1,10 +1,10 @@
 package uk.ac.hutton.ics.brapi.resource.phenotyping.event;
 
-import java.util.List;
-
 import lombok.*;
 import lombok.experimental.Accessors;
 import uk.ac.hutton.ics.brapi.resource.base.BrapiObject;
+
+import java.util.List;
 
 @NoArgsConstructor
 @Getter
@@ -12,7 +12,7 @@ import uk.ac.hutton.ics.brapi.resource.base.BrapiObject;
 @Accessors(chain = true)
 public class Event extends BrapiObject
 {
-	private List<String>         date;
+	private DateRange            eventDateRange;
 	private String               eventDbId;
 	private String               eventDescription;
 	private List<EventParameter> eventParameters;
@@ -20,4 +20,5 @@ public class Event extends BrapiObject
 	private String               eventTypeDbId;
 	private List<String>         observationUnitDbIds;
 	private String               studyDbId;
+	private String               studyName;
 }

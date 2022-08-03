@@ -1,10 +1,10 @@
 package uk.ac.hutton.ics.brapi.server.genotyping.variant;
 
+import jakarta.ws.rs.*;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.genotyping.call.*;
 import uk.ac.hutton.ics.brapi.resource.genotyping.variant.Variant;
 
-import jakarta.ws.rs.*;
 import java.io.IOException;
 import java.sql.SQLException;
 

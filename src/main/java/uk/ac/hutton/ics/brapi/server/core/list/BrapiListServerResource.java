@@ -1,9 +1,9 @@
 package uk.ac.hutton.ics.brapi.server.core.list;
 
+import jakarta.ws.rs.*;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.core.list.Lists;
 
-import jakarta.ws.rs.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -13,7 +13,9 @@ public interface BrapiListServerResource
 											@QueryParam("listName") String listName,
 											@QueryParam("listDbId") String listDbId,
 											@QueryParam("listSource") String listSource,
-											@QueryParam("externalReferenceID") String externalReferenceID,
+											@QueryParam("commonCropName") String commonCropName,
+											@QueryParam("programDbId") String programDbId,
+											@QueryParam("externalReferenceId") String externalReferenceId,
 											@QueryParam("externalReferenceSource") String externalReferenceSource)
 		throws SQLException, IOException;
 

@@ -1,9 +1,9 @@
 package uk.ac.hutton.ics.brapi.server.germplasm.germplasm;
 
+import jakarta.ws.rs.*;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.germplasm.germplasm.*;
 
-import jakarta.ws.rs.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -15,13 +15,16 @@ public interface BrapiGermplasmServerResource
 													@QueryParam("commonCropName") String commonCropName,
 													@QueryParam("accessionNumber") String accessionNumber,
 													@QueryParam("collection") String collection,
+													@QueryParam("binomialName") String binomialName,
 													@QueryParam("genus") String genus,
 													@QueryParam("species") String species,
+													@QueryParam("programDbId") String programDbId,
 													@QueryParam("studyDbId") String studyDbId,
+													@QueryParam("trialDbId") String trialDbId,
 													@QueryParam("synonym") String synonym,
 													@QueryParam("parentDbId") String parentDbId,
 													@QueryParam("progenyDbId") String progenyDbId,
-													@QueryParam("externalReferenceID") String externalReferenceID,
+													@QueryParam("externalReferenceId") String externalReferenceId,
 													@QueryParam("externalReferenceSource") String externalReferenceSource)
 		throws IOException, SQLException;
 

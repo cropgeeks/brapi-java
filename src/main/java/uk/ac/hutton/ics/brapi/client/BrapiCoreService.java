@@ -1,7 +1,5 @@
 package uk.ac.hutton.ics.brapi.client;
 
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.http.*;
 import uk.ac.hutton.ics.brapi.resource.base.*;
@@ -13,6 +11,8 @@ import uk.ac.hutton.ics.brapi.resource.core.season.Season;
 import uk.ac.hutton.ics.brapi.resource.core.serverinfo.ServerInfo;
 import uk.ac.hutton.ics.brapi.resource.core.study.*;
 import uk.ac.hutton.ics.brapi.resource.core.trial.*;
+
+import java.util.List;
 
 public interface BrapiCoreService
 {
@@ -139,7 +139,7 @@ public interface BrapiCoreService
 		@Query("programDbId") String programDbId,
 		@Query("programName") String programName,
 		@Query("abbreviation") String abbreviation,
-		@Query("externalReferenceID") String externalReferenceID,
+		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
@@ -230,7 +230,7 @@ public interface BrapiCoreService
 		@Query("active") String active,
 		@Query("sortBy") String sortBy,
 		@Query("sortOrder") String sortOrder,
-		@Query("externalReferenceID") String externalReferenceID,
+		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
@@ -283,7 +283,7 @@ public interface BrapiCoreService
 		@Query("trialPUI") String trialPUI,
 		@Query("sortBy") String sortBy,
 		@Query("sortOrder") String sortOrder,
-		@Query("externalReferenceID") String externalReferenceID,
+		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize

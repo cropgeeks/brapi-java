@@ -1,9 +1,9 @@
 package uk.ac.hutton.ics.brapi.server.genotyping.call;
 
+import jakarta.ws.rs.QueryParam;
 import uk.ac.hutton.ics.brapi.resource.base.TokenBaseResult;
 import uk.ac.hutton.ics.brapi.resource.genotyping.call.*;
 
-import jakarta.ws.rs.QueryParam;
 import java.io.IOException;
 import java.sql.SQLException;
 

@@ -14,14 +14,19 @@ public class LocationSearch
 	private List<String>       abbreviations;
 	private Double             altitudeMax;
 	private Double             altitudeMin;
+	private List<String>       commonCropNames;
 	private CoordinatesPolygon coordinates;
 	private List<String>       countryCodes;
 	private List<String>       countryNames;
-	private List<String>       externalReferenceIDs;
+	private List<String>       externalReferenceIds;
 	private List<String>       externalReferenceSources;
 	private List<String>       instituteAddresses;
 	private List<String>       instituteNames;
 	private List<String>       locationDbIds;
 	private List<String>       locationNames;
 	private List<String>       locationTypes;
+	private List<String>       parentLocationDbIds;
+	private List<String>       parentLocationNames;
+	private List<String>       programDbIds;
+	private List<String>       programNames;
 }

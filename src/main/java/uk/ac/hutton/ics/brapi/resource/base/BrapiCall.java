@@ -91,10 +91,6 @@ public class BrapiCall
 			this.type = type;
 		}
 
-		public String getType() {
-			return type;
-		}
-
 		public static DataType getFromString(String type)
 		{
 			for (DataType dt : DataType.values())
@@ -104,6 +100,11 @@ public class BrapiCall
 			}
 
 			return null;
+		}
+
+		public String getType()
+		{
+			return type;
 		}
 	}
 
@@ -131,10 +132,6 @@ public class BrapiCall
 			this.number = number;
 		}
 
-		public String getNumber() {
-			return number;
-		}
-
 		public static Version getFromString(String version)
 		{
 			for (Version v : Version.values())
@@ -144,6 +141,11 @@ public class BrapiCall
 			}
 
 			return null;
+		}
+
+		public String getNumber()
+		{
+			return number;
 		}
 	}
 }

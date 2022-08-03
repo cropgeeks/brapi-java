@@ -1,7 +1,5 @@
 package uk.ac.hutton.ics.brapi.client;
 
-import java.util.*;
-
 import retrofit2.Call;
 import retrofit2.http.*;
 import uk.ac.hutton.ics.brapi.resource.base.*;
@@ -11,13 +9,15 @@ import uk.ac.hutton.ics.brapi.resource.germplasm.germplasm.*;
 import uk.ac.hutton.ics.brapi.resource.germplasm.plannedcross.PlannedCross;
 import uk.ac.hutton.ics.brapi.resource.germplasm.seedlot.*;
 
+import java.util.*;
+
 public interface BrapiGermplasmService
 {
 	@GET("crosses")
 	Call<BaseResult<ArrayResult<Cross>>> getCrosses(
 		@Query("crossingProjectDbId") String crossingProjectDbId,
 		@Query("crossDbId") String crossDbId,
-		@Query("externalReferenceID") String externalReferenceID,
+		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
@@ -32,7 +32,7 @@ public interface BrapiGermplasmService
 	@GET("crossingprojects")
 	Call<BaseResult<ArrayResult<CrossingProject>>> getCrossingProjects(
 		@Query("crossingProjectDbId") String crossingProjectDbId,
-		@Query("externalReferenceID") String externalReferenceID,
+		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
@@ -70,7 +70,7 @@ public interface BrapiGermplasmService
 		@Query("synonym") String synonym,
 		@Query("parentDbId") String parentDbId,
 		@Query("progenyDbId") String progenyDbId,
-		@Query("externalReferenceID") String externalReferenceID,
+		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
@@ -121,7 +121,7 @@ public interface BrapiGermplasmService
 		@Query("attributeDbId") String attributeDbId,
 		@Query("attributeName") String attributeName,
 		@Query("germplasmDbId") String germplasmDbId,
-		@Query("externalReferenceID") String externalReferenceID,
+		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
@@ -159,7 +159,7 @@ public interface BrapiGermplasmService
 		@Query("attributeDbId") String attributeDbId,
 		@Query("attributeName") String attributeName,
 		@Query("germplasmDbId") String germplasmDbId,
-		@Query("externalReferenceID") String externalReferenceID,
+		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
@@ -201,7 +201,7 @@ public interface BrapiGermplasmService
 	Call<BaseResult<ArrayResult<PlannedCross>>> getPlannedCrosses(
 		@Query("crossingProjectDbId") String crossingProjectDbId,
 		@Query("plannedCrossDbId") String plannedCrossDbId,
-		@Query("externalReferenceID") String externalReferenceID,
+		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
@@ -217,7 +217,7 @@ public interface BrapiGermplasmService
 	Call<BaseResult<ArrayResult<SeedLot>>> getSeedLots(
 		@Query("seedLotDbId") String seedLotDbId,
 		@Query("germplasmDbId") String germplasmDbId,
-		@Query("externalReferenceID") String externalReferenceID,
+		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
@@ -231,7 +231,7 @@ public interface BrapiGermplasmService
 		@Query("transactionDbId") String transactionDbId,
 		@Query("seedLotDbId") String seedLotDbId,
 		@Query("germplasmDbId") String germplasmDbId,
-		@Query("externalReferenceID") String externalReferenceID,
+		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize

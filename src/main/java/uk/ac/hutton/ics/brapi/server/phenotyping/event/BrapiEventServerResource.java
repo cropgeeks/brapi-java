@@ -1,9 +1,9 @@
 package uk.ac.hutton.ics.brapi.server.phenotyping.event;
 
+import jakarta.ws.rs.QueryParam;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.phenotyping.event.Event;
 
-import jakarta.ws.rs.QueryParam;
 import java.io.IOException;
 import java.sql.SQLException;
 

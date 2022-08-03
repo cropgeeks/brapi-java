@@ -1,9 +1,9 @@
 package uk.ac.hutton.ics.brapi.server.core.program;
 
+import jakarta.ws.rs.*;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.core.program.Program;
 
-import jakarta.ws.rs.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -12,8 +12,9 @@ public interface BrapiProgramServerResource
 	BaseResult<ArrayResult<Program>> getPrograms(@QueryParam("commonCropName") String commonCropName,
 												 @QueryParam("programDbId") String programDbId,
 												 @QueryParam("programName") String programName,
+												 @QueryParam("programType") String programType,
 												 @QueryParam("abbreviation") String abbreviation,
-												 @QueryParam("externalReferenceID") String externalReferenceID,
+												 @QueryParam("externalReferenceId") String externalReferenceId,
 												 @QueryParam("externalReferenceSource") String externalReferenceSource)
 		throws SQLException, IOException;
 

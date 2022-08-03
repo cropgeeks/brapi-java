@@ -1,10 +1,10 @@
 package uk.ac.hutton.ics.brapi.server.genotyping.marker;
 
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.core.Response;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.genotyping.map.*;
 
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.core.Response;
 import java.io.IOException;
 import java.sql.SQLException;
 

@@ -11,8 +11,9 @@ import java.util.List;
 @Accessors(chain = true)
 public class PeopleSearch
 {
+	private List<String> commonCropNames;
 	private List<String> emailAddresses;
-	private List<String> externalReferenceIDs;
+	private List<String> externalReferenceIds;
 	private List<String> externalReferenceSources;
 	private List<String> firstNames;
 	private List<String> lastNames;
@@ -20,5 +21,7 @@ public class PeopleSearch
 	private List<String> middleNames;
 	private List<String> personDbIds;
 	private List<String> phoneNumbers;
+	private List<String> programDbIds;
+	private List<String> programNames;
 	private List<String> userIDs;
 }

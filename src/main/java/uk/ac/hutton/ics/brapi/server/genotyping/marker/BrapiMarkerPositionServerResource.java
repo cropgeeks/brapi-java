@@ -1,9 +1,9 @@
 package uk.ac.hutton.ics.brapi.server.genotyping.marker;
 
+import jakarta.ws.rs.QueryParam;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.genotyping.map.MarkerPosition;
 
-import jakarta.ws.rs.QueryParam;
 import java.io.IOException;
 import java.sql.SQLException;
 

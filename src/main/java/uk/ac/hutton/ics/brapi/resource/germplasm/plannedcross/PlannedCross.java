@@ -1,11 +1,11 @@
 package uk.ac.hutton.ics.brapi.resource.germplasm.plannedcross;
 
-import java.util.List;
-
 import lombok.*;
 import lombok.experimental.Accessors;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.germplasm.cross.Parent;
+
+import java.util.List;
 
 @NoArgsConstructor
 @Getter

@@ -1,10 +1,10 @@
 package uk.ac.hutton.ics.brapi.resource.phenotyping.ontology;
 
-import java.net.URI;
-
 import lombok.*;
 import lombok.experimental.Accessors;
 import uk.ac.hutton.ics.brapi.resource.base.BrapiObject;
+
+import java.net.URI;
 
 @NoArgsConstructor
 @Getter

@@ -1,9 +1,9 @@
 package uk.ac.hutton.ics.brapi.server.core.trial;
 
+import jakarta.ws.rs.*;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.core.trial.Trial;
 
-import jakarta.ws.rs.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -23,7 +23,7 @@ public interface BrapiTrialServerResource
 											 @QueryParam("trialPUI") String trialPUI,
 											 @QueryParam("sortBy") String sortBy,
 											 @QueryParam("sortOrder") String sortOrder,
-											 @QueryParam("externalReferenceID") String externalReferenceID,
+											 @QueryParam("externalReferenceId") String externalReferenceId,
 											 @QueryParam("externalReferenceSource") String externalReferenceSource)
 		throws SQLException, IOException;
 

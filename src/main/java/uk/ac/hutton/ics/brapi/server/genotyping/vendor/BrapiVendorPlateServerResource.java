@@ -1,9 +1,9 @@
 package uk.ac.hutton.ics.brapi.server.genotyping.vendor;
 
+import jakarta.ws.rs.PathParam;
 import uk.ac.hutton.ics.brapi.resource.base.BaseResult;
 import uk.ac.hutton.ics.brapi.resource.genotyping.vendor.*;
 
-import jakarta.ws.rs.PathParam;
 import java.io.IOException;
 import java.sql.SQLException;
 

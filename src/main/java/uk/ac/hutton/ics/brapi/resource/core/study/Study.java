@@ -1,13 +1,13 @@
 package uk.ac.hutton.ics.brapi.resource.core.study;
 
-import java.net.URI;
-import java.sql.Timestamp;
-import java.util.List;
-
 import lombok.*;
 import lombok.experimental.Accessors;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.phenotyping.observation.ObservationLevel;
+
+import java.net.URI;
+import java.sql.Timestamp;
+import java.util.List;
 
 @NoArgsConstructor
 @Getter

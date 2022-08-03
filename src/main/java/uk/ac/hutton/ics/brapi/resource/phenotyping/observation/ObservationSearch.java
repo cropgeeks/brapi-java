@@ -12,7 +12,8 @@ import java.util.List;
 @Accessors(chain = true)
 public class ObservationSearch
 {
-	private List<String>           externalReferenceIDs;
+	private List<String>           commonCropNames;
+	private List<String>           externalReferenceIds;
 	private List<String>           externalReferenceSources;
 	private List<String>           germplasmDbIds;
 	private List<String>           germplasmNames;
@@ -26,6 +27,7 @@ public class ObservationSearch
 	private List<String>           observationUnitDbIds;
 	private List<String>           observationVariableDbIds;
 	private List<String>           observationVariableNames;
+	private List<String>           observationVariablePUIs;
 	private List<String>           programDbIds;
 	private List<String>           programNames;
 	private List<String>           seasonDbIds;

@@ -1,10 +1,10 @@
 package uk.ac.hutton.ics.brapi.resource.germplasm.cross;
 
-import java.util.List;
-
 import lombok.*;
 import lombok.experimental.Accessors;
 import uk.ac.hutton.ics.brapi.resource.base.*;
+
+import java.util.List;
 
 @NoArgsConstructor
 @Getter

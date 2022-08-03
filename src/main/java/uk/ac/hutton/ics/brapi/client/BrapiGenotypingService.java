@@ -1,7 +1,5 @@
 package uk.ac.hutton.ics.brapi.client;
 
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.http.*;
 import uk.ac.hutton.ics.brapi.resource.base.*;
@@ -13,6 +11,8 @@ import uk.ac.hutton.ics.brapi.resource.genotyping.sample.Sample;
 import uk.ac.hutton.ics.brapi.resource.genotyping.sample.*;
 import uk.ac.hutton.ics.brapi.resource.genotyping.variant.*;
 import uk.ac.hutton.ics.brapi.resource.genotyping.vendor.*;
+
+import java.util.List;
 
 public interface BrapiGenotypingService
 {
@@ -219,7 +219,7 @@ public interface BrapiGenotypingService
 		@Query("plateDbId") String plateDbId,
 		@Query("germplasmDbId") String germplasmDbId,
 		@Query("studyDbId") String studyDbId,
-		@Query("externalReferenceID") String externalReferenceID,
+		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize

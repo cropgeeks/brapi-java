@@ -13,11 +13,12 @@ public class ProgramSearch
 {
 	private List<String> abbreviations;
 	private List<String> commonCropNames;
-	private List<String> externalReferenceIDs;
+	private List<String> externalReferenceIds;
 	private List<String> externalReferenceSources;
 	private List<String> leadPersonDbIds;
 	private List<String> leadPersonNames;
 	private List<String> objectives;
 	private List<String> programDbIds;
 	private List<String> programNames;
+	private List<String> programTypes;
 }

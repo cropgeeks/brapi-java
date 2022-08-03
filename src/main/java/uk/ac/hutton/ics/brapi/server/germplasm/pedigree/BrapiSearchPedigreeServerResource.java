@@ -3,7 +3,7 @@ package uk.ac.hutton.ics.brapi.server.germplasm.pedigree;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.core.Response;
 import uk.ac.hutton.ics.brapi.resource.base.*;
-import uk.ac.hutton.ics.brapi.resource.germplasm.germplasm.*;
+import uk.ac.hutton.ics.brapi.resource.germplasm.germplasm.Pedigree;
 import uk.ac.hutton.ics.brapi.resource.germplasm.pedigree.PedigreeSearch;
 
 import java.io.IOException;

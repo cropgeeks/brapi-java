@@ -1,11 +1,11 @@
 package uk.ac.hutton.ics.brapi.resource.germplasm.cross;
 
-import java.sql.Timestamp;
-import java.util.*;
-
 import lombok.*;
 import lombok.experimental.Accessors;
 import uk.ac.hutton.ics.brapi.resource.base.Reference;
+
+import java.sql.Timestamp;
+import java.util.*;
 
 @NoArgsConstructor
 @Getter

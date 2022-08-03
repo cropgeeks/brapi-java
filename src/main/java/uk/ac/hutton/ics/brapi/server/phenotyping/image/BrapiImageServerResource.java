@@ -1,9 +1,9 @@
 package uk.ac.hutton.ics.brapi.server.phenotyping.image;
 
+import jakarta.ws.rs.*;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.phenotyping.image.Image;
 
-import jakarta.ws.rs.*;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -15,7 +15,9 @@ public interface BrapiImageServerResource
 											 @QueryParam("observationUnitDbId") String observationUnitDbId,
 											 @QueryParam("observationDbId") String observationDbId,
 											 @QueryParam("descriptiveOntologyTerm") String descriptiveOntologyTerm,
-											 @QueryParam("externalReferenceID") String externalReferenceID,
+											 @QueryParam("commonCropName") String commonCropName,
+											 @QueryParam("programDbId") String programDbId,
+											 @QueryParam("externalReferenceId") String externalReferenceId,
 											 @QueryParam("externalReferenceSource") String externalReferenceSource)
 		throws IOException, SQLException;
 

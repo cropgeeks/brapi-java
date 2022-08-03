@@ -36,29 +36,34 @@ public class Pedigree extends BrapiObject
 		this.progeny.add(toAdd);
 	}
 
-	public void addParent(Parent toAdd) {
+	public void addParent(Parent toAdd)
+	{
 		if (this.parents == null)
 			this.parents = new HashSet<>();
 
 		this.parents.add(toAdd);
 	}
 
-	public void addSibling(Sibling toAdd) {
+	public void addSibling(Sibling toAdd)
+	{
 		if (this.siblings == null)
 			this.siblings = new HashSet<>();
 
 		this.siblings.add(toAdd);
 	}
 
-	public List<Parent> getParents() {
+	public List<Parent> getParents()
+	{
 		return this.parents == null ? null : new ArrayList<>(this.parents);
 	}
 
-	public List<Parent> getProgeny() {
+	public List<Parent> getProgeny()
+	{
 		return this.progeny == null ? null : new ArrayList<>(this.progeny);
 	}
 
-	public List<Sibling> getSiblings() {
+	public List<Sibling> getSiblings()
+	{
 		return this.siblings == null ? null : new ArrayList<>(this.siblings);
 	}
 

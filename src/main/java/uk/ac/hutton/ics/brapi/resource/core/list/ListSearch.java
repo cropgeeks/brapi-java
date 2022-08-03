@@ -12,11 +12,12 @@ import java.util.List;
 @Accessors(chain = true)
 public class ListSearch
 {
+	private List<String> commonCropNames;
 	private Timestamp    dateCreatedRangeEnd;
 	private Timestamp    dateCreatedRangeStart;
 	private Timestamp    dateModifiedRangeEnd;
 	private Timestamp    dateModifiedRangeStart;
-	private List<String> externalReferenceIDs;
+	private List<String> externalReferenceIds;
 	private List<String> externalReferenceSources;
 	private List<String> listDbIds;
 	private List<String> listNames;
@@ -24,4 +25,6 @@ public class ListSearch
 	private List<String> listOwnerPersonDbIds;
 	private List<String> listSources;
 	private String       listType;
+	private List<String> programDbIds;
+	private List<String> programNames;
 }

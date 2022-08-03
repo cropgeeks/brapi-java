@@ -14,7 +14,7 @@ public class TrialSearch
 	private Boolean      active;
 	private List<String> commonCropNames;
 	private List<String> contactDbIds;
-	private List<String> externalReferenceIDs;
+	private List<String> externalReferenceIds;
 	private List<String> externalReferenceSources;
 	private List<String> locationDbIds;
 	private List<String> locationNames;

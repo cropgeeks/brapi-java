@@ -1,16 +1,20 @@
 package uk.ac.hutton.ics.brapi.server.germplasm.cross;
 
+import jakarta.ws.rs.*;
 import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.germplasm.cross.CrossingProject;
 
-import jakarta.ws.rs.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
 public interface BrapiCrossingProjectServerResource
 {
 	BaseResult<ArrayResult<CrossingProject>> getCrossingProjects(@QueryParam("crossingProjectDbId") String crossingProjectDbId,
-																 @QueryParam("externalReferenceID") String externalReferenceID,
+																 @QueryParam("crossingProjectName") String crossingProjectName,
+																 @QueryParam("includePotentialParents") Boolean includePotentialParents,
+																 @QueryParam("commonCropName") String commonCropName,
+																 @QueryParam("programDbId") String programDbId,
+																 @QueryParam("externalReferenceId") String externalReferenceId,
 																 @QueryParam("externalReferenceSource") String externalReferenceSource)
 		throws IOException, SQLException;
 
