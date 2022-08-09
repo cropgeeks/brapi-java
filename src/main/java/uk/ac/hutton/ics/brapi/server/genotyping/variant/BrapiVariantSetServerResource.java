@@ -31,7 +31,7 @@ public interface BrapiVariantSetServerResource
 															  @QueryParam("callSetName") String callSetName)
 		throws SQLException, IOException;
 
-	BaseResult<ArrayResult<Call>> getVariantSetByIdCalls(@PathParam("variantSetDbId") String variantSetDbId,
+	BaseResult<CallResult<Call>> getVariantSetByIdCalls(@PathParam("variantSetDbId") String variantSetDbId,
 														 @QueryParam("expandHomozygotes") Boolean expandHomozygotes,
 														 @QueryParam("unknownString") String unknownString,
 														 @QueryParam("sepPhased") String sepPhased,
