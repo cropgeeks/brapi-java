@@ -9,11 +9,11 @@ import java.sql.SQLException;
 
 public interface BrapiProgramServerResource
 {
-	BaseResult<ArrayResult<Program>> getPrograms(@QueryParam("commonCropName") String commonCropName,
+	BaseResult<ArrayResult<Program>> getPrograms(@QueryParam("abbreviation") String abbreviation,
+												 @QueryParam("commonCropName") String commonCropName,
 												 @QueryParam("programDbId") String programDbId,
 												 @QueryParam("programName") String programName,
 												 @QueryParam("programType") String programType,
-												 @QueryParam("abbreviation") String abbreviation,
 												 @QueryParam("externalReferenceId") String externalReferenceId,
 												 @QueryParam("externalReferenceSource") String externalReferenceSource)
 		throws SQLException, IOException;

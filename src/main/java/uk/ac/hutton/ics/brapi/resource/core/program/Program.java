@@ -16,9 +16,11 @@ public class Program extends BrapiObject
 	private String          commonCropName;
 	private String          documentationURL;
 	private List<Reference> externalReferences;
+	private String          fundingInformation;
 	private String          leadPersonDbId;
 	private String          leadPersonName;
 	private String          objective;
 	private String          programDbId;
 	private String          programName;
+	private String          programType;
 }

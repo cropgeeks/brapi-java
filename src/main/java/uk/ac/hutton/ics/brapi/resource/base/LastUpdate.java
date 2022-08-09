@@ -11,6 +11,6 @@ import java.sql.Timestamp;
 @Accessors(chain = true)
 public class LastUpdate
 {
-	private Timestamp timestamp;
-	private String    version;
+	private String timestamp;
+	private String version;
 }

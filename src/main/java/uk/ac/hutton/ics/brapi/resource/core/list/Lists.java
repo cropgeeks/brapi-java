@@ -14,8 +14,8 @@ import java.util.List;
 public class Lists extends BrapiObject
 {
 	private List<String>    data;
-	private Timestamp       dateCreated;
-	private Timestamp       dateModified;
+	private String          dateCreated;
+	private String          dateModified;
 	private List<Reference> externalReferences;
 	private String          listDbId;
 	private String          listDescription;

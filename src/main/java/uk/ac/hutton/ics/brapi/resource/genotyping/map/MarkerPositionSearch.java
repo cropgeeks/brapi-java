@@ -13,7 +13,7 @@ public class MarkerPositionSearch
 {
 	private List<String> linkageGroupNames;
 	private List<String> mapDbIds;
-	private Double       maxPosition;
-	private Double       minPosition;
+	private Long         maxPosition;
+	private Long         minPosition;
 	private List<String> variantDbIds;
 }

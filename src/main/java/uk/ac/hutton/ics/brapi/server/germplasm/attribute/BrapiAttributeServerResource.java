@@ -38,6 +38,6 @@ public interface BrapiAttributeServerResource
 	BaseResult<Attribute> putAttributeById(@QueryParam("attributeDbId") String attributeDbId, Attribute attribute)
 		throws IOException, SQLException;
 
-	BaseResult<ArrayResult<Category>> getAttributeCategories()
+	BaseResult<ArrayResult<String>> getAttributeCategories()
 		throws IOException, SQLException;
 }

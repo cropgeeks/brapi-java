@@ -25,7 +25,7 @@ public class Image extends BrapiObject
 	private Integer         imageHeight;
 	private GeometryPoint   imageLocation;
 	private String          imageName;
-	private Timestamp       imageTimeStamp;
+	private String          imageTimeStamp;
 	private URI             imageURL;
 	private Integer         imageWidth;
 	private String          mimeType;

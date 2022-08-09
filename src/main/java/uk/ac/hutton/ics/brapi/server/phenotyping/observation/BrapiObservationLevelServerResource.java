@@ -9,8 +9,8 @@ import java.sql.SQLException;
 
 public interface BrapiObservationLevelServerResource
 {
-	BaseResult<ArrayResult<ObservationLevel>> getObservationLevels(@QueryParam("studyDbId") String studyDbId,
+	BaseResult<ArrayResult<ObservationLevel>> getObservationLevels(@QueryParam("programDbId") String programDbId,
 																   @QueryParam("trialDbId") String trialDbId,
-																   @QueryParam("programDbId") String programDbId)
+																   @QueryParam("studyDbId") String studyDbId)
 		throws IOException, SQLException;
 }

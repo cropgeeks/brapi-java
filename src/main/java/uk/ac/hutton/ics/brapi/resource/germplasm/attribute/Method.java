@@ -19,5 +19,6 @@ public class Method extends BrapiObject
 	private String            methodClass;
 	private String            methodDbId;
 	private String            methodName;
+	private String            methodPUI;
 	private OntologyReference ontologyReference;
 }

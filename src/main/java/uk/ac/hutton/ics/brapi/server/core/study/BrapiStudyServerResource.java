@@ -9,24 +9,24 @@ import java.sql.SQLException;
 
 public interface BrapiStudyServerResource
 {
-	BaseResult<ArrayResult<Study>> getStudies(@QueryParam("commonCropName") String commonCropName,
-											  @QueryParam("studyType") String studyType,
-											  @QueryParam("programDbId") String programDbId,
+	BaseResult<ArrayResult<Study>> getStudies(@QueryParam("studyType") String studyType,
 											  @QueryParam("locationDbId") String locationDbId,
 											  @QueryParam("seasonDbId") String seasonDbId,
-											  @QueryParam("trialDbId") String trialDbId,
-											  @QueryParam("studyDbId") String studyDbId,
-											  @QueryParam("studyName") String studyName,
 											  @QueryParam("studyCode") String studyCode,
 											  @QueryParam("studyPUI") String studyPUI,
-											  @QueryParam("germplasmDbId") String germplasmDbId,
 											  @QueryParam("observationVariableDbId") String observationVariableDbId,
 											  @QueryParam("active") String active,
 											  @QueryParam("sortBy") String sortBy,
 											  @QueryParam("sortOrder") String sortOrder,
+											  @QueryParam("commonCropName") String commonCropName,
+											  @QueryParam("programDbId") String programDbId,
+											  @QueryParam("trialDbId") String trialDbId,
+											  @QueryParam("studyDbId") String studyDbId,
+											  @QueryParam("studyName") String studyName,
+											  @QueryParam("germplasmDbId") String germplasmDbId,
 											  @QueryParam("externalReferenceId") String externalReferenceId,
 											  @QueryParam("externalReferenceSource") String externalReferenceSource)
-		throws SQLException, IOException;
+	throws SQLException, IOException;
 
 	BaseResult<ArrayResult<Study>> postStudies(Study[] newStudies)
 		throws SQLException, IOException;

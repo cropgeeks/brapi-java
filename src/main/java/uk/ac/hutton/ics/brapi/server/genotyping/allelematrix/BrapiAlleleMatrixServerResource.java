@@ -9,9 +9,9 @@ import java.sql.SQLException;
 
 public interface BrapiAlleleMatrixServerResource
 {
-	BaseResult<AlleleMatrix> getAlleleMatrix(@QueryParam("dimensionVariantPage") String dimensionVariantPage,
+	BaseResult<AlleleMatrix> getAlleleMatrix(@QueryParam("dimensionVariantPage") Integer dimensionVariantPage,
 											 @QueryParam("dimensionVariantPageSize") Integer dimensionVariantPageSize,
-											 @QueryParam("dimensionCallSetPage") String dimensionCallSetPage,
+											 @QueryParam("dimensionCallSetPage") Integer dimensionCallSetPage,
 											 @QueryParam("dimensionCallSetPageSize") Integer dimensionCallSetPageSize,
 											 @QueryParam("preview") @DefaultValue("false") Boolean preview,
 											 @QueryParam("dataMatrixNames") String dataMatrixNames,

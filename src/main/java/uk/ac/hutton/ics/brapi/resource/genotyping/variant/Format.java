@@ -11,7 +11,11 @@ import java.net.URI;
 @Accessors(chain = true)
 public class Format
 {
-	private String dataFormat;
-	private String fileFormat;
-	private URI    fileURL;
+	private String  dataFormat;
+	private Boolean expandHomozygotes;
+	private String  fileFormat;
+	private URI     fileURL;
+	private String  sepPhased;
+	private String  sepUnphased;
+	private String  unknownString;
 }

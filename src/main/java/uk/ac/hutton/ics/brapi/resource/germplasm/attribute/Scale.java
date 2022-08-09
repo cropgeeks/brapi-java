@@ -18,5 +18,7 @@ public class Scale extends BrapiObject
 	private OntologyReference ontologyReference;
 	private String            scaleDbId;
 	private String            scaleName;
+	private String            scalePUI;
+	private String            units;
 	private ValidValues       validValues;
 }

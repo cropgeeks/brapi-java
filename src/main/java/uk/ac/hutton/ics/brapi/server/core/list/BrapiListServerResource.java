@@ -28,6 +28,6 @@ public interface BrapiListServerResource
 	BaseResult<Lists> putListById(@PathParam("listDbId") String listDbId, Lists updatedLists)
 		throws SQLException, IOException;
 
-	BaseResult<Lists> postListByIdItems(@PathParam("listDbId") String listDbId, String[] ids)
+	BaseResult<Lists> postListByIdData(@PathParam("listDbId") String listDbId, String[] data)
 		throws SQLException, IOException;
 }

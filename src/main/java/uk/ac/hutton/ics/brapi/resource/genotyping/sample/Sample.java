@@ -27,7 +27,7 @@ public class Sample extends BrapiObject
 	private String          sampleGroupDbId;
 	private String          sampleName;
 	private String          samplePUI;
-	private Timestamp       sampleTimestamp;
+	private String          sampleTimestamp;
 	private String          sampleType;
 	private String          studyDbId;
 	private String          takenBy;

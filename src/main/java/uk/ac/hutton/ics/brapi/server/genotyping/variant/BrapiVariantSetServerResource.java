@@ -2,7 +2,7 @@ package uk.ac.hutton.ics.brapi.server.genotyping.variant;
 
 import jakarta.ws.rs.*;
 import uk.ac.hutton.ics.brapi.resource.base.*;
-import uk.ac.hutton.ics.brapi.resource.genotyping.call.CallSet;
+import uk.ac.hutton.ics.brapi.resource.genotyping.call.*;
 import uk.ac.hutton.ics.brapi.resource.genotyping.variant.*;
 
 import java.io.IOException;
@@ -17,7 +17,9 @@ public interface BrapiVariantSetServerResource
 													   @QueryParam("commonCropName") String commonCropName,
 													   @QueryParam("programDbId") String programDbId,
 													   @QueryParam("studyDbId") String studyDbId,
-													   @QueryParam("studyName") String studyName)
+													   @QueryParam("studyName") String studyName,
+													   @QueryParam("externalReferenceId") String externalReferenceId,
+													   @QueryParam("externalReferenceSource") String externalReferenceSource)
 		throws SQLException, IOException;
 
 	BaseResult<VariantSet> getVariantSetById(@PathParam("variantSetDbId") String variantSetDbId)
@@ -27,6 +29,17 @@ public interface BrapiVariantSetServerResource
 	BaseResult<ArrayResult<CallSet>> getVariantSetByIdCallSet(@PathParam("variantSetDbId") String variantSetDbId,
 															  @QueryParam("callSetDbId") String callSetDbId,
 															  @QueryParam("callSetName") String callSetName)
+		throws SQLException, IOException;
+
+	BaseResult<ArrayResult<Call>> getVariantSetByIdCalls(@PathParam("variantSetDbId") String variantSetDbId,
+														 @QueryParam("expandHomozygotes") Boolean expandHomozygotes,
+														 @QueryParam("unknownString") String unknownString,
+														 @QueryParam("sepPhased") String sepPhased,
+														 @QueryParam("sepUnphased") String sepUnphased)
+		throws SQLException, IOException;
+
+	BaseResult<ArrayResult<Variant>> getVariantSetByIdVariant(@PathParam("variantSetDbId") String variantSetDbId,
+															  @QueryParam("variantDbId") String variantDbId)
 		throws SQLException, IOException;
 
 	BaseResult<VariantSet> postVariantSetExtract(VariantSetExtract extract)

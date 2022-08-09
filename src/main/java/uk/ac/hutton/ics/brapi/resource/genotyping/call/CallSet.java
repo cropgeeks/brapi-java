@@ -15,9 +15,9 @@ public class CallSet extends BrapiObject
 {
 	private String       callSetDbId;
 	private String       callSetName;
-	private Timestamp    created;
+	private String       created;
 	private String       sampleDbId;
 	private String       studyDbId;
-	private Timestamp    updated;
+	private String       updated;
 	private List<String> variantSetDbIds;
 }

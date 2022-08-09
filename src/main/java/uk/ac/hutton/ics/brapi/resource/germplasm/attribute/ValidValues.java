@@ -12,6 +12,6 @@ import java.util.List;
 public class ValidValues
 {
 	private List<Category> categories;
-	private Integer        max;
-	private Integer        min;
+	private String         maximumValue;
+	private String         minimumValue;
 }

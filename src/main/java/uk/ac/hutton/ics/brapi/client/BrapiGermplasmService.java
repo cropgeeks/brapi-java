@@ -106,14 +106,14 @@ public interface BrapiGermplasmService
 	);
 
 	@POST("search/germplasm")
-	Call<BaseResult<SearchResult>> postGermplasmSearchAsync(@Body GermplasmSearch search);
-
-	@GET("search/germplasm/{searchResultsDbId}")
-	Call<BaseResult<ArrayResult<Germplasm>>> getGermplasmSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
+	Call<BaseResult<SearchResult>> postGermplasmSearchAsync(
+		@Body GermplasmSearch search,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
+
+	@GET("search/germplasm/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<Germplasm>>> getGermplasmSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
 
 	@GET("attributevalues")
 	Call<BaseResult<ArrayResult<AttributeValue>>> getAttributeValues(
@@ -144,14 +144,14 @@ public interface BrapiGermplasmService
 	);
 
 	@POST("search/attributevalues")
-	Call<BaseResult<SearchResult>> postAttributeValueSearchAsync(@Body AttributeValueSearch search);
-
-	@GET("search/attributevalues/{searchResultsDbId}")
-	Call<BaseResult<ArrayResult<AttributeValue>>> getAttributeValueSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
+	Call<BaseResult<SearchResult>> postAttributeValueSearchAsync(
+		@Body AttributeValueSearch search,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
+
+	@GET("search/attributevalues/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<AttributeValue>>> getAttributeValueSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
 
 	@GET("attributes")
 	Call<BaseResult<ArrayResult<Attribute>>> getAttributes(
@@ -188,14 +188,14 @@ public interface BrapiGermplasmService
 	);
 
 	@POST("search/attributes")
-	Call<BaseResult<SearchResult>> postAttributeSearchAsync(@Body AttributeSearch search);
-
-	@GET("search/attributes/{searchResultsDbId}")
-	Call<BaseResult<ArrayResult<Attribute>>> getAttributeSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
+	Call<BaseResult<SearchResult>> postAttributeSearchAsync(
+		@Body AttributeSearch search,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
+
+	@GET("search/attributes/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<Attribute>>> getAttributeSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
 
 	@GET("plannedcrosses")
 	Call<BaseResult<ArrayResult<PlannedCross>>> getPlannedCrosses(

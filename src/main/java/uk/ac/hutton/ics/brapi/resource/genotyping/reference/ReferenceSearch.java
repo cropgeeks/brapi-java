@@ -12,10 +12,21 @@ import java.util.List;
 public class ReferenceSearch
 {
 	private List<String> accessions;
+	private List<String> commonCropNames;
+	private List<String> externalReferenceIds;
+	private List<String> externalReferenceSources;
+	private List<String> germplasmDbIds;
+	private List<String> germplasmNames;
 	private Boolean      isDerived;
-	private Integer      maxLength;
+	private Long         maxLength;
 	private List<String> md5checksums;
-	private Integer      minLength;
+	private Long         minLength;
+	private List<String> programDbIds;
+	private List<String> programNames;
 	private List<String> referenceDbIds;
 	private List<String> referenceSetDbIds;
+	private List<String> studyDbIds;
+	private List<String> studyNames;
+	private List<String> trialDbIds;
+	private List<String> trialNames;
 }

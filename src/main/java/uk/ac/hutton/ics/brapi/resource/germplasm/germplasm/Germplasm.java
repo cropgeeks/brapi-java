@@ -18,6 +18,7 @@ public class Germplasm extends BrapiObject
 	private String          biologicalStatusOfAccessionCode;
 	private String          biologicalStatusOfAccessionDescription;
 	private String          breedingMethodDbId;
+	private String          breedingMethodName;
 	private String          collection;
 	private String          commonCropName;
 	private String          countryOfOriginCode;

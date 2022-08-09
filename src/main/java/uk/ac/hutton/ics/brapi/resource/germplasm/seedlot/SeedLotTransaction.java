@@ -19,6 +19,6 @@ public class SeedLotTransaction extends BrapiObject
 	private String          toSeedLotDbId;
 	private String          transactionDbId;
 	private String          transactionDescription;
-	private Timestamp       transactionTimestamp;
+	private String          transactionTimestamp;
 	private String          units;
 }

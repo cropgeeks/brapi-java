@@ -19,5 +19,5 @@ public class VendorContact
 	private String vendorEmail;
 	private String vendorName;
 	private String vendorPhone;
-	private URI    vendorURL;
+	private String vendorURL;
 }

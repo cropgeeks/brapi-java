@@ -14,12 +14,13 @@ import java.util.List;
 @Accessors(chain = true)
 public class Call extends BrapiObject
 {
-	private String       callSetDbId;
-	private String       callSetName;
-	private Genotype     genotype;
-	@SerializedName("genotype_likelihood")
-	private List<Double> genotypeLikelihood;
-	private String       phaseSet;
-	private String       variantDbId;
-	private String       variantName;
+	private String           callSetDbId;
+	private String           callSetName;
+	private GenotypeMetadata genotypeMetadata;
+	private String           genotypeValue;
+	private String           phaseSet;
+	private String           variantDbId;
+	private String           variantName;
+	private String           variantSetDbId;
+	private String           variantSetName;
 }

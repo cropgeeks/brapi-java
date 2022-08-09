@@ -16,7 +16,6 @@ public class PedigreeSearch
 	private List<String> collections;
 	private List<String> commonCropNames;
 	private List<String> externalReferenceIds;
-	private List<String> externalReferenceIds;
 	private List<String> externalReferenceSources;
 	private List<String> familyCodes;
 	private List<String> genus;

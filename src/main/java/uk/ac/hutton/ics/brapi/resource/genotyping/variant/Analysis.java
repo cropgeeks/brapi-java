@@ -14,9 +14,9 @@ public class Analysis
 {
 	private String       analysisDbId;
 	private String       analysisName;
-	private Timestamp    created;
+	private String       created;
 	private String       description;
 	private List<String> software;
 	private String       type;
-	private Timestamp    updated;
+	private String       updated;
 }

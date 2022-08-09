@@ -9,11 +9,11 @@ import java.sql.SQLException;
 
 public interface BrapiEventServerResource
 {
-	BaseResult<ArrayResult<Event>> getEvents(@QueryParam("studyDbId") String studyDbId,
-											 @QueryParam("observationUnitDbId") String observationUnitDbId,
+	BaseResult<ArrayResult<Event>> getEvents(@QueryParam("observationUnitDbId") String observationUnitDbId,
 											 @QueryParam("eventDbId") String eventDbId,
 											 @QueryParam("eventType") String eventType,
 											 @QueryParam("dateRangeStart") String dateRangeStart,
-											 @QueryParam("dateRangeEnd") String dateRangeEnd)
+											 @QueryParam("dateRangeEnd") String dateRangeEnd,
+											 @QueryParam("studyDbId") String studyDbId)
 		throws IOException, SQLException;
 }

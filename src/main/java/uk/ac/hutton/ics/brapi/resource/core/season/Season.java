@@ -9,7 +9,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class Season
 {
-	private String seasonDbId;
-	private String seasonName;
-	private int    year;
+	private String  seasonDbId;
+	private String  seasonName;
+	private Integer year;
 }

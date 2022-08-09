@@ -61,14 +61,14 @@ public interface BrapiPhenotypingService
 	);
 
 	@POST("search/images")
-	Call<BaseResult<SearchResult>> postImageSearchAsync(@Body ImageSearch search);
-
-	@GET("search/images/{searchResultsDbId}")
-	Call<BaseResult<ArrayResult<Image>>> getImageSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
+	Call<BaseResult<SearchResult>> postImageSearchAsync(
+		@Body ImageSearch search,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
+
+	@GET("search/images/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<Image>>> getImageSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
 
 	@GET("methods")
 	Call<BaseResult<ArrayResult<Method>>> getMethods(
@@ -166,14 +166,14 @@ public interface BrapiPhenotypingService
 	);
 
 	@POST("search/observationunits")
-	Call<BaseResult<SearchResult>> postObservationUnitSearchAsync(@Body ObservationUnitSearch search);
-
-	@GET("search/observationunits/{searchResultsDbId}")
-	Call<BaseResult<ArrayResult<ObservationUnit>>> getObservationUnitSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
+	Call<BaseResult<SearchResult>> postObservationUnitSearchAsync(
+		@Body ObservationUnitSearch search,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
+
+	@GET("search/observationunits/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<ObservationUnit>>> getObservationUnitSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
 
 	@POST("search/variables")
 	Call<BaseResult<ArrayResult<ObservationVariable>>> postObservationVariableSearch(
@@ -183,14 +183,14 @@ public interface BrapiPhenotypingService
 	);
 
 	@POST("search/variables")
-	Call<BaseResult<SearchResult>> postObservationVariableSearchAsync(@Body ObservationVariableSearch search);
-
-	@GET("search/variables/{searchResultsDbId}")
-	Call<BaseResult<ArrayResult<ObservationVariable>>> getObservationVariableSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
+	Call<BaseResult<SearchResult>> postObservationVariableSearchAsync(
+		@Body ObservationVariableSearch search,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
+
+	@GET("search/variables/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<ObservationVariable>>> getObservationVariableSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
 
 	@GET("variables")
 	Call<BaseResult<ArrayResult<ObservationVariable>>> getObservationVariables(
@@ -289,14 +289,14 @@ public interface BrapiPhenotypingService
 	);
 
 	@POST("search/observations")
-	Call<BaseResult<SearchResult>> postObservationSearchAsync(@Body ObservationSearch search);
-
-	@GET("search/observations/{searchResultsDbId}")
-	Call<BaseResult<ArrayResult<Observation>>> getObservationSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
+	Call<BaseResult<SearchResult>> postObservationSearchAsync(
+		@Body ObservationSearch search,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
+
+	@GET("search/observations/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<Observation>>> getObservationSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
 
 	@GET("ontologies")
 	Call<BaseResult<ArrayResult<Ontology>>> getOntologies(

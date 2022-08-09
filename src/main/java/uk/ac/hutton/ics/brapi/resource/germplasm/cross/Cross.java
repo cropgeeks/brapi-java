@@ -2,7 +2,7 @@ package uk.ac.hutton.ics.brapi.resource.germplasm.cross;
 
 import lombok.*;
 import lombok.experimental.Accessors;
-import uk.ac.hutton.ics.brapi.resource.base.Reference;
+import uk.ac.hutton.ics.brapi.resource.base.*;
 
 import java.sql.Timestamp;
 import java.util.*;
@@ -11,9 +11,8 @@ import java.util.*;
 @Getter
 @Setter
 @Accessors(chain = true)
-public class Cross
+public class Cross extends BrapiObject
 {
-	private Map<String, String>  additionalData;
 	private List<CrossAttribute> crossAttributes;
 	private String               crossDbId;
 	private String               crossName;
@@ -23,5 +22,7 @@ public class Cross
 	private List<Reference>      externalReferences;
 	private Parent               parent1;
 	private Parent               parent2;
-	private Timestamp            pollinationTimeStamp;
+	private String               plannedCrossDbId;
+	private String               plannedCrossName;
+	private List<Pollination>    pollinationEvents;
 }

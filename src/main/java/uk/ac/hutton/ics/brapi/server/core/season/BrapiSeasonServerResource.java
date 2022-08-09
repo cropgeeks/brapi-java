@@ -11,7 +11,8 @@ public interface BrapiSeasonServerResource
 {
 	BaseResult<ArrayResult<Season>> getSeasons(@QueryParam("seasonDbId") String seasonDbId,
 											   @QueryParam("season") String season,
-											   @QueryParam("year") String year)
+											   @QueryParam("seasonName") String seasonName,
+											   @QueryParam("year") Integer year)
 		throws SQLException, IOException;
 
 	BaseResult<ArrayResult<Season>> postSeasons(Season[] newSeasons)

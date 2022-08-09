@@ -12,9 +12,19 @@ import java.util.List;
 public class VariantSearch
 {
 	private List<String> callSetDbIds;
+	private List<String> commonCropNames;
 	private Long         end;
-	private String       referenceDbId;
+	private List<String> externalReferenceIds;
+	private List<String> externalReferenceSources;
+	private List<String> programDbId;
+	private List<String> programNames;
+	private List<String> referenceDbIds;
+	private List<String> referenceSetDbIds;
 	private Long         start;
+	private List<String> studyDbIds;
+	private List<String> studyNames;
+	private List<String> trialDbIds;
+	private List<String> trialNames;
 	private List<String> variantDbIds;
 	private List<String> variantSetDbIds;
 }

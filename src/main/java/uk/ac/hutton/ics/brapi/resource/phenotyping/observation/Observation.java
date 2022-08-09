@@ -21,7 +21,7 @@ public class Observation extends BrapiObject
 	private String          germplasmDbId;
 	private String          germplasmName;
 	private String          observationDbId;
-	private Timestamp       observationTimeStamp;
+	private String          observationTimeStamp;
 	private String          observationUnitDbId;
 	private String          observationUnitName;
 	private String          observationVariableDbId;

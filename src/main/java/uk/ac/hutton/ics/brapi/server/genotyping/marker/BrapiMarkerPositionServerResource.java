@@ -12,7 +12,7 @@ public interface BrapiMarkerPositionServerResource
 	BaseResult<ArrayResult<MarkerPosition>> getMarkerPositions(@QueryParam("mapDbId") String mapDbId,
 															   @QueryParam("linkageGroupName") String linkageGroupName,
 															   @QueryParam("variantDbId") String variantDbId,
-															   @QueryParam("minPosition") String minPosition,
-															   @QueryParam("maxPosition") String maxPosition)
+															   @QueryParam("minPosition") Long minPosition,
+															   @QueryParam("maxPosition") Long maxPosition)
 		throws IOException, SQLException;
 }

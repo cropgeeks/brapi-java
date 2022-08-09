@@ -9,11 +9,11 @@ import java.sql.SQLException;
 
 public interface BrapiMapServerResource
 {
-	BaseResult<ArrayResult<Map>> getMaps(@QueryParam("commonCropName") String commonCropName,
-										 @QueryParam("mapDbId") String mapDbId,
+	BaseResult<ArrayResult<Map>> getMaps(@QueryParam("mapDbId") String mapDbId,
 										 @QueryParam("mapPUI") String mapPUI,
 										 @QueryParam("scientificName") String scientificName,
 										 @QueryParam("type") String type,
+										 @QueryParam("commonCropName") String commonCropName,
 										 @QueryParam("programDbId") String programDbId,
 										 @QueryParam("trialDbId") String trialDbId,
 										 @QueryParam("studyDbId") String studyDbId)

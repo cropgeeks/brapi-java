@@ -9,23 +9,24 @@ import java.sql.SQLException;
 
 public interface BrapiGermplasmServerResource
 {
-	BaseResult<ArrayResult<Germplasm>> getGermplasm(@QueryParam("germplasmPUI") String germplasmPUI,
-													@QueryParam("germplasmDbId") String germplasmDbId,
-													@QueryParam("germplasmName") String germplasmName,
-													@QueryParam("commonCropName") String commonCropName,
-													@QueryParam("accessionNumber") String accessionNumber,
+	BaseResult<ArrayResult<Germplasm>> getGermplasm(@QueryParam("accessionNumber") String accessionNumber,
 													@QueryParam("collection") String collection,
 													@QueryParam("binomialName") String binomialName,
 													@QueryParam("genus") String genus,
 													@QueryParam("species") String species,
-													@QueryParam("programDbId") String programDbId,
-													@QueryParam("studyDbId") String studyDbId,
-													@QueryParam("trialDbId") String trialDbId,
 													@QueryParam("synonym") String synonym,
 													@QueryParam("parentDbId") String parentDbId,
 													@QueryParam("progenyDbId") String progenyDbId,
+													@QueryParam("commonCropName") String commonCropName,
+													@QueryParam("programDbId") String programDbId,
+													@QueryParam("trialDbId") String trialDbId,
+													@QueryParam("studyDbId") String studyDbId,
+													@QueryParam("germplasmDbId") String germplasmDbId,
+													@QueryParam("germplasmName") String germplasmName,
+													@QueryParam("germplasmPUI") String germplasmPUI,
 													@QueryParam("externalReferenceId") String externalReferenceId,
-													@QueryParam("externalReferenceSource") String externalReferenceSource)
+													@QueryParam("externalReferenceSource") String externalReferenceSource
+	)
 		throws IOException, SQLException;
 
 	BaseResult<ArrayResult<Germplasm>> postGermplasm(Germplasm[] newGermplasm)
@@ -38,13 +39,5 @@ public interface BrapiGermplasmServerResource
 		throws IOException, SQLException;
 
 	BaseResult<Mcpd> getGermplasmMcpd(@PathParam("germplasmDbId") String germplasmDbId)
-		throws IOException, SQLException;
-
-	BaseResult<Pedigree> getGermplasmByIdPedigree(@PathParam("germplasmDbId") String germplasmDbId,
-												  @QueryParam("notation") String notation,
-												  @QueryParam("includeSiblings") String includeSiblings)
-		throws IOException, SQLException;
-
-	BaseResult<Progeny> getGermplasmByIdProgeny(@PathParam("germplasmDbId") String germplasmDbId)
 		throws IOException, SQLException;
 }

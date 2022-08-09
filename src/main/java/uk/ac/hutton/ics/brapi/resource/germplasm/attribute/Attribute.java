@@ -18,6 +18,7 @@ public class Attribute extends BrapiObject
 	private String            attributeDbId;
 	private String            attributeDescription;
 	private String            attributeName;
+	private String            attributePUI;
 	private String            commonCropName;
 	private String            contextOfUse;
 	private String            defaultValue;

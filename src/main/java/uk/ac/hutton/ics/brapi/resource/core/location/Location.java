@@ -15,7 +15,7 @@ public class Location extends BrapiObject
 	private String           abbreviation;
 	private String           coordinateDescription;
 	private String           coordinateUncertainty;
-	private CoordinatesPoint coordinatesPoint;
+	private CoordinatesPoint coordinates;
 	private String           countryCode;
 	private String           countryName;
 	private String           documentationURL;
@@ -27,6 +27,8 @@ public class Location extends BrapiObject
 	private String           locationDbId;
 	private String           locationName;
 	private String           locationType;
+	private String           parentLocationDbId;
+	private String           parentLocationName;
 	private String           siteStatus;
 	private String           slope;
 	private String           topography;

@@ -12,6 +12,8 @@ import java.util.List;
 @Accessors(chain = true)
 public class ObservationUnit extends BrapiObject
 {
+	private String                  crossDbId;
+	private String                  crossName;
 	private List<Reference>         externalReferences;
 	private String                  germplasmDbId;
 	private String                  germplasmName;
@@ -25,6 +27,7 @@ public class ObservationUnit extends BrapiObject
 	private String                  programDbId;
 	private String                  programName;
 	private String                  seedLotDbId;
+	private String                  seedLotName;
 	private String                  studyDbId;
 	private String                  studyName;
 	private List<Treatment>         treatments;

@@ -14,12 +14,14 @@ import java.util.List;
 public class SeedLot extends BrapiObject
 {
 	private Integer         amount;
+	private List<Mixture>   contentMixture;
 	private Timestamp       createdDate;
 	private List<Reference> externalReferences;
-	private String          germplasmDbId;
 	private Timestamp       lastUpdated;
 	private String          locationDbId;
+	private String          locationName;
 	private String          programDbId;
+	private String          programName;
 	private String          seedLotDbId;
 	private String          seedLotDescription;
 	private String          seedLotName;

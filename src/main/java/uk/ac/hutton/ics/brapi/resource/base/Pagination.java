@@ -10,14 +10,14 @@ import lombok.experimental.Accessors;
 public class Pagination
 {
 	private int  pageSize;
-	private int  currentPage;
+	private int  page;
 	private long totalCount;
 	private int  totalPages;
 
-	public Pagination(int pageSize, int currentPage, long totalCount, int desiredPageSize)
+	public Pagination(int pageSize, int page, long totalCount, int desiredPageSize)
 	{
 		this.pageSize = pageSize;
-		this.currentPage = currentPage;
+		this.page = page;
 		this.totalCount = totalCount;
 		this.totalPages = (int) Math.ceil(totalCount / (float) desiredPageSize);
 	}

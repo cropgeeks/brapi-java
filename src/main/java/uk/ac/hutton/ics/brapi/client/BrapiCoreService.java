@@ -26,7 +26,12 @@ public interface BrapiCoreService
 	Call<BaseResult<ArrayResult<Lists>>> getLists(
 		@Query("listType") String listType,
 		@Query("listName") String listName,
+		@Query("listDbId") String listDbId,
 		@Query("listSource") String listSource,
+		@Query("commonCropName") String commonCropName,
+		@Query("programDbId") String programDbId,
+		@Query("externalReferenceId") String externalReferenceId,
+		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
@@ -36,16 +41,14 @@ public interface BrapiCoreService
 
 	@GET("lists/{listDbId}")
 	Call<BaseResult<Lists>> getListById(
-		@Path("listDbId") String listDbId,
-		@Query("page") int page,
-		@Query("pageSize") int pageSize
+		@Path("listDbId") String listDbId
 	);
 
 	@PUT("lists/{listDbId}")
 	Call<BaseResult<Lists>> putListById(@Body Lists updatedLists);
 
-	@POST("lists/{listDbId}/items")
-	Call<BaseResult<Lists>> postListByIdItems(@Path("listDbId") String listDbId, @Body List<String> ids);
+	@POST("lists/{listDbId}/data")
+	Call<BaseResult<Lists>> postListByIdData(@Path("listDbId") String listDbId, @Body List<String> data);
 
 	@POST("search/lists")
 	Call<BaseResult<ArrayResult<Lists>>> postListSearch(
@@ -55,18 +58,26 @@ public interface BrapiCoreService
 	);
 
 	@POST("search/lists")
-	Call<BaseResult<SearchResult>> postListSearchAsync(@Body ListSearch search);
-
-	@GET("search/lists/{searchResultsDbId}")
-	Call<BaseResult<ArrayResult<Lists>>> getListSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
+	Call<BaseResult<SearchResult>> postListSearchAsync(
+		@Body ListSearch search,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
 
+	@GET("search/lists/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<Lists>>> getListSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
+
 	@GET("locations")
 	Call<BaseResult<ArrayResult<Location>>> getLocations(
 		@Query("locationType") String locationType,
+		@Query("locationDbId") String locationDbId,
+		@Query("locationName") String locationName,
+		@Query("parentLocationDbId") String parentLocationDbId,
+		@Query("parentLocationName") String parentLocationName,
+		@Query("cropCommonName") String cropCommonName,
+		@Query("programDbId") String programDbId,
+		@Query("externalReferenceId") String externalReferenceId,
+		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
@@ -88,14 +99,14 @@ public interface BrapiCoreService
 	);
 
 	@POST("search/locations")
-	Call<BaseResult<SearchResult>> postLocationSearchAsync(@Body LocationSearch search);
-
-	@GET("search/locations/{searchResultsDbId}")
-	Call<BaseResult<ArrayResult<Location>>> getLocationSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
+	Call<BaseResult<SearchResult>> postLocationSearchAsync(
+		@Body LocationSearch search,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
+
+	@GET("search/locations/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<Location>>> getLocationSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
 
 	@GET("people")
 	Call<BaseResult<ArrayResult<Person>>> getPeople(
@@ -103,6 +114,10 @@ public interface BrapiCoreService
 		@Query("lastName") String lastName,
 		@Query("personDbId") String personDbId,
 		@Query("userID") String userID,
+		@Query("commonCropName") String commonCropName,
+		@Query("programDbId") String programDbId,
+		@Query("externalReferenceId") String externalReferenceId,
+		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
@@ -124,21 +139,22 @@ public interface BrapiCoreService
 	);
 
 	@POST("search/people")
-	Call<BaseResult<SearchResult>> postPeopleSearchAsync(@Body PeopleSearch search);
-
-	@GET("search/people/{searchResultsDbId}")
-	Call<BaseResult<ArrayResult<Person>>> getPeopleSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
+	Call<BaseResult<SearchResult>> postPeopleSearchAsync(
+		@Body PeopleSearch search,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
 
+	@GET("search/people/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<Person>>> getPeopleSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
+
 	@GET("programs")
 	Call<BaseResult<ArrayResult<Program>>> getPrograms(
+		@Query("abbreviation") String abbreviation,
+		@Query("programType") String programType,
 		@Query("cropCommonName") String cropCommonName,
 		@Query("programDbId") String programDbId,
 		@Query("programName") String programName,
-		@Query("abbreviation") String abbreviation,
 		@Query("externalReferenceId") String externalReferenceId,
 		@Query("externalReferenceSource") String externalReferenceSource,
 		@Query("page") int page,
@@ -162,14 +178,14 @@ public interface BrapiCoreService
 	);
 
 	@POST("search/programs")
-	Call<BaseResult<SearchResult>> postProgramSearchAsync(@Body ProgramSearch search);
-
-	@GET("search/programs/{searchResultsDbId}")
-	Call<BaseResult<ArrayResult<Program>>> getProgramSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
+	Call<BaseResult<SearchResult>> postProgramSearchAsync(
+		@Body ProgramSearch search,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
+
+	@GET("search/programs/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<Program>>> getProgramSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
 
 	@GET("seasons")
 	Call<BaseResult<ArrayResult<Season>>> getSeasons(
@@ -204,14 +220,14 @@ public interface BrapiCoreService
 	);
 
 	@POST("search/studies")
-	Call<BaseResult<SearchResult>> postStudySearchAsync(@Body StudySearch search);
-
-	@GET("search/studies/{searchResultsDbId}")
-	Call<BaseResult<ArrayResult<Study>>> getStudySearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
+	Call<BaseResult<SearchResult>> postStudySearchAsync(
+		@Body StudySearch search,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
+
+	@GET("search/studies/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<Study>>> getStudySearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
 
 	@GET("studies")
 	Call<BaseResult<ArrayResult<Study>>> getStudies(
@@ -259,14 +275,14 @@ public interface BrapiCoreService
 	);
 
 	@POST("search/trials")
-	Call<BaseResult<SearchResult>> postTrialSearchAsync(@Body TrialSearch search);
-
-	@GET("search/trials/{searchResultsDbId}")
-	Call<BaseResult<ArrayResult<Trial>>> getTrialSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
+	Call<BaseResult<SearchResult>> postTrialSearchAsync(
+		@Body TrialSearch search,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
+
+	@GET("search/trials/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<Trial>>> getTrialSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
 
 	@GET("trials")
 	Call<BaseResult<ArrayResult<Trial>>> getTrials(

@@ -11,18 +11,18 @@ import java.sql.SQLException;
 public interface BrapiTrialServerResource
 {
 	BaseResult<ArrayResult<Trial>> getTrials(@QueryParam("active") String active,
-											 @QueryParam("commonCropName") String commonCropName,
 											 @QueryParam("contactDbId") String contactDbId,
-											 @QueryParam("programDbId") String programDbId,
 											 @QueryParam("locationDbId") String locationDbId,
 											 @QueryParam("searchDateRangeStart") String searchDateRangeStart,
 											 @QueryParam("searchDateRangeEnd") String searchDateRangeEnd,
-											 @QueryParam("studyDbId") String studyDbId,
-											 @QueryParam("trialDbId") String trialDbId,
-											 @QueryParam("trialName") String trialName,
 											 @QueryParam("trialPUI") String trialPUI,
 											 @QueryParam("sortBy") String sortBy,
 											 @QueryParam("sortOrder") String sortOrder,
+											 @QueryParam("commonCropName") String commonCropName,
+											 @QueryParam("programDbId") String programDbId,
+											 @QueryParam("trialDbId") String trialDbId,
+											 @QueryParam("trialName") String trialName,
+											 @QueryParam("studyDbId") String studyDbId,
 											 @QueryParam("externalReferenceId") String externalReferenceId,
 											 @QueryParam("externalReferenceSource") String externalReferenceSource)
 		throws SQLException, IOException;

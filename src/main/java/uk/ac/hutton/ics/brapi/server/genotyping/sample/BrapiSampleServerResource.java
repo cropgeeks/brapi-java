@@ -6,6 +6,7 @@ import uk.ac.hutton.ics.brapi.resource.genotyping.sample.Sample;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Map;
 
 public interface BrapiSampleServerResource
 {
@@ -18,8 +19,8 @@ public interface BrapiSampleServerResource
 											   @QueryParam("commonCropName") String commonCropName,
 											   @QueryParam("programDbId") String programDbId,
 											   @QueryParam("trialDbId") String trialDbId,
-											   @QueryParam("germplasmDbId") String germplasmDbId,
 											   @QueryParam("studyDbId") String studyDbId,
+											   @QueryParam("germplasmDbId") String germplasmDbId,
 											   @QueryParam("externalReferenceId") String externalReferenceId,
 											   @QueryParam("externalReferenceSource") String externalReferenceSource)
 		throws SQLException, IOException;
@@ -30,6 +31,6 @@ public interface BrapiSampleServerResource
 	BaseResult<ArrayResult<Sample>> postSamples(Sample[] newSamples)
 		throws SQLException, IOException;
 
-	BaseResult<Sample> putSampleById(@PathParam("sampleDbId") String sampleDbId, Sample sample)
+	BaseResult<ArrayResult<Sample>> putSamples(Map<String, Sample> samples)
 		throws SQLException, IOException;
 }

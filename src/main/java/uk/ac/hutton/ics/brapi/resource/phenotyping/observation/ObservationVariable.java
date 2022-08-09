@@ -15,8 +15,6 @@ import java.util.List;
 @Accessors(chain = true)
 public class ObservationVariable extends BrapiObject
 {
-	private String            observationVariableDbId;
-	private String            observationVariableName;
 	private String            commonCropName;
 	private String            contextOfUse;
 	private String            defaultValue;
@@ -26,11 +24,13 @@ public class ObservationVariable extends BrapiObject
 	private String            institution;
 	private String            language;
 	private Method            method;
+	private String            observationVariableDbId;
+	private String            observationVariableName;
 	private OntologyReference ontologyReference;
 	private Scale             scale;
 	private String            scientist;
 	private String            status;
-	private Timestamp         submissionTimestamp;
+	private String            submissionTimestamp;
 	private List<String>      synonyms;
 	private Trait             trait;
 }

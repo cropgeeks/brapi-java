@@ -17,6 +17,7 @@ public class CrossingProject extends BrapiObject
 	private String          crossingProjectDescription;
 	private String          crossingProjectName;
 	private List<Reference> externalReferences;
+	private List<Parent>    potentialParents;
 	private String          programDbId;
 	private String          programName;
 }

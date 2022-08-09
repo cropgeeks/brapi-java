@@ -21,4 +21,5 @@ public class PlannedCross extends BrapiObject
 	private Parent          parent2;
 	private String          plannedCrossDbId;
 	private String          plannedCrossName;
+	private String          status;
 }

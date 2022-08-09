@@ -31,7 +31,7 @@ public interface BrapiGenotypingService
 	Call<BaseResult<CallSet>> getCallSetById(@Path("callSetDbId") String callSetDbId);
 
 	@GET("callsets/{callSetDbId}/calls")
-	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> getCallSetByIdCalls(
+	Call<BaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> getCallSetByIdCalls(
 		@Path("callSetDbId") String callSetDbId,
 		@Query("expandHomozygotes") String expandHomozygotes,
 		@Query("unknownString") String unknownString,
@@ -49,17 +49,17 @@ public interface BrapiGenotypingService
 	);
 
 	@POST("search/callsets")
-	Call<BaseResult<SearchResult>> postCallSetSearchAsync(@Body CallSetSearch search);
-
-	@GET("search/callsets/{searchResultsDbId}")
-	Call<BaseResult<ArrayResult<CallSet>>> getCallSetSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
+	Call<BaseResult<SearchResult>> postCallSetSearchAsync(
+		@Body CallSetSearch search,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
 
+	@GET("search/callsets/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<CallSet>>> getCallSetSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
+
 	@GET("calls")
-	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> getCalls(
+	Call<BaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> getCalls(
 		@Query("callSetDbId") String callSetDbId,
 		@Query("variantDbId") String variantDbId,
 		@Query("variantSetDbId") String variantSetDbId,
@@ -72,21 +72,21 @@ public interface BrapiGenotypingService
 	);
 
 	@POST("search/calls")
-	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> postCallSearch(
+	Call<BaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> postCallSearch(
 		@Body CallSearch search,
 		@Query("pageToken") String pageToken,
 		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/calls")
-	Call<BaseResult<SearchResult>> postCallSearchAsync(@Body CallSearch search);
-
-	@GET("search/calls/{searchResultsDbId}")
-	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> getCallSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
-		@Query("pageToken") String pageToken,
+	Call<BaseResult<SearchResult>> postCallSearchAsync(
+		@Body CallSearch search,
+		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
+
+	@GET("search/calls/{searchResultsDbId}")
+	Call<BaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> getCallSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
 
 	@GET("maps")
 	Call<BaseResult<ArrayResult<Map>>> getMaps(
@@ -131,14 +131,14 @@ public interface BrapiGenotypingService
 	);
 
 	@POST("search/markerpositions")
-	Call<BaseResult<SearchResult>> postMarkerPositionsSearchAsync(@Body MarkerPositionSearch search);
-
-	@GET("search/markerpositions/{searchResultsDbId}")
-	Call<BaseResult<ArrayResult<MarkerPosition>>> getMarkerPositionSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
+	Call<BaseResult<SearchResult>> postMarkerPositionsSearchAsync(
+		@Body MarkerPositionSearch search,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
+
+	@GET("search/markerpositions/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<MarkerPosition>>> getMarkerPositionSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
 
 	@GET("referencesets")
 	Call<BaseResult<ArrayResult<ReferenceSet>>> getReferenceSets(
@@ -161,14 +161,14 @@ public interface BrapiGenotypingService
 	);
 
 	@POST("search/referencesets")
-	Call<BaseResult<SearchResult>> postReferenceSetsSearchAsync(@Body ReferenceSetSearch search);
-
-	@GET("search/referencesets/{searchResultsDbId}")
-	Call<BaseResult<ArrayResult<MarkerPosition>>> getReferenceSetsSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
+	Call<BaseResult<SearchResult>> postReferenceSetsSearchAsync(
+		@Body ReferenceSetSearch search,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
+
+	@GET("search/referencesets/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<MarkerPosition>>> getReferenceSetsSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
 
 	@GET("reference")
 	Call<BaseResult<ArrayResult<Reference>>> getReferences(
@@ -187,7 +187,7 @@ public interface BrapiGenotypingService
 	Call<BaseResult<Reference>> getReferenceById(@Path("referenceDbId") String referenceDbId);
 
 	@GET("references/{referenceDbId}/bases")
-	Call<TokenBaseResult<ArrayResult<Base>>> getReferenceByIdBases(
+	Call<BaseResult<ArrayResult<Base>>> getReferenceByIdBases(
 		@Path("referenceDbId") String referenceDbId,
 		@Query("start") String start,
 		@Query("end") String end,
@@ -203,14 +203,14 @@ public interface BrapiGenotypingService
 	);
 
 	@POST("search/references")
-	Call<BaseResult<SearchResult>> postReferenceSearchAsync(@Body ReferenceSearch search);
-
-	@GET("search/references/{searchResultsDbId}")
-	Call<BaseResult<ArrayResult<Reference>>> getReferenceSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
+	Call<BaseResult<SearchResult>> postReferenceSearchAsync(
+		@Body ReferenceSearch search,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
+
+	@GET("search/references/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<Reference>>> getReferenceSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
 
 	@GET("samples")
 	Call<BaseResult<ArrayResult<Sample>>> getSamples(
@@ -242,14 +242,14 @@ public interface BrapiGenotypingService
 	);
 
 	@POST("search/samples")
-	Call<BaseResult<SearchResult>> postSampleSearchAsync(@Body SampleSearch search);
-
-	@GET("search/samples/{searchResultsDbId}")
-	Call<BaseResult<ArrayResult<Sample>>> getSampleSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
+	Call<BaseResult<SearchResult>> postSampleSearchAsync(
+		@Body SampleSearch search,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
+
+	@GET("search/samples/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<Sample>>> getSampleSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
 
 	@POST("search/variantsets")
 	Call<BaseResult<ArrayResult<VariantSet>>> postVariantSetSearch(
@@ -259,14 +259,14 @@ public interface BrapiGenotypingService
 	);
 
 	@POST("search/variantsets")
-	Call<BaseResult<SearchResult>> postVariantSetSearchAsync(@Body VariantSetSearch search);
-
-	@GET("search/variantsets/{searchResultsDbId}")
-	Call<BaseResult<ArrayResult<VariantSet>>> getVariantSetSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
+	Call<BaseResult<SearchResult>> postVariantSetSearchAsync(
+		@Body VariantSetSearch search,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
+
+	@GET("search/variantsets/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<VariantSet>>> getVariantSetSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
 
 	@GET("variantsets")
 	Call<BaseResult<ArrayResult<VariantSet>>> getVariantSets(
@@ -286,7 +286,7 @@ public interface BrapiGenotypingService
 	Call<BaseResult<VariantSet>> getVariantSetById(@Path("variantSetDbId") String variantSetDbId);
 
 	@GET("variantsets/{variantSetDbId}/calls")
-	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> getVariantSetByIdCalls(
+	Call<BaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> getVariantSetByIdCalls(
 		@Path("variantSetDbId") String variantSetDbId,
 		@Query("expandHomozygotes") String expandHomozygotes,
 		@Query("unknownString") String unknownString,
@@ -306,7 +306,7 @@ public interface BrapiGenotypingService
 	);
 
 	@GET("variantsets/{variantSetDbId}/variants")
-	Call<TokenBaseResult<BaseResult<Variant>>> getVariantSetByIdVariants(
+	Call<BaseResult<BaseResult<Variant>>> getVariantSetByIdVariants(
 		@Path("variantSetDbId") String variantSetDbId,
 		@Query("variantDbId") String variantDbId,
 		@Query("pageToken") String pageToken,
@@ -314,24 +314,24 @@ public interface BrapiGenotypingService
 	);
 
 	@POST("search/variants")
-	Call<TokenBaseResult<CallResult<Variant>>> postVariantSearch(
+	Call<BaseResult<CallResult<Variant>>> postVariantSearch(
 		@Body VariantSearch search,
 		@Query("pageToken") String pageToken,
 		@Query("pageSize") int pageSize
 	);
 
 	@POST("search/variants")
-	Call<BaseResult<SearchResult>> postVariantSearchAsync(@Body VariantSearch search);
-
-	@GET("search/variants/{searchResultsDbId}")
-	Call<TokenBaseResult<ArrayResult<Variant>>> getVariantSearchAsync(
-		@Path("searchResultsDbId") String searchResultsDbId,
-		@Query("pageToken") String pageToken,
+	Call<BaseResult<SearchResult>> postVariantSearchAsync(
+		@Body VariantSearch search,
+		@Query("page") int page,
 		@Query("pageSize") int pageSize
 	);
 
+	@GET("search/variants/{searchResultsDbId}")
+	Call<BaseResult<ArrayResult<Variant>>> getVariantSearchAsync(@Path("searchResultsDbId") String searchResultsDbId);
+
 	@GET("variants")
-	Call<TokenBaseResult<ArrayResult<Variant>>> getVariants(
+	Call<BaseResult<ArrayResult<Variant>>> getVariants(
 		@Query("variantDbId") String variantDbId,
 		@Query("variantSetDbId") String variantSetDbId,
 		@Query("pageToken") String pageToken,
@@ -342,7 +342,7 @@ public interface BrapiGenotypingService
 	Call<BaseResult<Variant>> getVariantById(@Path("variantDbId") String variantDbId);
 
 	@GET("variants/{variantDbId}/calls")
-	Call<TokenBaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> getVariantByIdCalls(
+	Call<BaseResult<CallResult<uk.ac.hutton.ics.brapi.resource.genotyping.call.Call>>> getVariantByIdCalls(
 		@Path("variantDbId") String variantDbId,
 		@Query("expandHomozygotes") String expandHomozygotes,
 		@Query("unknownString") String unknownString,

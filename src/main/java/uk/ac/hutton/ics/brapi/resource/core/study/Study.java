@@ -21,7 +21,7 @@ public class Study extends BrapiObject
 	private String                       culturalPractices;
 	private List<DataLink>               dataLinks;
 	private URI                          documentationURL;
-	private Timestamp                    endDate;
+	private String                       endDate;
 	private List<EnvironmentalParameter> environmentParameters;
 	private PuiDescription               experimentalDesign;
 	private List<Reference>              externalReference;
@@ -32,8 +32,9 @@ public class Study extends BrapiObject
 	private String                       locationName;
 	private List<ObservationLevel>       observationLevels;
 	private String                       observationUnitsDescription;
+	private List<String>                 observationVariableDbIds;
 	private List<String>                 seasons;
-	private Timestamp                    startDate;
+	private String                       startDate;
 	private String                       studyCode;
 	private String                       studyDbId;
 	private String                       studyDescription;

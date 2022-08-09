@@ -13,14 +13,11 @@ public interface BrapiObservationServerResource
 {
 	BaseResult<ArrayResult<Observation>> getObservations(@QueryParam("observationDbId") String observationDbId,
 														 @QueryParam("observationUnitDbId") String observationUnitDbId,
-														 @QueryParam("germplasmDbId") String germplasmDbId,
 														 @QueryParam("observationVariableDbId") String observationVariableDbId,
-														 @QueryParam("studyDbId") String studyDbId,
 														 @QueryParam("locationDbId") String locationDbId,
-														 @QueryParam("trialDbId") String trialDbId,
-														 @QueryParam("programDbId") String programDbId,
 														 @QueryParam("seasonDbId") String seasonDbId,
-														 @QueryParam("commonCropName") String commonCropName,
+														 @QueryParam("observationTimeStampRangeStart") String observationTimeStampRangeStart,
+														 @QueryParam("observationTimeStampRangeEnd") String observationTimeStampRangeEnd,
 														 @QueryParam("observationUnitLevelName") String observationUnitLevelName,
 														 @QueryParam("observationUnitLevelOrder") String observationUnitLevelOrder,
 														 @QueryParam("observationUnitLevelCode") String observationUnitLevelCode,
@@ -28,8 +25,11 @@ public interface BrapiObservationServerResource
 														 @QueryParam("observationUnitLevelRelationshipOrder") String observationUnitLevelRelationshipOrder,
 														 @QueryParam("observationUnitLevelRelationshipCode") String observationUnitLevelRelationshipCode,
 														 @QueryParam("observationUnitLevelRelationshipDbId") String observationUnitLevelRelationshipDbId,
-														 @QueryParam("observationTimeStampRangeStart") String observationTimeStampRangeStart,
-														 @QueryParam("observationTimeStampRangeEnd") String observationTimeStampRangeEnd,
+														 @QueryParam("commonCropName") String commonCropName,
+														 @QueryParam("programDbId") String programDbId,
+														 @QueryParam("trialDbId") String trialDbId,
+														 @QueryParam("studyDbId") String studyDbId,
+														 @QueryParam("germplasmDbId") String germplasmDbId,
 														 @QueryParam("externalReferenceId") String externalReferenceId,
 														 @QueryParam("externalReferenceSource") String externalReferenceSource)
 		throws IOException, SQLException;
@@ -41,17 +41,23 @@ public interface BrapiObservationServerResource
 		throws IOException, SQLException;
 
 	Response getObservationTable(@QueryParam("observationUnitDbId") String observationUnitDbId,
-								 @QueryParam("germplasmDbId") String germplasmDbId,
 								 @QueryParam("observationVariableDbId") String observationVariableDbId,
-								 @QueryParam("studyDbId") String studyDbId,
 								 @QueryParam("locationDbId") String locationDbId,
-								 @QueryParam("trialDbId") String trialDbId,
-								 @QueryParam("programDbId") String programDbId,
 								 @QueryParam("seasonDbId") String seasonDbId,
-								 @QueryParam("observationLevel") String observationLevel,
 								 @QueryParam("searchResultsDbId") String searchResultsDbId,
 								 @QueryParam("observationTimeStampRangeStart") String observationTimeStampRangeStart,
-								 @QueryParam("observationTimeStampRangeEnd") String observationTimeStampRangeEnd)
+								 @QueryParam("observationTimeStampRangeEnd") String observationTimeStampRangeEnd,
+								 @QueryParam("programDbId") String programDbId,
+								 @QueryParam("trialDbId") String trialDbId,
+								 @QueryParam("studyDbId") String studyDbId,
+								 @QueryParam("germplasmDbId") String germplasmDbId,
+								 @QueryParam("observationUnitLevelName") String observationUnitLevelName,
+								 @QueryParam("observationUnitLevelOrder") String observationUnitLevelOrder,
+								 @QueryParam("observationUnitLevelCode") String observationUnitLevelCode,
+								 @QueryParam("observationUnitLevelRelationshipName") String observationUnitLevelRelationshipName,
+								 @QueryParam("observationUnitLevelRelationshipOrder") String observationUnitLevelRelationshipOrder,
+								 @QueryParam("observationUnitLevelRelationshipCode") String observationUnitLevelRelationshipCode,
+								 @QueryParam("observationUnitLevelRelationshipDbId") String observationUnitLevelRelationshipDbId)
 		throws IOException, SQLException;
 
 	BaseResult<Observation> getObservationById(@PathParam("observationDbId") String observationDbId)

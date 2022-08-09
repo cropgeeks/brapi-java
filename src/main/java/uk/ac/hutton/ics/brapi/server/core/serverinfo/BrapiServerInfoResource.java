@@ -9,6 +9,6 @@ import java.sql.SQLException;
 
 public interface BrapiServerInfoResource
 {
-	BaseResult<ServerInfo> getServerinfo(@QueryParam("dataType") String dataType)
+	BaseResult<ServerInfo> getServerinfo(@QueryParam("contentType") String contentType)
 		throws SQLException, IOException;
 }

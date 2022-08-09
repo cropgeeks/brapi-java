@@ -16,7 +16,7 @@ public class AttributeValue extends BrapiObject
 	private String          attributeDbId;
 	private String          attributeName;
 	private String          attributeValueDbId;
-	private Timestamp       determinedDate;
+	private String          determinedDate;
 	private List<Reference> externalReferences;
 	private String          germplasmDbId;
 	private String          germplasmName;

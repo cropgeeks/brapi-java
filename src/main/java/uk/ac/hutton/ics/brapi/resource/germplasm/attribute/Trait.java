@@ -14,7 +14,9 @@ public class Trait extends BrapiObject
 {
 	private List<String>      alternativeAbbreviations;
 	private String            attribute;
+	private String            attributePUI;
 	private String            entity;
+	private String            entityPUI;
 	private List<Reference>   externalReferences;
 	private String            mainAbbreviation;
 	private OntologyReference ontologyReference;
@@ -24,4 +26,5 @@ public class Trait extends BrapiObject
 	private String            traitDbId;
 	private String            traitDescription;
 	private String            traitName;
+	private String            traitPUI;
 }

@@ -13,10 +13,10 @@ import java.util.List;
 public class ListSearch
 {
 	private List<String> commonCropNames;
-	private Timestamp    dateCreatedRangeEnd;
-	private Timestamp    dateCreatedRangeStart;
-	private Timestamp    dateModifiedRangeEnd;
-	private Timestamp    dateModifiedRangeStart;
+	private String       dateCreatedRangeEnd;
+	private String       dateCreatedRangeStart;
+	private String       dateModifiedRangeEnd;
+	private String       dateModifiedRangeStart;
 	private List<String> externalReferenceIds;
 	private List<String> externalReferenceSources;
 	private List<String> listDbIds;

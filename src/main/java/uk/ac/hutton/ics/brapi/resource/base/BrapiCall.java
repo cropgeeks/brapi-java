@@ -5,10 +5,10 @@ import java.util.stream.Collectors;
 
 public class BrapiCall
 {
+	private List<String> contentTypes = new ArrayList<>();
+	private List<String> methods      = new ArrayList<>();
 	private String       service;
-	private List<String> dataTypes = new ArrayList<>();
-	private List<String> methods   = new ArrayList<>();
-	private List<String> versions  = new ArrayList<>();
+	private List<String> versions     = new ArrayList<>();
 
 	public BrapiCall()
 	{
@@ -19,15 +19,15 @@ public class BrapiCall
 		this.service = service;
 	}
 
-	public BrapiCall addMethod(Method method)
+	public BrapiCall addContentType(ContentType contentType)
 	{
-		methods.add(method.name());
+		contentTypes.add(contentType.type);
 		return this;
 	}
 
-	public BrapiCall addDataType(DataType datatype)
+	public BrapiCall addMethod(Method method)
 	{
-		dataTypes.add(datatype.type);
+		methods.add(method.name());
 		return this;
 	}
 
@@ -37,9 +37,9 @@ public class BrapiCall
 		return this;
 	}
 
-	public boolean hasDataType(DataType datatype)
+	public boolean hasContentType(ContentType contentType)
 	{
-		return dataTypes.contains(datatype.getType());
+		return contentTypes.contains(contentType.getType());
 	}
 
 	public boolean hasMethod(Method method)
@@ -63,9 +63,9 @@ public class BrapiCall
 		return this;
 	}
 
-	public List<DataType> getDataTypes()
+	public List<ContentType> getContentTypes()
 	{
-		return dataTypes.stream().map(DataType::getFromString).collect(Collectors.toList());
+		return contentTypes.stream().map(ContentType::getFromString).collect(Collectors.toList());
 	}
 
 	public List<Method> getMethods()
@@ -78,7 +78,7 @@ public class BrapiCall
 		return versions.stream().map(Version::getFromString).collect(Collectors.toList());
 	}
 
-	public enum DataType
+	public enum ContentType
 	{
 		json("application/json"),
 		tsv("text/tsv"),
@@ -86,17 +86,16 @@ public class BrapiCall
 
 		String type;
 
-		DataType(String type)
+		ContentType(String type)
 		{
 			this.type = type;
 		}
 
-		public static DataType getFromString(String type)
+		public static ContentType getFromString(String type)
 		{
-			for (DataType dt : DataType.values())
+			for (ContentType ct : ContentType.values())
 			{
-				if (Objects.equals(dt.type, type))
-					return dt;
+				if (Objects.equals(ct.type, type)) return ct;
 			}
 
 			return null;
@@ -135,10 +134,7 @@ public class BrapiCall
 		public static Version getFromString(String version)
 		{
 			for (Version v : Version.values())
-			{
-				if (Objects.equals(v.number, version))
-					return v;
-			}
+				if (Objects.equals(v.number, version)) return v;
 
 			return null;
 		}
