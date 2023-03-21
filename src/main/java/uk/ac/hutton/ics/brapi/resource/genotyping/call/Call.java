@@ -16,7 +16,7 @@ public class Call extends BrapiObject
 {
 	private String           callSetDbId;
 	private String           callSetName;
-	private GenotypeMetadata genotypeMetadata;
+	private List<GenotypeMetadata> genotypeMetadata;
 	private String           genotypeValue;
 	private String           phaseSet;
 	private String           variantDbId;
