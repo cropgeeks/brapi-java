@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 public class BrapiCall
 {
 	private List<String> contentTypes = new ArrayList<>();
+	private List<String> dataTypes		= new ArrayList<>();
 	private List<String> methods      = new ArrayList<>();
 	private String       service;
 	private List<String> versions     = new ArrayList<>();
@@ -17,6 +18,12 @@ public class BrapiCall
 	public BrapiCall(String service)
 	{
 		this.service = service;
+	}
+
+	public BrapiCall addDataType(DataType dataType)
+	{
+		dataTypes.add(dataType.type);
+		return this;
 	}
 
 	public BrapiCall addContentType(ContentType contentType)
@@ -35,6 +42,11 @@ public class BrapiCall
 	{
 		versions.add(version.number);
 		return this;
+	}
+
+	public boolean hasDataType(DataType dataType)
+	{
+		return dataTypes.contains(dataType.getType());
 	}
 
 	public boolean hasContentType(ContentType contentType)
@@ -68,6 +80,11 @@ public class BrapiCall
 		return contentTypes.stream().map(ContentType::getFromString).collect(Collectors.toList());
 	}
 
+	public List<DataType> getDataTypes()
+	{
+		return dataTypes.stream().map(DataType::getFromString).collect(Collectors.toList());
+	}
+
 	public List<Method> getMethods()
 	{
 		return methods.stream().map(Method::valueOf).collect(Collectors.toList());
@@ -96,6 +113,35 @@ public class BrapiCall
 			for (ContentType ct : ContentType.values())
 			{
 				if (Objects.equals(ct.type, type)) return ct;
+			}
+
+			return null;
+		}
+
+		public String getType()
+		{
+			return type;
+		}
+	}
+
+	public enum DataType
+	{
+		json("application/json"),
+		tsv("text/tsv"),
+		flapjack("application/flapjack");
+
+		String type;
+
+		DataType(String type)
+		{
+			this.type = type;
+		}
+
+		public static DataType getFromString(String type)
+		{
+			for (DataType dt : DataType.values())
+			{
+				if (Objects.equals(dt.type, type)) return dt;
 			}
 
 			return null;

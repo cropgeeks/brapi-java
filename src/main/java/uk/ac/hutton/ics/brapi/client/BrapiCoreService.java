@@ -207,6 +207,7 @@ public interface BrapiCoreService
 
 	@GET("serverinfo")
 	Call<BaseResult<ServerInfo>> getServerInfo(
+        @Query("contentType") String contentType,
 		@Query("dataType") String dataType,
 		@Query("page") int page,
 		@Query("pageSize") int pageSize
