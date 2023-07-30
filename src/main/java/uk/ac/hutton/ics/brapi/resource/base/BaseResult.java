@@ -1,5 +1,7 @@
 package uk.ac.hutton.ics.brapi.resource.base;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.*;
 import com.google.gson.annotations.SerializedName;
 import lombok.*;
@@ -22,5 +24,17 @@ public class BaseResult<T>
 	{
 		this.result = result;
 		metadata.setPagination(new Pagination(pageSize, currentPage, totalCount, pageSize));
+	}
+
+	public BaseResult(T result, int currentPage, int pageSize, long totalCount, int totalPages)
+	{
+		this.result = result;
+		metadata.setPagination(new Pagination().setPage(currentPage).setPageSize(pageSize).setTotalCount(totalCount).setTotalPages(totalPages));
+	}
+
+	public BaseResult(T result, List<Status> status)
+	{
+		this.result = result;
+		metadata.setStatus(status);
 	}
 }
