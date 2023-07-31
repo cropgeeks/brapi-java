@@ -1,7 +1,5 @@
 package uk.ac.hutton.ics.brapi.resource.base;
 
-import com.fasterxml.jackson.annotation.JsonValue;
-
 import lombok.*;
 import lombok.experimental.Accessors;
 
