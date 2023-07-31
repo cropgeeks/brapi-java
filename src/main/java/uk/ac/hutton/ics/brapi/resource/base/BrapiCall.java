@@ -3,6 +3,8 @@ package uk.ac.hutton.ics.brapi.resource.base;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
 public class BrapiCall
 {
 	private List<String> contentTypes = new ArrayList<>();
@@ -118,6 +120,7 @@ public class BrapiCall
 			return null;
 		}
 
+		@JsonValue
 		public String getType()
 		{
 			return type;
@@ -147,6 +150,7 @@ public class BrapiCall
 			return null;
 		}
 
+		@JsonValue
 		public String getType()
 		{
 			return type;
@@ -185,6 +189,7 @@ public class BrapiCall
 			return null;
 		}
 
+		@JsonValue
 		public String getNumber()
 		{
 			return number;

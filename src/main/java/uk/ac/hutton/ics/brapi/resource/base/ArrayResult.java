@@ -12,4 +12,8 @@ import java.util.List;
 public class ArrayResult<T>
 {
 	private List<T> data;
+
+	public ArrayResult(List<T> data) {
+		this.data = data;
+	}
 }
