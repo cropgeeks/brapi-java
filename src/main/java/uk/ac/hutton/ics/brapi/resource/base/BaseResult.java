@@ -29,7 +29,7 @@ public class BaseResult<T>
 	public BaseResult(T result, int currentPage, int pageSize, long totalCount, int totalPages)
 	{
 		this.result = result;
-		metadata.setPagination(new Pagination().setPage(currentPage).setPageSize(pageSize).setTotalCount(totalCount).setTotalPages(totalPages));
+		metadata.setPagination(new Pagination().setCurrentPage(currentPage).setPageSize(pageSize).setTotalCount(totalCount).setTotalPages(totalPages));
 	}
 
 	public BaseResult(T result, List<Status> status)
