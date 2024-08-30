@@ -12,7 +12,7 @@ import java.util.List;
 @Accessors(chain = true)
 public class VariantSet extends BrapiObject
 {
-	private Analysis        analysis;
+	private List<Analysis>        analysis;
 	private List<Format>    availableFormats;
 	private Long            callSetCount;
 	private List<Reference> externalReferences;
