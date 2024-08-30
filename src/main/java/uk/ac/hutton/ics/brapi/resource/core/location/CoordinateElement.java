@@ -7,6 +7,8 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
-public class GeometryPoint extends GeometryElement<Double[]>
+public abstract class CoordinateElement<T extends GeometryElement<?>>
 {
+	private String type;
+	private T      geometry;
 }

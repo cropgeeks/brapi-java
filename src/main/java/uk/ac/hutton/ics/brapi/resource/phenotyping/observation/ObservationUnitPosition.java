@@ -2,7 +2,7 @@ package uk.ac.hutton.ics.brapi.resource.phenotyping.observation;
 
 import lombok.*;
 import lombok.experimental.Accessors;
-import uk.ac.hutton.ics.brapi.resource.core.location.CoordinatesPoint;
+import uk.ac.hutton.ics.brapi.resource.core.location.*;
 
 import java.util.List;
 
@@ -12,12 +12,12 @@ import java.util.List;
 @Accessors(chain = true)
 public class ObservationUnitPosition
 {
-	private String                 entryType;
-	private CoordinatesPoint       geoCoordinates;
-	private ObservationLevel       observationLevel;
-	private List<ObservationLevel> observationLevelRelationships;
-	private String                 positionCoordinateX;
-	private String                 positionCoordinateXType;
-	private String                 positionCoordinateY;
-	private String                 positionCoordinateYType;
+	private String                                          entryType;
+	private CoordinateElement<? extends GeometryElement<?>> geoCoordinates;
+	private ObservationLevel                                observationLevel;
+	private List<ObservationLevel>                          observationLevelRelationships;
+	private String                                          positionCoordinateX;
+	private String                                          positionCoordinateXType;
+	private String                                          positionCoordinateY;
+	private String                                          positionCoordinateYType;
 }

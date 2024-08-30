@@ -7,8 +7,6 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
-public class CoordinatesPoint
+public class CoordinatesPoint extends CoordinateElement<GeometryPoint>
 {
-	private GeometryPoint geometry;
-	private String        type;
 }

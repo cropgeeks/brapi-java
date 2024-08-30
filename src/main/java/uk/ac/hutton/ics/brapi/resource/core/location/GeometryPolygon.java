@@ -7,8 +7,6 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
-public class GeometryPolygon
+public class GeometryPolygon extends GeometryElement<Double[][][]>
 {
-	private String       type;
-	private Double[][][] coordinates;
 }
