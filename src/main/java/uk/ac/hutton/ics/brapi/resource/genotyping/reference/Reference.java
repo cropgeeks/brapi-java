@@ -5,7 +5,6 @@ import lombok.experimental.Accessors;
 import uk.ac.hutton.ics.brapi.resource.base.BrapiObject;
 import uk.ac.hutton.ics.brapi.resource.germplasm.germplasm.MiniGermplasm;
 
-import java.net.URI;
 import java.util.List;
 
 @NoArgsConstructor

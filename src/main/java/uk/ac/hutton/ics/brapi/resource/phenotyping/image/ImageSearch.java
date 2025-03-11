@@ -4,7 +4,6 @@ import lombok.*;
 import lombok.experimental.Accessors;
 import uk.ac.hutton.ics.brapi.resource.core.location.*;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 @NoArgsConstructor

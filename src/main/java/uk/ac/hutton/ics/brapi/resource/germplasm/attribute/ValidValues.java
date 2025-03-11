@@ -14,4 +14,12 @@ public class ValidValues
 	private List<Category> categories;
 	private String         maximumValue;
 	private String         minimumValue;
+
+	/** @deprecated Deprecated in BrAPI 2.1 */
+	@Deprecated
+	private Integer        min;
+	/** @deprecated Deprecated in BrAPI 2.1 */
+	@Deprecated
+	private Integer        max;
+
 }

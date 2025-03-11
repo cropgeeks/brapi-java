@@ -3,7 +3,6 @@ package uk.ac.hutton.ics.brapi.resource.genotyping.variant;
 import lombok.*;
 import lombok.experimental.Accessors;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 @NoArgsConstructor

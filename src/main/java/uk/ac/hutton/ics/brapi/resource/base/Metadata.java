@@ -13,5 +13,5 @@ public class Metadata
 {
 	private List<DataFile> datafiles;
 	private Pagination     pagination;
-	private List<Status>   status;
+	private List<Status>   status = List.of();
 }

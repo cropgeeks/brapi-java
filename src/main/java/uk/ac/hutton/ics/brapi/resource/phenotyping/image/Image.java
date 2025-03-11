@@ -6,7 +6,6 @@ import uk.ac.hutton.ics.brapi.resource.base.*;
 import uk.ac.hutton.ics.brapi.resource.core.location.GeometryPoint;
 
 import java.net.URI;
-import java.sql.Timestamp;
 import java.util.List;
 
 @NoArgsConstructor
